@@ -10,3 +10,5 @@ cd 3Dify\makeHuman_Exporter\public_html
 npm i
 npm start
 ```
+
+The server is up at http://localhost:3000/.
