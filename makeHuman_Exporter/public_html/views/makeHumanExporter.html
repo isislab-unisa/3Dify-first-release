@@ -5,6 +5,7 @@
   <script src="js/commons.js"></script>
   <script src="js/faceDetectionControls.js"></script>
   <script src="js/imageSelectionControls.js"></script>
+  <script src="js/inference.js"></script>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -43,7 +44,7 @@
       <div class="row side-by-side">
         <button
           class="waves-effect waves-light btn"
-          onclick="exportMhm()"
+          onclick="testDownload()"
         >
           Export
         </button>
@@ -70,6 +71,10 @@
       const options = getFaceDetectorOptions()
 
       const results = await faceapi.detectAllFaces(inputImgEl, options).withFaceLandmarks()
+      //console.log(results[0].landmarks._positions)
+      calculateLimits(results[0].landmarks._positions)
+      console.log(scaledLandmarkPositions)
+      console.log(limits)
       const canvas = $('#overlay').get(0)
       faceapi.matchDimensions(canvas, inputImgEl)
       const resizedResults = faceapi.resizeResults(results, inputImgEl)
@@ -77,25 +82,11 @@
       faceapi.draw.drawFaceLandmarks(canvas, resizedResults)
     }
 
-    function download(filename, text) {
-      var element = document.createElement('a');
-      element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-      element.setAttribute('download', filename);
-
-      element.style.display = 'none';
-      document.body.appendChild(element);
-
-      element.click();
-
-      document.body.removeChild(element);
-    }
-
     function exportMhm()
     {
       const defaultMhmFile = '# Written by MakeHuman 1.2.0 final\nversion v1.2.0\ncamera 0.0 0.0 0.0 0.0 0.0 1.0\nmodifier breast/BreastSize 0.500000\nmodifier breast/BreastFirmness 0.500000\nmodifier macrodetails/Gender 1.000000\nmodifier macrodetails/Age 0.500000\nmodifier macrodetails/African 0.333333\nmodifier macrodetails/Asian 0.333333\nmodifier macrodetails/Caucasian 0.333333\nmodifier macrodetails-universal/Muscle 0.500000\nmodifier macrodetails-universal/Weight 0.500000\nmodifier macrodetails-height/Height 0.500000\nmodifier macrodetails-proportions/BodyProportions 0.500000\neyes HighPolyEyes 2c12f43b-1303-432c-b7ce-d78346baf2e6\nclothesHideFaces True\nskinMaterial skins/default.mhmat\nmaterial HighPolyEyes 2c12f43b-1303-432c-b7ce-d78346baf2e6 eyes/materials/brown.mhmat\nsubdivide False\n'
       download('theRock.mhm', defaultMhmFile)
-    }
-    
+    }    
 
     async function run() {
       // load face detection and face landmark models
