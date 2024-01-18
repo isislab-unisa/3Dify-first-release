@@ -17,6 +17,7 @@ app.use(express.static(path.join(__dirname, '../../dist')))
 
 app.get('/', (req, res) => res.redirect('/makehuman_exporter'))
 app.get('/makehuman_exporter', (req, res) => res.sendFile(path.join(viewsDir, 'makeHumanExporter.html')))
+app.get('/mediaPipeTest', (req, res) => res.sendFile(path.join(viewsDir, 'mediaPipeTest.html')))
 
 app.post('/fetch_external_image', async (req, res) => {
   const { imageUrl } = req.body

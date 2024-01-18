@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="face-api.js"></script>
+  <script src="js/commons.js"></script>
+  <script src="js/faceDetectionControls.js"></script>
+  <script src="js/imageSelectionControls.js"></script>
+  <script src="js/inference.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script type="module" src="js/mediaPipeTest.js"></script>
+</head>
+<body>
+  <div class="center-content page-container">
+
+    <div class="progress" id="loader">
+      <div class="indeterminate"></div>
+    </div>
+    <div style="position: relative" class="margin">
+      <img id="inputImg" src="" style="max-width: 800px;" />
+      <canvas id="overlay" />
+    </div>
+
+    <div class="row side-by-side">
+      <!-- image_selection_control -->
+      <div id="selectList"></div>
+      <div class="row">
+        <label for="imgUrlInput">Get image from URL:</label>
+        <input id="imgUrlInput" type="text" class="bold">
+      </div>
+      <button
+        class="waves-effect waves-light btn"
+        onclick="loadImageFromUrl()"
+      >
+        Ok
+      </button>
+      <input id="queryImgUploadInput" type="file" class="waves-effect btn bold" onchange="loadImageFromUploadMediaPipeTest()" accept=".jpg, .jpeg, .png">
+      <!-- image_selection_control -->
+    </div>
+
+    <!-- exporter -->
+    <span id="makehuman_exporter">
+      <div class="row">
+        <label for="imgUrlInput">Download MakeHuman File:</label>
+      </div>
+      <div class="row side-by-side">        
+        <button
+          class="waves-effect waves-light btn"
+          onclick="downloadMakeHumanFile()"
+        >
+          Export
+        </button>
+      </div>
+    </span>
+    <!-- exporter -->
+
+  </body>
+
+  <script>
+    $(document).ready(function() {
+      initImageSelectionControls('therock.png')
+    })
+  </script>
+</body>
+</html>

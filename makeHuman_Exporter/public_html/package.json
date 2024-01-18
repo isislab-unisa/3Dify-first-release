@@ -5,6 +5,7 @@
   "author": "DanieleBubb",
   "license": "MIT",
   "dependencies": {
+    "@mediapipe/tasks-vision": "^0.10.9",
     "express": "^4.17.1",
     "request": "^2.88.2"
   }
