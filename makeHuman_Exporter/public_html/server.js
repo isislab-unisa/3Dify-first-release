@@ -33,6 +33,56 @@ app.post('/fetch_external_image', async (req, res) => {
   }
 })
 
+const fs = require('fs')
+var exec = require('child_process').exec;
+
+app.post('/uploadmhm', (req, res) => {
+
+  console.log(req.body.text)
+  fs.writeFile(path.join(__dirname, 'aaa.mhm'), req.body.text, (err) => {
+    if (err) {
+      return res.send(err);
+    } else {
+      exec('\"C:\\Program Files\\Python312\\python.exe\" d:\\MakehumanSocketClient\\cli\\mhrc\\genericCommand.py loadMhm', 
+          (err, stdout, stderr) => {
+            if (err) {
+              console.error(`exec error: ${err}`);
+              return;
+            }
+          
+            console.log(`${stdout}`);
+            exec('\"C:\\Program Files\\Python312\\python.exe\" d:\\MakehumanSocketClient\\cli\\mhrc\\genericCommand.py exportFbx',
+              (err, stdout, stderr) => {
+                if (err) {
+                  console.error(`exec error: ${err}`);
+                  return;
+                }
+              
+                console.log(`${stdout}`);
+                res.send('OK');
+              });
+      });
+    }
+  })
+});
+
+var AdmZip = require('adm-zip');
+app.get('/downloadFbxZip', function(req, res) {
+    var zip = new AdmZip();
+    // add local file
+    zip.addLocalFile("d:/myHuman.fbx");
+    zip.addLocalFolder("d:/Textures/", "/Textures");
+    // get everything as a buffer
+    var zipFileContents = zip.toBuffer();
+    const fileName = 'avatar.zip';
+    const fileType = 'application/zip';
+    res.writeHead(200, {
+        'Content-Disposition': `attachment; filename="${fileName}"`,
+        'Content-Type': fileType,
+      })
+    return res.end(zipFileContents);
+});
+
 app.listen(3000, () => console.log('Listening on port 3000!'))
 
 function request(url, returnBuffer = true, timeout = 10000) {

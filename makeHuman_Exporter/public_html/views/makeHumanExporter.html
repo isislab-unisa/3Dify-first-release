@@ -48,8 +48,24 @@
         <button
           class="waves-effect waves-light btn"
           onclick="downloadMakeHumanFile()"
+          id="export_button"
         >
           Export
+        </button>
+        <button
+          class="btn-large disabled"
+          id="exporting_button"
+          style="display: none;"
+        >
+          Exporting...
+        </button>
+        <button
+          class="waves-effect waves-light btn"
+          onclick="downloadFbx()"
+          id="download_button"
+          style="display: none;"
+        >
+          Download
         </button>
       </div>
     </span>

@@ -76,6 +76,24 @@ function download(filename, text) {
     document.body.removeChild(element);
 }
 
+function saveFile(text) {
+    document.getElementById("export_button").style.display = "none";
+    document.getElementById("exporting_button").style.display = "block";
+
+    fetch('/uploadmhm', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({text})
+            })
+            .then(res => 
+                {
+                    console.log(res)
+                    document.getElementById("exporting_button").style.display = "none";
+                    document.getElementById("download_button").style.display = "block";
+                }
+            )
+}
+
 function setHeadRound(){    
     const headRoundLeft = inverseLerp(0.2, 0.1, scaledLandmarkPositions[0].x)
     const headRoundRight = inverseLerp(0.8, 0.9, scaledLandmarkPositions[16].x)
@@ -306,5 +324,22 @@ function downloadMakeHumanFile(){
     for(let i = 0; i < keys.length; ++i){
         outputFile += `${keys[i]} ${makeHumanParameters[keys[i]]}\n`
     }
-    download('output.mhm', outputFile)
+    saveFile(outputFile)
+}
+
+function downloadFbx()
+{
+    const options = {
+        method: 'GET',
+      };
+    fetch('/downloadFbxZip', options)
+        .then(function(t) {
+            return t.blob().then((b)=>{
+                var a = document.createElement("a");
+                a.href = URL.createObjectURL(b);
+                a.setAttribute("download", 'avatar.zip');
+                a.click();
+            }
+            )
+        });
 }
