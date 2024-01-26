@@ -233,6 +233,7 @@ def parse_arguments():
     parser.add_argument("--debugopengl", action="store_true", help="enable OpenGL error checking and logging (slow)")
     parser.add_argument("--fullloggingopengl", action="store_true", help="log all OpenGL calls (very slow)")
     parser.add_argument("--debugnumpy", action="store_true", help="enable numpy runtime error messages")
+    parser.add_argument("--headless", action="store_true", help="run Makehuman without graphics")
 
     if not isRelease():
         parser.add_argument("-t", "--runtests", action="store_true", help="run test suite (for developers)")
@@ -580,7 +581,7 @@ def main():
         set_sys_path()
         make_user_dir()
         get_platform_paths()
-        redirect_standard_streams()
+        # redirect_standard_streams()
         os.environ['MH_VERSION'] = getVersionStr()
         os.environ['MH_SHORT_VERSION'] = getShortVersion()
         os.environ['MH_MESH_VERSION'] = getBasemeshVersion()
@@ -607,10 +608,22 @@ def main():
         # Suppress runtime errors
         numpy.seterr(all = 'ignore')
 
-    # Here pyQt and PyOpenGL will be imported
-    from mhmain import MHApplication
-    application = MHApplication()
-    application.run()
+    # --headless option given -> run in headless mode
+    runHeadless = bool( args.get("headless", None) )
+    
+    if runHeadless:
+        print("""headless\n""")
+        from mhmain import MHHeadlessApp
+        application = MHHeadlessApp()
+        application.start()                
+        application.run()
+    else:
+        print("""non headless\n""")
+        # Here pyQt and PyOpenGL will be imported
+        from mhmain import MHApplication
+
+        application = MHApplication()
+        application.run()
 
     #import cProfile
     #cProfile.run('application.run()')

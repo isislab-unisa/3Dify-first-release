@@ -56,8 +56,11 @@ import gui
 import language
 import log
 import contextlib
+import eventqueue
 
 from mhversion import MHVersion
+from qtui import Frame
+from qtui import LogWindow
 
 @contextlib.contextmanager
 def outFile(path):
@@ -1806,3 +1809,28 @@ class MHApplication(gui3d.Application, mh.Application):
 
     def addExporter(self, exporter):
         self.getCategory('Files').getTaskByName('Export').addExporter(exporter)
+
+class MHHeadlessApp(MHApplication):
+    def __init__(self):
+        MHApplication.__init__(self)
+    
+    def start(self):
+        self.messages = eventqueue.Manager(self._postAsync)
+        self.mainwin = Frame(self, (G.windowWidth, G.windowHeight))
+        self.tabs = self.mainwin.tabs
+        self.log_window = LogWindow()
+        self.createActions()
+        self.loadHuman()
+        #self.loadScene()
+        self.loadMainGui()
+        self.loadPlugins()
+        #self.setTheme("default")
+        self.loadFinish()
+    
+    def run(self):
+        self.setLanguage("english")
+        self.loadSettings()
+        self.syncUndoRedo()
+        self.createShortcuts()
+        self.exec()
+        
