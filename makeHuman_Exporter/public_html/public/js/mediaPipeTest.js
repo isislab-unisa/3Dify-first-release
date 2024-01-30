@@ -45,34 +45,6 @@ function calculateLimits(landmarks) {
     return { minX, minY, maxX, maxY };
 }
 
-function calculateLimits2(landmarks) {
-    limits = [];
-    landmarks = landmarks[0];
-    let top = landmarks[10];
-    let bottom = landmarks[152];
-    let left = landmarks[93];
-    let right = landmarks[323];
-
-    //Calcola il punto centrale della faccia
-    let centerPoint = {
-        x: (left.x + right.x) * 0.5,
-        y: (top.y + bottom.y) * 0.5
-    }
-
-    const halfSizepx = Math.abs(centerPoint.x - centerPoint.y)
-    const sizepx = halfSizepx * 2;
-    const leftpx = centerPoint.x - halfSizepx;
-    const rightpx = centerPoint.x + halfSizepx;
-    const downpx = centerPoint.y;
-    const uppx = downpx - sizepx
-    limits[0] = { x: leftpx, y: downpx }
-    limits[1] = { x: rightpx, y: uppx }
-
-    return limits;
-
-}
-
-
 async function handleCLick(event){
     console.log("click");
     if(!faceLandmarker){
@@ -435,9 +407,11 @@ async function handleCLick(event){
     //Head-rectangular
     //Distanza x tra estremo SX e mento SX
     let distanceLeftLowerFace = Math.abs(faceShapeCoord[2].x - faceShapeCoord[4].x);
+
     // distanceDictionary["distanceLeftLowerFace"] = distanceLeftLowerFace;
     //Distanza x tra estremo DX e mento DX
     let distanceRightLowerFace = Math.abs(faceShapeCoord[3].x - faceShapeCoord[5].x);
+
     // distanceDictionary["distanceRightLowerFace"] = distanceRightLowerFace;
     //media delle due distance
     let meanDistanceLowerFace = (distanceLeftLowerFace + distanceRightLowerFace) * 0.5;
