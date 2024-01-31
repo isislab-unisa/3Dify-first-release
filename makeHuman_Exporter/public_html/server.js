@@ -66,6 +66,36 @@ app.post('/uploadmhm', (req, res) => {
   })
 });
 
+app.post('/applymodifiers', (req, res) =>
+{
+  console.log(req.body.text)
+  fs.writeFile(path.join(__dirname, 'aaa.json'), req.body.text, (err) => {
+    if (err) {
+      return res.send(err);
+    } else {      
+      exec('\"C:\\Program Files\\Python312\\python.exe\" d:\\3dify\\MakehumanSocketClient\\cli\\mhrc\\applymodifiers.py ' + path.join(__dirname, 'aaa.json'), 
+          (err, stdout, stderr) => {
+            if (err) {
+              console.error(`exec error: ${err}`);
+              return;
+            }
+          
+            console.log(`${stdout}`);
+            exec('\"C:\\Program Files\\Python312\\python.exe\" d:\\3dify\\MakehumanSocketClient\\cli\\mhrc\\genericCommand.py exportFbx',
+              (err, stdout, stderr) => {
+                if (err) {
+                  console.error(`exec error: ${err}`);
+                  return;
+                }
+              
+                console.log(`${stdout}`);
+                res.send('OK');
+              });
+      });
+    }
+  })
+})
+
 var AdmZip = require('adm-zip');
 app.get('/downloadFbxZip', function(req, res) {
     var zip = new AdmZip();
