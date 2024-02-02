@@ -7,6 +7,7 @@ import math
 import numpy as np
 import time
 import log
+import events3d
 
 from .abstractop import AbstractOp
 from core import G
@@ -35,12 +36,29 @@ class ImportExportOps(AbstractOp):
         jsonCall.setData("OK")
 
     def applyModifiers(self, conn, jsonCall):
+        for lh in list(G.app.loadHandlers.values()):
+            lh(self, ['status', 'started'], True)
+
+        event = events3d.HumanEvent(self, 'load')
+        event.path = "aaa.mhm"
+        human.callEvent('onChanging', event)
         human.resetMeshValues()
         for key, value in jsonCall.params.items():
-            modifier = self.api.internals.getHuman().getModifier(key)
-            if not modifier:
-                jsonCall.setError("No such modifier")
-                return
-            log.debug(key + " " + value)
-            self.api.modifiers.applyModifier(key, float(value), True)
+            linedata = key.strip().split()
+            linedata.append(value)
+            if linedata[0] == 'modifier':
+                modifier = self.api.internals.getHuman().getModifier(linedata[1])
+                if not modifier:
+                    jsonCall.setError("No such modifier")
+                    return
+                self.api.modifiers.applyModifier(linedata[1], float(value), True)
+            elif linedata[0] in G.app.loadHandlers:
+                G.app.loadHandlers[linedata[0]](human, linedata, False)
+
+        for lh in set(G.app.loadHandlers.values()):
+            lh(self, ['status', 'finished'], True)
+        human.blockEthnicUpdates = False        
+        human._setEthnicVals()
+        human.callEvent('onChanged', event)
+        human.applyAllTargets()
         jsonCall.setData("OK")

@@ -28,9 +28,9 @@ jsc.setFunction("applyModifiers")
 
 for (key, value) in data.items():
     keySplit = key.split(' ')
-    if len(keySplit) == 2 and keySplit[0] == "modifier":
-        print(keySplit[1] + ' ' + value)
-        jsc.setParam(keySplit[1], value);
+    if keySplit[0] != "#":
+        print(key + ' ' + value)
+        jsc.setParam(key, value);
 
 response = jsc.send()
 
