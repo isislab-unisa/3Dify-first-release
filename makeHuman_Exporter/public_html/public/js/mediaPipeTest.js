@@ -40,6 +40,61 @@ const makeHumanParameters = {
     "material eyebrow011": "19e43555-4613-4457-ac6e-c30bf350d275 eyebrow011.mhmat"
 }
 
+function sendJsonModifiers() {
+    let outputFile = JSON.stringify(makeHumanParameters)
+
+    saveJsonFile(outputFile)
+}
+
+function downloadFbx() {
+    document.getElementById("download_button").style.display = "none";
+    document.getElementById("exporting_button").style.display = "block";
+    const options = {
+        method: 'GET',
+    };
+    fetch('/downloadFbxZip', options)
+        .then(function (t) {
+            return t.blob().then((b) => {
+                var a = document.createElement("a");
+                a.href = URL.createObjectURL(b);
+                a.setAttribute("download", 'avatar.zip');
+                a.click();
+                document.getElementById("download_button").style.display = "block";
+                document.getElementById("exporting_button").style.display = "none";
+            }
+            )
+        });
+}
+
+function applySlider() {
+    const sliderName = document.getElementById('sliderInputModifier').value
+    const sliderValue = document.getElementById('sliderInputValue').value
+    const sliderJson =
+    {
+        "modifier": sliderName,
+        "value": sliderValue
+    }
+    document.getElementById("download_button").style.display = "none";
+    document.getElementById("exporting_button").style.display = "block";
+    document.getElementById("apply_slider").style.display = "none";
+    document.getElementById("applying_slider").style.display = "block";
+
+    fetch('/applymodifier', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sliderJson })
+    })
+        .then(res => {
+            console.log(res)
+            document.getElementById("download_button").style.display = "block";
+            document.getElementById("exporting_button").style.display = "none";
+            document.getElementById("apply_slider").style.display = "block";
+            document.getElementById("applying_slider").style.display = "none";
+        }
+        )
+}
+
+
 
 const {FaceLandmarker, FilesetResolver, DrawingUtils} = vision;
 
@@ -468,11 +523,18 @@ async function handleCLick(event){
     distanceDictionary["meanDistanceLowerFace"] = meanDistanceLowerFace;
     normalizedDistanceDictionary["head/head-rectangular"] = normalize(meanDistanceLowerFace, 0.152612, 0.232226);
 
+    for(let key in normalizedDistanceDictionary){
+        makeHumanParameters["modifier " + key] = normalizedDistanceDictionary[key].toString();
+    }
+    
     console.log("Distance Dictionary");
     console.log(distanceDictionary);
 
     console.log("Normalized Distance Dictionary");
     console.log(normalizedDistanceDictionary);
+
+    console.log("MakeHuman Parameters");
+    console.log(makeHumanParameters);
 
     //HandleClick on created Canvas for getting normalized coordinates of point clicked
     canvas.addEventListener("click", handleClickCanvas);
