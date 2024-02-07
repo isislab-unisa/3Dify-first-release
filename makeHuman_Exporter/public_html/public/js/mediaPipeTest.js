@@ -142,6 +142,45 @@ function calculateLimits(landmarks) {
 
 async function handleCLick(event){
     console.log("click");
+
+    await changeFaceDetector(SSD_MOBILENETV1)
+    await faceapi.loadFaceLandmarkModel('/')
+    await faceapi.nets.ageGenderNet.load('/')
+
+
+    //FaceAPI for gender and age
+    if (!isFaceDetectionModelLoaded()) {
+        console.log("Face detection model not loaded")
+        return
+    }
+
+    const options = getFaceDetectorOptions()
+
+    const faceAPIResults = await faceapi.detectAllFaces(event.target, options).withFaceLandmarks()
+        .withAgeAndGender()
+
+    let gender = faceAPIResults[0].gender
+    let genderValue = 0.0
+    if (gender.toLowerCase() == "male") {
+        genderValue = 1.0
+    }
+    makeHumanParameters["modifier macrodetails/Gender"] = genderValue.toString()
+
+    let age = faceAPIResults[0].age
+    let ageValue
+    if (age <= 25.0) {
+        ageValue = inverseLerp(0, 25, age) * 0.5
+    }
+    else {
+        ageValue = inverseLerp(25, 99, age) * 0.5 + 0.5
+    }
+    makeHumanParameters["modifier macrodetails/Age"] = ageValue.toString()
+
+
+    console.log("GENDER : " + gender)
+    console.log("AGE : " + age)
+
+
     if(!faceLandmarker){
         console.log("faceLandmarker not ready");
         return;
