@@ -40,10 +40,54 @@ const makeHumanParameters = {
     "material eyebrow011": "19e43555-4613-4457-ac6e-c30bf350d275 eyebrow011.mhmat"
 }
 
+function clamp(value, min, max) {
+    return Math.min(Math.max(value, min), max);
+}
+
+function clamp01(value) {
+    return clamp(value, 0, 1);
+}
+
+function lerp(a, b, t) {
+    return (1-t)*a + t*b
+}
+
+function inverseLerp(a, b, x){
+    return clamp((x-a) / (b-a), 0, 1)
+}
+
+function map01tominus11(x){
+    return x*2-1
+}
+
 function sendJsonModifiers() {
     let outputFile = JSON.stringify(makeHumanParameters)
 
     saveJsonFile(outputFile)
+}
+window.sendJsonModifiers = sendJsonModifiers;
+
+function saveJsonFile(text) {
+    document.getElementById("export_button").style.display = "none";
+    document.getElementById("exporting_button").style.display = "block";
+    document.getElementById("apply_slider").style.display = "none";
+    document.getElementById("applying_slider").style.display = "block";
+
+    fetch('/applymodifiers', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({text})
+            })
+            .then(res => 
+                {
+                    console.log(res)
+                    document.getElementById("exporting_button").style.display = "none";
+                    document.getElementById("download_button").style.display = "block";
+                    document.getElementById("apply_slider").style.display = "block";
+                    document.getElementById("applying_slider").style.display = "none";
+                    document.getElementById("slider").style.display = "block";
+                }
+            )
 }
 
 function downloadFbx() {
@@ -65,6 +109,7 @@ function downloadFbx() {
             )
         });
 }
+window.downloadFbx = downloadFbx;
 
 function applySlider() {
     const sliderName = document.getElementById('sliderInputModifier').value
@@ -93,7 +138,7 @@ function applySlider() {
         }
         )
 }
-
+window.applySlider = applySlider;
 
 
 const {FaceLandmarker, FilesetResolver, DrawingUtils} = vision;
