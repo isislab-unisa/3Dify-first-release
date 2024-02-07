@@ -4,11 +4,11 @@ import sys
 from mhrc.JsonCall import JsonCall
 
 def usage():
-    print "USAGE:\n"
-    print "  applyModifier.py <modifier name> <power>\n";
-    print "Modifier name is the name as listed by the listAvailableModifiers"
-    print "script. Power is either (usually) between 0.0 and +1.0, but some"
-    print "modifiers may accept a range between -1.0 and +1.0."
+    print("USAGE:\n")
+    print("  applyModifier.py <modifier name> <power>\n")
+    print("Modifier name is the name as listed by the listAvailableModifiers")
+    print("script. Power is either (usually) between 0.0 and +1.0, but some")
+    print("modifiers may accept a range between -1.0 and +1.0.")
     sys.exit(1)
 
 if len(sys.argv) < 3:
@@ -29,14 +29,14 @@ jsc.setParam("power",modval);
 response = jsc.send()
 
 if not response:
-    print "Command failed (returned null response)\n"
+    print("Command failed (returned null response)\n")
     sys.exit(1)
 
 if hasattr(response,"error") and getattr(response,"error"):
-    print "ERROR: " + getattr(response,"error")
+    print("ERROR: " + getattr(response,"error"))
     sys.exit(1)
 
-print "OK"
+print("OK")
 
 
 

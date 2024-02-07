@@ -81,23 +81,38 @@ app.post('/applymodifiers', (req, res) =>
             }
           
             console.log(`${stdout}`);
-            exec('\"C:\\Program Files\\Python312\\python.exe\" d:\\3dify\\MakehumanSocketClient\\cli\\mhrc\\genericCommand.py exportFbx',
-              (err, stdout, stderr) => {
-                if (err) {
-                  console.error(`exec error: ${err}`);
-                  return;
-                }
-              
-                console.log(`${stdout}`);
-                res.send('OK');
-              });
+            res.send('OK');
+
       });
     }
   })
 })
 
+app.post('/applymodifier', (req, res) =>
+{
+  console.log(req.body.sliderJson)
+  const params = req.body.sliderJson
+  exec('\"C:\\Program Files\\Python312\\python.exe\" d:\\3dify\\MakehumanSocketClient\\cli\\mhrc\\applymodifier.py ' + params.modifier + " " + params.value,
+    (err, stdout, stderr) => {
+      if (err) {
+        console.error(`exec error: ${err}`);
+        return;
+      }
+    
+      console.log(`${stdout}`);
+      res.send('OK');
+    });
+})
+
 var AdmZip = require('adm-zip');
+const { json } = require('stream/consumers')
 app.get('/downloadFbxZip', function(req, res) {
+  exec('\"C:\\Program Files\\Python312\\python.exe\" d:\\3dify\\MakehumanSocketClient\\cli\\mhrc\\genericCommand.py exportFbx',
+  (err, stdout, stderr) => {
+    if (err) {
+      console.error(`exec error: ${err}`);
+      return;
+    }
     var zip = new AdmZip();
     // add local file
     zip.addLocalFile("d:/myHuman.fbx");
@@ -110,7 +125,11 @@ app.get('/downloadFbxZip', function(req, res) {
         'Content-Disposition': `attachment; filename="${fileName}"`,
         'Content-Type': fileType,
       })
+    
+    console.log(`${stdout}`);
     return res.end(zipFileContents);
+  });
+    
 });
 
 app.listen(3000, () => console.log('Listening on port 3000!'))

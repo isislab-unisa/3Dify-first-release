@@ -97,6 +97,8 @@ function saveFile(text) {
 function saveJsonFile(text) {
     document.getElementById("export_button").style.display = "none";
     document.getElementById("exporting_button").style.display = "block";
+    document.getElementById("apply_slider").style.display = "none";
+    document.getElementById("applying_slider").style.display = "block";
 
     fetch('/applymodifiers', {
                 method: 'POST',
@@ -108,6 +110,9 @@ function saveJsonFile(text) {
                     console.log(res)
                     document.getElementById("exporting_button").style.display = "none";
                     document.getElementById("download_button").style.display = "block";
+                    document.getElementById("apply_slider").style.display = "block";
+                    document.getElementById("applying_slider").style.display = "none";
+                    document.getElementById("slider").style.display = "block";
                 }
             )
 }
@@ -353,6 +358,8 @@ function sendJsonModifiers(){
 
 function downloadFbx()
 {
+    document.getElementById("download_button").style.display = "none";
+    document.getElementById("exporting_button").style.display = "block";
     const options = {
         method: 'GET',
       };
@@ -363,7 +370,39 @@ function downloadFbx()
                 a.href = URL.createObjectURL(b);
                 a.setAttribute("download", 'avatar.zip');
                 a.click();
+                document.getElementById("download_button").style.display = "block";
+                document.getElementById("exporting_button").style.display = "none";
             }
             )
         });
+}
+
+function applySlider()
+{
+    const sliderName = document.getElementById('sliderInputModifier').value
+    const sliderValue = document.getElementById('sliderInputValue').value
+    const sliderJson =
+    {
+        "modifier" : sliderName,
+        "value" : sliderValue
+    }
+    document.getElementById("download_button").style.display = "none";
+    document.getElementById("exporting_button").style.display = "block";
+    document.getElementById("apply_slider").style.display = "none";
+    document.getElementById("applying_slider").style.display = "block";
+
+    fetch('/applymodifier', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({sliderJson})
+    })
+    .then(res => 
+        {
+            console.log(res)
+            document.getElementById("download_button").style.display = "block";
+            document.getElementById("exporting_button").style.display = "none";
+            document.getElementById("apply_slider").style.display = "block";
+            document.getElementById("applying_slider").style.display = "none";
+        }
+    )
 }

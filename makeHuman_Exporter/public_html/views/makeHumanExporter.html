@@ -71,6 +71,34 @@
     </span>
     <!-- exporter -->
 
+    <!-- fake slider -->
+    <span id="slider" style="display: none;">
+      <div class="row">
+        <label for="sliderInput">Set Slider:</label>
+      </div>
+      <div class="row">
+        <input id="sliderInputModifier" type="text" class="bold">
+        <input id="sliderInputValue" type="text" class="bold">
+      </div>
+      <div class="row side-by-side">        
+        <button
+          class="waves-effect waves-light btn"
+          onclick="applySlider()"
+          id="apply_slider"
+        >
+          Apply Slider Value
+        </button>
+        <button
+          class="btn-large disabled"
+          id="applying_slider"
+          style="display: none;"
+        >
+        Working...
+      </button>
+      </div>
+    </span>
+    <!-- exporter -->
+
   </body>
 
   <script>
