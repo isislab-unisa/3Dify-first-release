@@ -396,7 +396,7 @@ async function handleCLick(event){
     let faceShapePoints = [152, 10, 93, 323, 150, 379]; //GIU. SU, SX, DX, SX_GIU, DX_GIU
     let rightEyePoints = [145, 159, 33, 133]; //GIU, SU, SX, DX
     let rightEyeBrowPoints = [46, 55, 52, 65, 70, 107, 105, 66]; //GIU_SX, GIU_DX, GIU_CENT_SX, GIU_CENT_DX, SU_SX, SU_DX, SU_CENT_SX, SU_CENT_DX
-    let leftEyePoints = [374, 386, 362, 263]; //DX, SX, GIU, SU
+    let leftEyePoints = [374, 386, 362, 263]; //GIU, SU, SX, DX
     let leftEyeBrowPoints = [285, 276, 282, 295, 336, 300, 334, 296]; //GIU_SX, GIU_DX, GIU_CENT_SX, GIU_CENT_DX, SU_SX, SU_DX, SU_CENT_SX, SU_CENT_DX
     let lipsPoints = [17, 0, 61, 291] //GIU, SU, SX, DX
 
@@ -428,11 +428,11 @@ async function handleCLick(event){
             let lm1 = normalizedLandmarks[0][p[i]];
             switch (p) {
                 case nosePoints:
-                    ctx.fillStyle = "blue";
+                    ctx.fillStyle = "red";
                     noseCoord.push(lm1);
                     break;
                 case faceShapePoints:
-                    ctx.fillStyle = "green";
+                    ctx.fillStyle = "red";
                     faceShapeCoord.push(lm1);
                     break;
                 case rightEyePoints:
@@ -440,7 +440,7 @@ async function handleCLick(event){
                     rightEyeCoord.push(lm1);
                     break;
                 case rightEyeBrowPoints:
-                    ctx.fillStyle = "yellow";
+                    ctx.fillStyle = "red";
                     rightEyeBrowCoord.push(lm1);
                     break;
                 case leftEyePoints:
@@ -448,11 +448,11 @@ async function handleCLick(event){
                     leftEyeCoord.push(lm1);
                     break;
                 case leftEyeBrowPoints:
-                    ctx.fillStyle = "yellow";
+                    ctx.fillStyle = "red";
                     leftEyeBrowCoord.push(lm1);
                     break;
                 case lipsPoints:
-                    ctx.fillStyle = "white";
+                    ctx.fillStyle = "red";
                     lipsCoord.push(lm1);
                     break;
             }
@@ -476,7 +476,7 @@ async function handleCLick(event){
     //Distanza x tra i punti esterni della bocca DX e SX
     let distanceXLips = Math.abs(lipsCoord[2].x - lipsCoord[3].x);
     distanceDictionary["distanceXLips"] = distanceXLips;
-    normalizedDistanceDictionary["mouth/mouth-scale-horiz-decr|incr"] = normalizeminus11(distanceXLips,0.242151 ,0.380956);
+    normalizedDistanceDictionary["mouth/mouth-scale-horiz-decr|incr"] = normalizeminus11(distanceXLips, 0.242151, 0.384317);
     //Distanza y tra i punti esterni della bocca UP e DW
     let distanceYLips = Math.abs(lipsCoord[1].y - lipsCoord[0].y);
     distanceDictionary["distanceYLips"] = distanceYLips;
@@ -509,8 +509,8 @@ async function handleCLick(event){
     distanceDictionary["meanDistanceYEyeBrow"] = meanDistanceYEyeBrow;
     let meanDistanceEyeBrowY = (distanceEyeBrowRightY + distanceEyeBrowLeftY) * 0.5;
     distanceDictionary["meanDistanceEyeBrowY"] = meanDistanceEyeBrowY;
-    normalizedDistanceDictionary["eyebrows/eyebrows-trans-down|up"] = normalizeminus11(meanDistanceYEyeBrow, 0.000050, 0.043772);
-    normalizedDistanceDictionary["eyebrows/eyebrows-angle-down|up"] = normalizeminus11(meanDistanceEyeBrowY, 0.016942, 0.040273);
+    normalizedDistanceDictionary["eyebrows/eyebrows-trans-down|up"] = normalizeminus11(meanDistanceEyeBrowY, 0.018856, 0.040273);
+    normalizedDistanceDictionary["eyebrows/eyebrows-angle-down|up"] = normalizeminus11(meanDistanceYEyeBrow, 0.000050, 0.043772);
 
 
 
@@ -524,7 +524,10 @@ async function handleCLick(event){
     //Distanza y tra estremi up e dw
     let distanceYRightEye = Math.abs(rightEyeCoord[0].y - rightEyeCoord[1].y);
     distanceDictionary["distanceYRightEye"] = distanceYRightEye;
-    normalizedDistanceDictionary["eyes/r-eye-height2-decr|incr"] = normalizeminus11(distanceYRightEye, 0.031517, 0.074913);
+    let scaledDistanceYRightEye = distanceYRightEye/distanceXRightEye;
+    distanceDictionary["scaledDistanceYRightEye"] = scaledDistanceYRightEye; 
+    //USARE SCALEDVALUE
+    normalizedDistanceDictionary["eyes/r-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYRightEye, 0.210716, 0.401557);
 
     //Distanza x dal centro degli occhi ad un punto del naso (punto in alto)
     //Punto centrale degli occhi
@@ -548,14 +551,18 @@ async function handleCLick(event){
 
     //LEFT EYE
     //Distanza x tra estremi dx e sx
-    let distanceXLeftEye = Math.abs(leftEyeCoord[0].x - leftEyeCoord[1].x);
+    let distanceXLeftEye = Math.abs(leftEyeCoord[2].x - leftEyeCoord[3].x);
     distanceDictionary["distanceXLeftEye"] = distanceXLeftEye;
-    normalizedDistanceDictionary["eyes/l-eye-scale-decr|incr"] = normalizeminus11(distanceXLeftEye, 0.000610, 0.020363);
+    //RIFARE LIMITI
+    normalizedDistanceDictionary["eyes/l-eye-scale-decr|incr"] = normalizeminus11(distanceXLeftEye, 0.147403, 0.193394);
 
     //Distanza y tra estremi up e dw
-    let distanceYLeftEye = Math.abs(leftEyeCoord[2].y - leftEyeCoord[3].y);
+    let distanceYLeftEye = Math.abs(leftEyeCoord[0].y - leftEyeCoord[1].y);
     distanceDictionary["distanceYLeftEye"] = distanceYLeftEye;
-    normalizedDistanceDictionary["eyes/l-eye-height2-decr|incr"] = normalizeminus11(distanceYLeftEye, 0.008417, 0.034097);
+    let scaledDistanceYLeftEye = distanceYLeftEye/distanceXLeftEye;
+    distanceDictionary["scaledDistanceYLeftEye"] = scaledDistanceYLeftEye;
+    //RIFARE LIMITI
+    normalizedDistanceDictionary["eyes/l-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYLeftEye, 0.166872, 0.416880);
 
     //Distanza x dal centro degli occhi ad un punto del naso (punto in alto)
     //Punto centrale degli occhi
