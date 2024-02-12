@@ -73,7 +73,7 @@ app.post('/applymodifiers', (req, res) =>
     if (err) {
       return res.send(err);
     } else {      
-      exec('\"C:\\Program Files\\Python312\\python.exe\" d:\\3dify\\MakehumanSocketClient\\cli\\mhrc\\applymodifiers.py ' + path.join(__dirname, 'aaa.json'), 
+      exec('python ' + path.join(__dirname, '..\\..\\MakehumanSocketClient\\cli\\mhrc\\applymodifiers.py')+ ' ' + path.join(__dirname, 'aaa.json'), 
           (err, stdout, stderr) => {
             if (err) {
               console.error(`exec error: ${err}`);
@@ -92,7 +92,7 @@ app.post('/applymodifier', (req, res) =>
 {
   console.log(req.body.sliderJson)
   const params = req.body.sliderJson
-  exec('\"C:\\Program Files\\Python312\\python.exe\" d:\\3dify\\MakehumanSocketClient\\cli\\mhrc\\applymodifier.py ' + params.modifier + " " + params.value,
+  exec('python ' + path.join(__dirname, '..\\..\\MakehumanSocketClient\\cli\\mhrc\\applymodifier.py')+ ' ' + params.modifier + " " + params.value,
     (err, stdout, stderr) => {
       if (err) {
         console.error(`exec error: ${err}`);
@@ -107,7 +107,7 @@ app.post('/applymodifier', (req, res) =>
 var AdmZip = require('adm-zip');
 const { json } = require('stream/consumers')
 app.get('/downloadFbxZip', function(req, res) {
-  exec('\"C:\\Program Files\\Python312\\python.exe\" d:\\3dify\\MakehumanSocketClient\\cli\\mhrc\\genericCommand.py exportFbx',
+  exec('python ' + path.join(__dirname, '..\\..\\MakehumanSocketClient\\cli\\mhrc\\genericCommand.py')+ ' exportFbx',
   (err, stdout, stderr) => {
     if (err) {
       console.error(`exec error: ${err}`);
@@ -115,8 +115,9 @@ app.get('/downloadFbxZip', function(req, res) {
     }
     var zip = new AdmZip();
     // add local file
-    zip.addLocalFile("d:/myHuman.fbx");
-    zip.addLocalFolder("d:/Textures/", "/Textures");
+    var tempFolder = `${stdout}`.replace(/(\r\n|\n|\r)/gm, "");
+    zip.addLocalFile(path.join(tempFolder, 'myHuman.fbx'));
+    zip.addLocalFolder(path.join(tempFolder, 'Textures/'), "/Textures");
     // get everything as a buffer
     var zipFileContents = zip.toBuffer();
     const fileName = 'avatar.zip';

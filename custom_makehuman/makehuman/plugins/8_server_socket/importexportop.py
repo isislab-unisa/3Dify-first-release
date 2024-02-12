@@ -8,6 +8,7 @@ import numpy as np
 import time
 import log
 import events3d
+import tempfile
 
 from .abstractop import AbstractOp
 from core import G
@@ -32,8 +33,9 @@ class ImportExportOps(AbstractOp):
         jsonCall.setData("OK")
 
     def exportFbx(self,conn,jsonCall):
-        mhapi.exports.exportAsFBX("D:\\myHuman.fbx", False)
-        jsonCall.setData("OK")
+        tmpDirName = tempfile.mkdtemp()
+        mhapi.exports.exportAsFBX(os.path.join(tmpDirName, 'myHuman.fbx'), False)
+        jsonCall.setData(tmpDirName)
 
     def applyModifiers(self, conn, jsonCall):
         for lh in list(G.app.loadHandlers.values()):
