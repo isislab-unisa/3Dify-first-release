@@ -174,6 +174,10 @@ function normalizeminus11(value, min, max){
     return 2 * ((value - min) / (max - min)) - 1;
 }
 
+function midpoint(point1x, point1y, point2x, point2y){
+    return ((point1x + point2x)/2, (point1y + point2y)/2)
+}
+
 //Calcola i limiti del quadrato di riferimento per l'estrazione delle feature
 function calculateLimits(landmarks) {
     let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
@@ -421,49 +425,86 @@ async function handleCLick(event){
         lipsCoord: lipsCoord
     }
 
-    //Disegna tutti i punt estratti e li salva in un array
-    for (let p of points){
-
-        for (let i = 0; i < p.length; i++){
-            let lm1 = normalizedLandmarks[0][p[i]];
-            switch (p) {
-                case nosePoints:
-                    ctx.fillStyle = "red";
-                    noseCoord.push(lm1);
-                    break;
-                case faceShapePoints:
-                    ctx.fillStyle = "red";
-                    faceShapeCoord.push(lm1);
-                    break;
-                case rightEyePoints:
-                    ctx.fillStyle = "red";
-                    rightEyeCoord.push(lm1);
-                    break;
-                case rightEyeBrowPoints:
-                    ctx.fillStyle = "red";
-                    rightEyeBrowCoord.push(lm1);
-                    break;
-                case leftEyePoints:
-                    ctx.fillStyle = "red";
-                    leftEyeCoord.push(lm1);
-                    break;
-                case leftEyeBrowPoints:
-                    ctx.fillStyle = "red";
-                    leftEyeBrowCoord.push(lm1);
-                    break;
-                case lipsPoints:
-                    ctx.fillStyle = "red";
-                    lipsCoord.push(lm1);
-                    break;
-            }
-
-            let x1 = lm1.x * squareSize + startX;
-            let y1 = lm1.y * squareSize + startY;
-
-            ctx.fillRect(x1, y1, 2, 2);
-
-        }
+    for(let i = 0; i < faceShapePoints.length; i++){
+        let lm = normalizedLandmarks[0][faceShapePoints[i]];
+        faceShapeCoord.push(lm);
     }
+
+    for (let i = 0; i < nosePoints.length; i++) {
+        let lm = normalizedLandmarks[0][nosePoints[i]];
+        noseCoord.push(lm);
+    }
+
+    for (let i = 0; i < rightEyePoints.length; i++) {
+        let lm = normalizedLandmarks[0][rightEyePoints[i]];
+        rightEyeCoord.push(lm);
+    }
+
+    for (let i = 0; i < rightEyeBrowPoints.length; i++) {
+        let lm = normalizedLandmarks[0][rightEyeBrowPoints[i]];
+        rightEyeBrowCoord.push(lm);
+    }
+
+    for (let i = 0; i < leftEyePoints.length; i++) {
+        let lm = normalizedLandmarks[0][leftEyePoints[i]];
+        leftEyeCoord.push(lm);
+    }
+
+    for (let i = 0; i < leftEyeBrowPoints.length; i++) {
+        let lm = normalizedLandmarks[0][leftEyeBrowPoints[i]];
+        leftEyeBrowCoord.push(lm);
+    }
+
+    for (let i = 0; i < lipsPoints.length; i++) {
+        let lm = normalizedLandmarks[0][lipsPoints[i]];
+        lipsCoord.push(lm);
+    }
+
+
+
+    //Disegna tutti i punt estratti e li salva in un array
+    // for (let p of points){
+    //     for (let i = 0; i < p.length; i++){
+    //         let lm1 = normalizedLandmarks[0][p[i]];
+    //         switch (p) {
+    //             case nosePoints:
+    //                 ctx.fillStyle = "red";
+    //                 noseCoord.push(lm1);
+    //                 break;
+    //             case faceShapePoints:
+    //                 ctx.fillStyle = "red";
+    //                 //faceShapeCoord.push(lm1);
+    //                 break;
+    //             case rightEyePoints:
+    //                 ctx.fillStyle = "red";
+    //                 rightEyeCoord.push(lm1);
+    //                 break;
+    //             case rightEyeBrowPoints:
+    //                 ctx.fillStyle = "red";
+    //                 rightEyeBrowCoord.push(lm1);
+    //                 break;
+    //             case leftEyePoints:
+    //                 ctx.fillStyle = "red";
+    //                 leftEyeCoord.push(lm1);
+    //                 break;
+    //             case leftEyeBrowPoints:
+    //                 ctx.fillStyle = "red";
+    //                 leftEyeBrowCoord.push(lm1);
+    //                 break;
+    //             case lipsPoints:
+    //                 ctx.fillStyle = "red";
+    //                 lipsCoord.push(lm1);
+    //                 break;
+    //         }
+
+    //         let x1 = lm1.x * squareSize + startX;
+    //         let y1 = lm1.y * squareSize + startY;
+
+    //         ctx.fillRect(x1, y1, 2, 2);
+
+    //     }
+    // }
+
 
     console.log("Coordinates")
     console.log(coord);
@@ -473,6 +514,7 @@ async function handleCLick(event){
     let distanceDictionary = {}
     let normalizedDistanceDictionary = {}
     //LIPS
+    //Per sicurezza è possibile calcolare la parte di bocca aperta per poi toglierla dai vari calcoli
     //Distanza x tra i punti esterni della bocca DX e SX
     let distanceXLips = Math.abs(lipsCoord[2].x - lipsCoord[3].x);
     distanceDictionary["distanceXLips"] = distanceXLips;
@@ -480,10 +522,17 @@ async function handleCLick(event){
     //Distanza y tra i punti esterni della bocca UP e DW
     let distanceYLips = Math.abs(lipsCoord[1].y - lipsCoord[0].y);
     distanceDictionary["distanceYLips"] = distanceYLips;
-    normalizedDistanceDictionary["mouth/mouth-scale-vert-decr|incr"] = normalizeminus11(distanceYLips,0.090961 ,0.185984);
+    normalizedDistanceDictionary["mouth/mouth-scale-vert-decr|incr"] = normalizeminus11(distanceYLips, 0.090961 ,0.185984);
 
 
     //EYEBROW DX
+    //Calcola un riferimento come media dei due riferimenti presenti
+    let rightPointSX = midpoint(rightEyeBrowCoord[0].x, rightEyeBrowCoord[0].y, rightEyeBrowCoord[4].x, rightEyeBrowCoord[4].y);
+    let rightPointMidSX = midpoint(rightEyeBrowCoord[2].x, rightEyeBrowCoord[2].y, rightEyeBrowCoord[6].x, rightEyeBrowCoord[6].y);
+    let rightPointMidDX = midpoint(rightEyeBrowCoord[3].x, rightEyeBrowCoord[3].y, rightEyeBrowCoord[7].x, rightEyeBrowCoord[7].y);
+    let rightPointDX = midpoint(rightEyeBrowCoord[1].x, rightEyeBrowCoord[1].y, rightEyeBrowCoord[5].x, rightEyeBrowCoord[5].y);
+
+
     //Differenza delle y dei punti esterni
     let distanceYEyeBrowDX = Math.abs(rightEyeBrowCoord[4].y - rightEyeBrowCoord[5].y);
     distanceDictionary["distanceYEyeBrowDX"] = distanceYEyeBrowDX;
@@ -495,6 +544,12 @@ async function handleCLick(event){
     distanceDictionary["distanceEyeBrowRightY"] = distanceEyeBrowRightY;
 
     //EYEBROW SX
+    //Calcola un riferimento come media dei due riferimenti presenti
+    let leftPointSX = midpoint(leftEyeBrowCoord[0].x, leftEyeBrowCoord[0].y, leftEyeBrowCoord[4].x, leftEyeBrowCoord[4].y);
+    let leftPointMidSX = midpoint(leftEyeBrowCoord[2].x, leftEyeBrowCoord[2].y, leftEyeBrowCoord[6].x, leftEyeBrowCoord[6].y);
+    let leftPointMidDX = midpoint(leftEyeBrowCoord[3].x, leftEyeBrowCoord[3].y, leftEyeBrowCoord[7].x, leftEyeBrowCoord[7].y);
+    let leftPointDX = midpoint(leftEyeBrowCoord[1].x, leftEyeBrowCoord[1].y, leftEyeBrowCoord[5].x, leftEyeBrowCoord[5].y);
+
     //Differenza delle y dei punti esterni
     let distanceYEyeBrowSX = Math.abs(leftEyeBrowCoord[4].y - leftEyeBrowCoord[5].y);
     distanceDictionary["distanceYEyeBrowSX"] = distanceYEyeBrowSX;
