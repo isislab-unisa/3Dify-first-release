@@ -25,7 +25,13 @@ async function loadImageFromUploadMediaPipeTest() {
   if (oldCanvas) {
     oldCanvas.parentNode.removeChild(oldCanvas);
   }
-
+  document.getElementById("export_button").style.display = "block";
+  document.getElementById("exporting_button").style.display = "none";
+  document.getElementById("download_button").style.display = "none";
+  document.getElementById("apply_slider").style.display = "none";
+  document.getElementById("applying_slider").style.display = "none";
+  document.getElementById("slider").style.display = "none";
+  updateResults()
 }
 
 
