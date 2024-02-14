@@ -66,6 +66,7 @@ function sendJsonModifiers() {
     saveJsonFile(outputFile)
 }
 window.sendJsonModifiers = sendJsonModifiers;
+window.handleClick = handleClick;
 
 function saveJsonFile(text) {
     document.getElementById("export_button").style.display = "none";
@@ -164,7 +165,7 @@ createFaceLandmarker();
 
 const inputImage = document.getElementById("inputImg");
 
-inputImage.addEventListener("click", handleCLick); 
+inputImage.addEventListener("click", handleClick); 
 
 function normalize(value, min, max){
     return (value - min) / (max - min);
@@ -189,13 +190,13 @@ function calculateLimits(landmarks) {
     return { minX, minY, maxX, maxY };
 }
 
-async function handleCLick(event){
+async function handleClick(){
     console.log("click");
 
     await changeFaceDetector(SSD_MOBILENETV1)
     await faceapi.loadFaceLandmarkModel('/')
     await faceapi.nets.ageGenderNet.load('/')
-
+    const inputImgEl = $('#inputImg').get(0)
 
     //FaceAPI for gender and age
     if (!isFaceDetectionModelLoaded()) {
@@ -205,7 +206,7 @@ async function handleCLick(event){
 
     const options = getFaceDetectorOptions()
 
-    const faceAPIResults = await faceapi.detectAllFaces(event.target, options).withFaceLandmarks()
+    const faceAPIResults = await faceapi.detectAllFaces(inputImgEl, options).withFaceLandmarks()
         .withAgeAndGender()
 
     let gender = faceAPIResults[0].gender
@@ -242,18 +243,18 @@ async function handleCLick(event){
     }
 
     //Rileva i landmark del volto e li disegna su un canvas creato appositamente
-    const faceLandmarkerResult = faceLandmarker.detect(event.target);
+    const faceLandmarkerResult = faceLandmarker.detect(inputImgEl);
     const canvas = document.createElement("canvas");
     canvas.setAttribute("class", "canvas");
     canvas.setAttribute("id", "overlay");
-    canvas.setAttribute("width", event.target.width + "px");
-    canvas.setAttribute("height", event.target.height + "px");
+    canvas.setAttribute("width", inputImgEl.width + "px");
+    canvas.setAttribute("height", inputImgEl.height + "px");
     canvas.style.left = "0px";
     canvas.style.top = "0px";
-    canvas.style.width = "${event.target.width}px";
-    canvas.style.height = "${event.target.height}px";
+    canvas.style.width = "${inputImgEl.width}px";
+    canvas.style.height = "${inputImgEl.height}px";
 
-    event.target.parentNode.appendChild(canvas);
+    inputImgEl.parentNode.appendChild(canvas);
     const ctx = canvas.getContext("2d");
     const drawingUtils = new DrawingUtils(ctx);
     for (const landmarks of faceLandmarkerResult.faceLandmarks){
@@ -633,6 +634,7 @@ async function handleCLick(event){
 
     //HandleClick on created Canvas for getting normalized coordinates of point clicked
     canvas.addEventListener("click", handleClickCanvas);
+    
 
     function handleClickCanvas(event){
         console.log("click on canvas");
