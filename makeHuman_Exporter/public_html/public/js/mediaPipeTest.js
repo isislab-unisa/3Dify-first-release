@@ -483,6 +483,10 @@ async function handleClick(){
     //Convert points to feature for makehuman and save them in a distance dictionary and then normalize them between 0 and 1 for the sliders
     let distanceDictionary = {}
     let normalizedDistanceDictionary = {}
+
+    normalizedDistanceDictionary["head/head-age-decr|incr"] = ageValue;
+
+
     //LIPS
     //Per sicurezza è possibile calcolare la parte di bocca aperta per poi toglierla dai vari calcoli
     let upOpenMouth = normalizedLandmarks[0][13];
@@ -499,6 +503,19 @@ async function handleClick(){
     let distanceYLips = Math.abs(lipsCoord[1].y - lipsCoord[0].y) - distanceOpenMouth;
     distanceDictionary["distanceYLips"] = distanceYLips;
     normalizedDistanceDictionary["mouth/mouth-scale-vert-decr|incr"] = normalizeminus11(distanceYLips, 0.090961 ,0.185984);
+
+    //Larghezza del labbro inferiore
+    let distanceLipsWidthDown = Math.abs(downOpenMouth.y - lipsCoord[0].y);
+    distanceDictionary["distanceLipsWidthDown"] = distanceLipsWidthDown;
+    //VEDERE LIMITI
+    // normalizedDistanceDictionary["mouth/mouth-lowerlip-height-decr|incr"] = normalizeminus11(distanceLipsWidthDown, 0.000000, 1.000000);
+
+    //Larghezza del labbro superiore
+    let distanceLipsWidthUp = Math.abs(upOpenMouth.y - lipsCoord[1].y);
+    distanceDictionary["distanceLipsWidthUp"] = distanceLipsWidthUp;
+    //VEDERE LIMITI
+    // normalizedDistanceDictionary["mouth/mouth-upperlip-height-decr|incr"] = normalizeminus11(distanceLipsWidthUp, 0.000000, 1.000000);
+
 
 
     //EYEBROW DX
@@ -555,7 +572,6 @@ async function handleClick(){
     normalizedDistanceDictionary["eyebrows/eyebrows-angle-down|up"] = normalizeminus11(meanDistanceYEyeBrow, 0.000050, 0.043772);
 
 
-
     //EYES
     //RIGHT EYE
     //Distanza x tra estremi dx e sx
@@ -602,7 +618,6 @@ async function handleClick(){
     //Distanza x tra estremi dx e sx
     let distanceXLeftEye = Math.abs(leftEyeCoord[2].x - leftEyeCoord[3].x);
     distanceDictionary["distanceXLeftEye"] = distanceXLeftEye;
-    //RIFARE LIMITI
     normalizedDistanceDictionary["eyes/l-eye-scale-decr|incr"] = normalizeminus11(distanceXLeftEye, 0.147403, 0.238990);
 
     //Distanza y tra estremi up e dw
@@ -610,7 +625,6 @@ async function handleClick(){
     distanceDictionary["distanceYLeftEye"] = distanceYLeftEye;
     let scaledDistanceYLeftEye = distanceYLeftEye/distanceXLeftEye;
     distanceDictionary["scaledDistanceYLeftEye"] = scaledDistanceYLeftEye;
-    //RIFARE LIMITI
     // normalizedDistanceDictionary["eyes/l-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYLeftEye, 0.166872, 0.416880);
     normalizedDistanceDictionary["eyes/l-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYLeftEye, 0.442249, 0.645937);
 
@@ -651,6 +665,13 @@ async function handleClick(){
     distanceDictionary["distanceNostrilNose"] = distanceNostrilNose;
     normalizedDistanceDictionary["nose/nose-scale-horiz-decr|incr"] = normalizeminus11(distanceNostrilNose, 0.210454, 0.286658);
 
+    // if (normalizedDistanceDictionary["nose/nose-scale-horiz-decr|incr"] > 1.0) {
+    //     let rest = normalizedDistanceDictionary["nose/nose-scale-horiz-decr|incr"] - 1.0;
+    //     normalizedDistanceDictionary["modifier nose/nose-width3-decr|incr"] = rest;
+    // }else{
+    //     normalizedDistanceDictionary["modifier nose/nose-width3-decr|incr"] = 0.0;
+    // }
+
     //NOSTRILS
     let nostril1SX = normalizedLandmarks[0][59];
     let nostril1DX = normalizedLandmarks[0][238];
@@ -664,12 +685,26 @@ async function handleClick(){
     ctx.fillRect(nostril2SX.x * squareSize + startX, nostril2SX.y * squareSize + startY, 2, 2);
     ctx.fillRect(nostril2DX.x * squareSize + startX, nostril2DX.y * squareSize + startY, 2, 2);
 
+    //Apertura delle narici
+    let distanceNostril1 = Math.abs(nostril1SX.x - nostril1DX.x);
+    let distanceNostril2 = Math.abs(nostril2SX.x - nostril2DX.x);
+
+    let meanDistanceNostril = (distanceNostril1 + distanceNostril2) * 0.5;
+    distanceDictionary["meanDistanceNostril"] = meanDistanceNostril;
+    //VEDERE LIMITI
+    // normalizedDistanceDictionary["nose/nose-nostrils-width-decr|incr"] = normalizeminus11(meanDistanceNostril, 0.2510176683786486, 0.2760042162535529);
+
     //Parti del naso verticali
-    let noseMediumDX = normalizedLandmarks[0][217];
-    let noseMediumSX = normalizedLandmarks[0][437];
+    let noseMediumDX = normalizedLandmarks[0][174];
+    let noseMediumSX = normalizedLandmarks[0][399];
 
     ctx.fillRect(noseMediumDX.x * squareSize + startX, noseMediumDX.y * squareSize + startY, 2, 2);
     ctx.fillRect(noseMediumSX.x * squareSize + startX, noseMediumSX.y * squareSize + startY, 2, 2);
+
+    let distanceNoseMedium = Math.abs(noseMediumDX.x - noseMediumSX.x);
+    distanceDictionary["distanceNoseMedium"] = distanceNoseMedium;
+    //VEDERE LIMITI
+    // normalizedDistanceDictionary["nose/nose-width2-decr|incr"] = normalizeminus11(distanceNoseMedium, 0.10790823909161279, 0.11129378864036976);
 
     let noseHighDX = normalizedLandmarks[0][193];
     let noseHighSX = normalizedLandmarks[0][417];
@@ -677,9 +712,10 @@ async function handleClick(){
     ctx.fillRect(noseHighDX.x * squareSize + startX, noseHighDX.y * squareSize + startY, 2, 2);
     ctx.fillRect(noseHighSX.x * squareSize + startX, noseHighSX.y * squareSize + startY, 2, 2);
 
-
-
-
+    let distanceNoseHigh = Math.abs(noseHighDX.x - noseHighSX.x);
+    distanceDictionary["distanceNoseHigh"] = distanceNoseHigh;
+    //VEDERE LIMITI
+    // normalizedDistanceDictionary["nose/nose-width3-decr|incr"] = normalizeminus11(distanceNoseHigh, 0.000000, 0.07854799422550335);
 
     //FACE SHAPE
     //Head-round
@@ -700,7 +736,75 @@ async function handleClick(){
     //media delle due distance
     let meanDistanceLowerFace = (distanceLeftLowerFace + distanceRightLowerFace) * 0.5;
     distanceDictionary["meanDistanceLowerFace"] = meanDistanceLowerFace;
-    normalizedDistanceDictionary["head/head-rectangular"] = normalize(meanDistanceLowerFace, 0.152612, 0.232226);
+    // normalizedDistanceDictionary["modifier head/head-fat-decr|incr"] = normalizeminus11(meanDistanceLowerFace, 0.152612, 0.232226);
+    normalizedDistanceDictionary["head/head-rectangular"] = normalizeminus11(meanDistanceLowerFace, 0.152612, 0.232226);
+
+    //CHIN
+    let chinSX = normalizedLandmarks[0][176];
+    let chinDX = normalizedLandmarks[0][400];
+
+    ctx.fillStyle = "green";
+    ctx.fillRect(chinSX.x * squareSize + startX, chinSX.y * squareSize + startY, 2, 2);
+    ctx.fillRect(chinDX.x * squareSize + startX, chinDX.y * squareSize + startY, 2, 2);
+
+    //Distanza x tra estremo SX e estremo DX
+    let distanceChin = Math.abs(chinSX.x - chinDX.x);
+    distanceDictionary["distanceChin"] = distanceChin;
+    //VEDERE LIMITI
+    // normalizedDistanceDictionary["chin/chin-width-decr|incr"] = normalizeminus11(distanceChin, 0.000000, 1.000000);
+
+    // let chinUpSX = normalizedLandmarks[0][150];
+    // let chinUpDX = normalizedLandmarks[0][379];
+
+    // ctx.fillRect(chinUpSX.x * squareSize + startX, chinUpSX.y * squareSize + startY, 2, 2);
+    // ctx.fillRect(chinUpDX.x * squareSize + startX, chinUpDX.y * squareSize + startY, 2, 2);
+
+    // //Media della distanza tra estremi del mento e la parte alta del mento
+    // let distanceChinUpDX = Math.abs(chinDX.y - chinUpDX.y);
+    // let distanceChinUpSX = Math.abs(chinSX.y - chinUpSX.y);
+    // let meanDistanceChinUp = (distanceChinUpDX + distanceChinUpSX) * 0.5;
+    // distanceDictionary["meanDistanceChinUp"] = meanDistanceChinUp;
+    // //VEDERE LIMITI
+    // normalizedDistanceDictionary["chin/chin-jaw-drop-decr|incr"] = normalizeminus11(meanDistanceChinUp, 0.000000, 1.000000);
+
+    //Chin Height
+    //Distanza y tra labbro inferiore e parte bassa della faccia
+    let distanceChinLips = Math.abs(faceShapeCoord[0].y - lipsCoord[0].y);
+    distanceDictionary["distanceChinLips"] = distanceChinLips;
+    //VEDERE LIMITI
+    // normalizedDistanceDictionary["chin/chin-height-decr|incr"] = normalizeminus11(distanceChinLips, 0.000000, 1.000000);
+
+    
+
+    //TEST PER LIMITI MAKEHUMAN(DA CANCELLARE)
+    // normalizedDistanceDictionary["head/head-age-decr|incr"] = 0;
+    // normalizedDistanceDictionary["mouth/mouth-scale-horiz-decr|incr"] = 0;
+    // normalizedDistanceDictionary["mouth/mouth-scale-vert-decr|incr"] = 0;
+    // normalizedDistanceDictionary["mouth/mouth-lowerlip-height-decr|incr"] = 0;
+    // normalizedDistanceDictionary["mouth/mouth-upperlip-height-decr|incr"] = 0;
+    // normalizedDistanceDictionary["eyebrows/eyebrows-trans-down|up"] = 0;
+    // normalizedDistanceDictionary["eyebrows/eyebrows-angle-down|up"] = 0;
+    // normalizedDistanceDictionary["eyes/r-eye-scale-decr|incr"] = 0;
+    // normalizedDistanceDictionary["eyes/r-eye-height2-decr|incr"] = 0;
+    // normalizedDistanceDictionary["eyes/r-eye-trans-in|out"] = 0;
+    // normalizedDistanceDictionary["eyes/r-eye-trans-down|up"] = 0;
+    // normalizedDistanceDictionary["eyes/l-eye-scale-decr|incr"] = 0;
+    // normalizedDistanceDictionary["eyes/l-eye-height2-decr|incr"] = 0;
+    // normalizedDistanceDictionary["eyes/l-eye-trans-in|out"] = 0;
+    // normalizedDistanceDictionary["eyes/l-eye-trans-down|up"] = 0;
+    // normalizedDistanceDictionary["nose/nose-trans-down|up"] = 0;
+    // normalizedDistanceDictionary["nose/nose-scale-vert-decr|incr"] = 0;
+    // normalizedDistanceDictionary["nose/nose-scale-horiz-decr|incr"] = 0.6;
+    // normalizedDistanceDictionary["modifier nose/nose-width3-decr|incr"] = 0;
+    // normalizedDistanceDictionary["nose/nose-nostrils-width-decr|incr"] = 0;
+    // normalizedDistanceDictionary["modifier nose/nose-width2-decr|incr"] = 0;
+    // normalizedDistanceDictionary["nose/nose-width3-decr|incr"] = 0;
+    // normalizedDistanceDictionary["head/head-round"] = 0;
+    // normalizedDistanceDictionary["modifier head/head-fat-decr|incr"] = 0;
+    // normalizedDistanceDictionary["head/head-rectangular"] = 0;
+    // normalizedDistanceDictionary["chin/chin-width-decr|incr"] = 0;
+    // normalizedDistanceDictionary["chin/chin-height-decr|incr"] = 0;
+
 
     for(let key in normalizedDistanceDictionary){
         makeHumanParameters["modifier " + key] = normalizedDistanceDictionary[key].toString();
