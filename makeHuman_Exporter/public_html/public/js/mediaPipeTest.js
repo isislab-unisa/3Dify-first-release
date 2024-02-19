@@ -610,7 +610,8 @@ async function handleClick(){
     let distanceRightEyeCenterChin = Math.abs(centerPointRightEye.y - faceShapeCoord[0].y);
     distanceDictionary["distanceRightEyeCenterChin"] = distanceRightEyeCenterChin;
     // normalizedDistanceDictionary["eyes/r-eye-trans-down|up"] = normalizeminus11(distanceRightEyeCenterChin, 0.655851, 0.770520);
-    normalizedDistanceDictionary["eyes/r-eye-trans-down|up"] = normalizeminus11(distanceRightEyeCenterChin, 0.648646, 0.770520);
+    // normalizedDistanceDictionary["eyes/r-eye-trans-down|up"] = normalizeminus11(distanceRightEyeCenterChin, 0.648646, 0.770520);
+    normalizedDistanceDictionary["eyes/r-eye-trans-down|up"] = normalizeminus11(distanceRightEyeCenterChin, 0.648646, 1.54);
 
 
 
@@ -647,7 +648,9 @@ async function handleClick(){
     //Distance Y dal punto centrale degli occhi al mento
     let distanceLeftEyeCenterChin = Math.abs(centerPointLeftEye.y - faceShapeCoord[0].y);
     distanceDictionary["distanceLeftEyeCenterChin"] = distanceLeftEyeCenterChin;
-    normalizedDistanceDictionary["eyes/l-eye-trans-down|up"] = normalizeminus11(distanceLeftEyeCenterChin, 0.648646, 0.770520);
+    // normalizedDistanceDictionary["eyes/l-eye-trans-down|up"] = normalizeminus11(distanceLeftEyeCenterChin, 0.648646, 0.770520);
+    normalizedDistanceDictionary["eyes/l-eye-trans-down|up"] = normalizeminus11(distanceLeftEyeCenterChin, 0.648646, 1.54);
+
 
     //NOSE
     //Distanza Y dal punto basso del naso al mento
@@ -663,7 +666,10 @@ async function handleClick(){
     //Distanza x tra le due narici
     let distanceNostrilNose = Math.abs(noseCoord[2].x - noseCoord[3].x);
     distanceDictionary["distanceNostrilNose"] = distanceNostrilNose;
-    normalizedDistanceDictionary["nose/nose-scale-horiz-decr|incr"] = normalizeminus11(distanceNostrilNose, 0.210454, 0.286658);
+    // normalizedDistanceDictionary["nose/nose-scale-horiz-decr|incr"] = normalizeminus11(distanceNostrilNose, 0.210454, 0.286658);
+    //Limite adattato in base a misurazioni prese da foto messe in rapporto con valore slider aggioustato a mano
+    normalizedDistanceDictionary["nose/nose-scale-horiz-decr|incr"] = normalizeminus11(distanceNostrilNose, 0.210454, 0.26);
+
 
     // if (normalizedDistanceDictionary["nose/nose-scale-horiz-decr|incr"] > 1.0) {
     //     let rest = normalizedDistanceDictionary["nose/nose-scale-horiz-decr|incr"] - 1.0;
