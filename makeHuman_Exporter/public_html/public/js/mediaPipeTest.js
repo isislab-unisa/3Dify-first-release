@@ -175,8 +175,22 @@ function normalizeminus11(value, min, max){
     return 2 * ((value - min) / (max - min)) - 1;
 }
 
+function reverse_normalizeminus11(value, min_value, max_value){
+    return 1 - 2 * ((value - min_value) / (max_value - min_value))
+}
+
 function midpoint(point1x, point1y, point2x, point2y){
     return {"x":(point1x + point2x)/2, "y": (point1y + point2y)/2}
+}
+
+function drawPoint(lm, color, squareSize, startX, startY ,ctx){
+    //Normalized Landmark Drawing (SINGLE POINT)
+    let x = lm.x * squareSize + startX;
+    let y = lm.y * squareSize + startY;
+    let pointSize = 2;
+    ctx.fillStyle = color;
+    ctx.fillRect(x, y, pointSize, pointSize);
+
 }
 
 //Calcola i limiti del quadrato di riferimento per l'estrazione delle feature
@@ -267,46 +281,46 @@ async function handleClick(){
             FaceLandmarker.FACE_LANDMARKS_TESSELATION,
             {color: "#C0C0C070", lineWidth: 1}
         );
-        drawingUtils.drawConnectors(
-            landmarks,
-            FaceLandmarker.FACE_LANDMARKS_RIGHT_EYE,
-            {color: "blue"}
-        );
-        drawingUtils.drawConnectors(
-            landmarks,
-            FaceLandmarker.FACE_LANDMARKS_RIGHT_EYEBROW,
-            {color: "blue"}
-        );
-        drawingUtils.drawConnectors(
-            landmarks,
-            FaceLandmarker.FACE_LANDMARKS_LEFT_EYE,
-            {color: "#30FF30"}
-        );
-        drawingUtils.drawConnectors(
-            landmarks,
-            FaceLandmarker.FACE_LANDMARKS_LEFT_EYEBROW,
-            {color: "#30FF30"}
-        );
-        drawingUtils.drawConnectors(
-            landmarks,
-            FaceLandmarker.FACE_LANDMARKS_FACE_OVAL,
-            {color: "#E0E0E0"}
-        );
-        drawingUtils.drawConnectors(
-            landmarks,
-            FaceLandmarker.FACE_LANDMARKS_LIPS,
-            {color: "#E0E0E0"}
-        );
-        drawingUtils.drawConnectors(
-            landmarks,
-            FaceLandmarker.FACE_LANDMARKS_RIGHT_IRIS,
-            {color: "blue"}
-        );
-        drawingUtils.drawConnectors(
-            landmarks,
-            FaceLandmarker.FACE_LANDMARKS_LEFT_IRIS,
-            {color: "#30FF30"}
-        );
+        // drawingUtils.drawConnectors(
+        //     landmarks,
+        //     FaceLandmarker.FACE_LANDMARKS_RIGHT_EYE,
+        //     {color: "blue"}
+        // );
+        // drawingUtils.drawConnectors(
+        //     landmarks,
+        //     FaceLandmarker.FACE_LANDMARKS_RIGHT_EYEBROW,
+        //     {color: "blue"}
+        // );
+        // drawingUtils.drawConnectors(
+        //     landmarks,
+        //     FaceLandmarker.FACE_LANDMARKS_LEFT_EYE,
+        //     {color: "#30FF30"}
+        // );
+        // drawingUtils.drawConnectors(
+        //     landmarks,
+        //     FaceLandmarker.FACE_LANDMARKS_LEFT_EYEBROW,
+        //     {color: "#30FF30"}
+        // );
+        // drawingUtils.drawConnectors(
+        //     landmarks,
+        //     FaceLandmarker.FACE_LANDMARKS_FACE_OVAL,
+        //     {color: "#E0E0E0"}
+        // );
+        // drawingUtils.drawConnectors(
+        //     landmarks,
+        //     FaceLandmarker.FACE_LANDMARKS_LIPS,
+        //     {color: "#E0E0E0"}
+        // );
+        // drawingUtils.drawConnectors(
+        //     landmarks,
+        //     FaceLandmarker.FACE_LANDMARKS_RIGHT_IRIS,
+        //     {color: "blue"}
+        // );
+        // drawingUtils.drawConnectors(
+        //     landmarks,
+        //     FaceLandmarker.FACE_LANDMARKS_LEFT_IRIS,
+        //     {color: "#30FF30"}
+        // );
     }
 
     console.log(faceLandmarkerResult.faceLandmarks);
@@ -360,16 +374,10 @@ async function handleClick(){
     console.log(normalizedLandmarks);
 
     //Normalized Landmark Drawing (SINGLE POINT)
-    // let lm = normalizedLandmarks[0][150];
+    // let lm = normalizedLandmarks[0][5];
     // let x = lm.x * squareSize + startX;
     // let y = lm.y * squareSize + startY;
-    // // let x = 0.5995368557206636 * squareSize + startX;
-    // // let y = 0.2689463031715021 * squareSize + startY;
-
-
-
     // let pointSize = 2;
-
     // ctx.fillStyle = "yellow";
     // ctx.fillRect(x, y, pointSize, pointSize);
 
@@ -510,7 +518,6 @@ async function handleClick(){
     //Larghezza del labbro inferiore
     let distanceLipsWidthDown = Math.abs(downOpenMouth.y - lipsCoord[0].y);
     distanceDictionary["distanceLipsWidthDown"] = distanceLipsWidthDown;
-    //VEDERE LIMITI
     // normalizedDistanceDictionary["mouth/mouth-lowerlip-height-decr|incr"] = normalizeminus11(distanceLipsWidthDown, 0.001, 0.112);
     normalizedDistanceDictionary["mouth/mouth-lowerlip-height-decr|incr"] = normalizeminus11(distanceLipsWidthDown, 0.037, 0.084);
 
@@ -518,7 +525,6 @@ async function handleClick(){
     //Larghezza del labbro superiore
     let distanceLipsWidthUp = Math.abs(upOpenMouth.y - lipsCoord[1].y);
     distanceDictionary["distanceLipsWidthUp"] = distanceLipsWidthUp;
-    //VEDERE LIMITI
     normalizedDistanceDictionary["mouth/mouth-upperlip-height-decr|incr"] = normalizeminus11(distanceLipsWidthUp, 0.021, 0.0465);
 
 
@@ -605,18 +611,31 @@ async function handleClick(){
     distanceDictionary["distanceYRightEye"] = distanceYRightEye;
     let scaledDistanceYRightEye = distanceYRightEye/distanceXRightEye;
     distanceDictionary["scaledDistanceYRightEye"] = scaledDistanceYRightEye; 
-    //USARE SCALEDVALUE
     // normalizedDistanceDictionary["eyes/r-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYRightEye, 0.210716, 0.401557);
     // normalizedDistanceDictionary["eyes/r-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYRightEye, 0.435137, 0.639566);
     // normalizedDistanceDictionary["eyes/r-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYRightEye, 0.379, 0.8535);
-    normalizedDistanceDictionary["eyes/r-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYRightEye, 0.2, 0.8535);
+    normalizedDistanceDictionary["eyes/r-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYRightEye, 0.2, 0.7);
 
+    //Distanza y tra estremi up e dw a sx
+    let upRightEyeSX = normalizedLandmarks[0][56];
+    let downRightEyeSX = normalizedLandmarks[0][26];
+    drawPoint(upRightEyeSX, "green", squareSize, startX, startY, ctx);
+    drawPoint(downRightEyeSX, "green", squareSize, startX, startY, ctx);
+    let distanceYRightEyeSX = Math.abs(upRightEyeSX.y - downRightEyeSX.y);
+    distanceDictionary["distanceYRightEyeSX"] = distanceYRightEyeSX;
+    normalizedDistanceDictionary["eyes/r-eye-height1-decr|incr"] = normalizeminus11(distanceYRightEyeSX, 0.052, 0.117);
 
-
+    //distanza y tra estremi up e dw a dx
+    let upRightEyeDX = normalizedLandmarks[0][30];
+    let downRightEyeDX = normalizedLandmarks[0][110];
+    drawPoint(upRightEyeDX, "green", squareSize, startX, startY, ctx);
+    drawPoint(downRightEyeDX, "green", squareSize, startX, startY, ctx);
+    let distanceYRightEyeDX = Math.abs(upRightEyeDX.y - downRightEyeDX.y);
+    distanceDictionary["distanceYRightEyeDX"] = distanceYRightEyeDX;
+    normalizedDistanceDictionary["eyes/r-eye-height3-decr|incr"] = normalizeminus11(distanceYRightEyeDX, 0.053, 0.12);
 
     //Distanza x dal centro degli occhi ad un punto del naso (punto in alto)
     //Punto centrale degli occhi
-
     let centerPointRightEye = {
         x: (rightEyeCoord[0].x + rightEyeCoord[1].x) * 0.5,
         y: (rightEyeCoord[0].y + rightEyeCoord[1].y) * 0.5
@@ -664,10 +683,25 @@ async function handleClick(){
     // normalizedDistanceDictionary["eyes/l-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYLeftEye, 0.166872, 0.416880);
     // normalizedDistanceDictionary["eyes/l-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYLeftEye, 0.442249, 0.645937);
     // normalizedDistanceDictionary["eyes/l-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYLeftEye, 0.379, 0.8535);
-    normalizedDistanceDictionary["eyes/l-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYLeftEye, 0.2, 0.8535);
+    normalizedDistanceDictionary["eyes/l-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYLeftEye, 0.2, 0.7);
 
+    //Distanza y tra estremi up e dw a sx
+    let upLeftEyeSX = normalizedLandmarks[0][286];
+    let downLeftEyeSX = normalizedLandmarks[0][256];
+    drawPoint(upLeftEyeSX, "green", squareSize, startX, startY, ctx);
+    drawPoint(downLeftEyeSX, "green", squareSize, startX, startY, ctx);
+    let distanceYLeftEyeSX = Math.abs(upRightEyeSX.y - downRightEyeSX.y);
+    distanceDictionary["distanceYLeftEyeSX"] = distanceYLeftEyeSX;
+    normalizedDistanceDictionary["eyes/l-eye-height1-decr|incr"] = normalizeminus11(distanceYLeftEyeSX, 0.052, 0.117);
 
-
+    //distanza y tra estremi up e dw a dx
+    let upLeftEyeDX = normalizedLandmarks[0][260];
+    let downLeftEyeDX = normalizedLandmarks[0][339];
+    drawPoint(upLeftEyeDX, "green", squareSize, startX, startY, ctx);
+    drawPoint(downLeftEyeDX, "green", squareSize, startX, startY, ctx);
+    let distanceYLeftEyeDX = Math.abs(upRightEyeDX.y - downRightEyeDX.y);
+    distanceDictionary["distanceYLeftEyeDX"] = distanceYLeftEyeDX;
+    normalizedDistanceDictionary["eyes/l-eye-height3-decr|incr"] = normalizeminus11(distanceYLeftEyeDX, 0.053, 0.12);
 
     //Distanza x dal centro degli occhi ad un punto del naso (punto in alto)
     //Punto centrale degli occhi
@@ -725,7 +759,7 @@ async function handleClick(){
     // normalizedDistanceDictionary["nose/nose-scale-horiz-decr|incr"] = normalizeminus11(distanceNostrilNose, 0.210454, 0.286658);
     // normalizedDistanceDictionary["nose/nose-scale-horiz-decr|incr"] = normalizeminus11(distanceNostrilNose, 0.210454, 0.251);
     // normalizedDistanceDictionary["nose/nose-scale-horiz-decr|incr"] = normalizeminus11(distanceNostrilNose, 0.161, 0.363);
-    normalizedDistanceDictionary["nose/nose-scale-horiz-decr|incr"] = normalizeminus11(distanceNostrilNose, 0.149, 0.3);
+    // normalizedDistanceDictionary["nose/nose-scale-horiz-decr|incr"] = normalizeminus11(distanceNostrilNose, 0.149, 0.3);
 
     normalizedDistanceDictionary["nose/nose-width3-decr|incr"] = normalizeminus11(distanceNostrilNose, 0.149, 0.3);
 
@@ -749,9 +783,24 @@ async function handleClick(){
 
     let meanDistanceNostril = (distanceNostril1 + distanceNostril2) * 0.5;
     distanceDictionary["meanDistanceNostril"] = meanDistanceNostril;
-    //VEDERE LIMITI
     // normalizedDistanceDictionary["nose/nose-nostrils-width-decr|incr"] = normalizeminus11(meanDistanceNostril, 0.005, 0.12);
-    normalizedDistanceDictionary["nose/nose-nostrils-width-decr|incr"] = normalizeminus11(meanDistanceNostril, 0.03, 0.067);
+    // normalizedDistanceDictionary["nose/nose-nostrils-width-decr|incr"] = normalizeminus11(meanDistanceNostril, 0.03, 0.067);
+    normalizedDistanceDictionary["nose/nose-flaring-decr|incr"] = normalizeminus11(meanDistanceNostril, 0.03, 0.067);
+
+
+    //Distanza y delle narici dal punto centrale del naso
+    //punto centrale naso
+    let noseCenter = normalizedLandmarks[0][5];
+    drawPoint(noseCenter, "green", squareSize, startX, startY, ctx);
+
+    let distanceNostrilUpDownSX = Math.abs(noseCenter.y - nostril1SX.y);
+    let distanceNostrilUpDownDX = Math.abs(noseCenter.y - nostril2DX.y);
+
+    //media delle distanze
+    let meanDistanceNostrilUpDown = (distanceNostrilUpDownSX + distanceNostrilUpDownDX) * 0.5;
+    distanceDictionary["meanDistanceNostrilUpDown"] = meanDistanceNostrilUpDown;
+    // normalizedDistanceDictionary["nose/nose-nostrils-angle-down|up"] = reverse_normalizeminus11(meanDistanceNostrilUpDown, 0.016, 0.036);
+    normalizedDistanceDictionary["nose/nose-septumangle-decr|incr"] = reverse_normalizeminus11(meanDistanceNostrilUpDown, 0.016, 0.036);
 
 
     //Parti del naso verticali
@@ -763,7 +812,6 @@ async function handleClick(){
 
     let distanceNoseMedium = Math.abs(noseMediumDX.x - noseMediumSX.x);
     distanceDictionary["distanceNoseMedium"] = distanceNoseMedium;
-    //VEDERE LIMITI
     // normalizedDistanceDictionary["nose/nose-width2-decr|incr"] = normalizeminus11(distanceNoseMedium, 0.105, 0.21);
     normalizedDistanceDictionary["nose/nose-width2-decr|incr"] = normalizeminus11(distanceNoseMedium, 0.075, 0.168);
 
@@ -776,7 +824,6 @@ async function handleClick(){
 
     let distanceNoseHigh = Math.abs(noseHighDX.x - noseHighSX.x);
     distanceDictionary["distanceNoseHigh"] = distanceNoseHigh;
-    //VEDERE LIMITI
     // normalizedDistanceDictionary["nose/nose-width1-decr|incr"] = normalizeminus11(distanceNoseHigh, 0.038, 0.087);
     normalizedDistanceDictionary["nose/nose-width1-decr|incr"] = normalizeminus11(distanceNoseHigh, 0.052, 0.117);
 
@@ -805,10 +852,13 @@ async function handleClick(){
     // normalizedDistanceDictionary["head/head-fat-decr|incr"] = normalizeminus11(meanDistanceLowerFace, 0.001, 0.23);
     normalizedDistanceDictionary["head/head-fat-decr|incr"] = normalizeminus11(meanDistanceLowerFace, 0.043, 0.196);
 
+
     normalizedDistanceDictionary["chin/chin-bones-decr|incr"] = normalizeminus11(meanDistanceLowerFace, 0.087, 0.196);
 
     // normalizedDistanceDictionary["head/head-rectangular"] = normalizeminus11(meanDistanceLowerFace, 0.152612, 0.232226);
     // normalizedDistanceDictionary["head/head-rectangular"] = normalizeminus11(meanDistanceLowerFace, 0.087, 0.196);
+
+    
 
     //Distanza tra punto in lato e punto in basso
     let distanceUpDownFace = Math.abs(faceShapeCoord[0].y - faceShapeCoord[1].y);
@@ -829,26 +879,14 @@ async function handleClick(){
     distanceDictionary["distanceChin"] = distanceChin;
     normalizedDistanceDictionary["chin/chin-width-decr|incr"] = normalizeminus11(distanceChin, 0.21, 0.465);
 
-    // let chinUpSX = normalizedLandmarks[0][150];
-    // let chinUpDX = normalizedLandmarks[0][379];
-
-    // ctx.fillRect(chinUpSX.x * squareSize + startX, chinUpSX.y * squareSize + startY, 2, 2);
-    // ctx.fillRect(chinUpDX.x * squareSize + startX, chinUpDX.y * squareSize + startY, 2, 2);
-
-    // //Media della distanza tra estremi del mento e la parte alta del mento
-    // let distanceChinUpDX = Math.abs(chinDX.y - chinUpDX.y);
-    // let distanceChinUpSX = Math.abs(chinSX.y - chinUpSX.y);
-    // let meanDistanceChinUp = (distanceChinUpDX + distanceChinUpSX) * 0.5;
-    // distanceDictionary["meanDistanceChinUp"] = meanDistanceChinUp;
-    // //VEDERE LIMITI
-    // normalizedDistanceDictionary["chin/chin-jaw-drop-decr|incr"] = normalizeminus11(meanDistanceChinUp, 0.000000, 1.000000);
-
     //Chin Height
     //Distanza y tra labbro inferiore e parte bassa della faccia
     let distanceChinLips = Math.abs(faceShapeCoord[0].y - lipsCoord[0].y);
     distanceDictionary["distanceChinLips"] = distanceChinLips;
     //VEDERE LIMITI
     // normalizedDistanceDictionary["chin/chin-height-decr|incr"] = normalizeminus11(distanceChinLips, 0.000000, 1.000000);
+
+
 
     //FOREHEAD
     //Distanza tra punto alto del naso e punto alto della faccia
@@ -858,34 +896,6 @@ async function handleClick(){
 
     
 
-    //TEST PER LIMITI MAKEHUMAN(DA CANCELLARE)
-    // normalizedDistanceDictionary["head/head-age-decr|incr"] = 0;
-    // normalizedDistanceDictionary["mouth/mouth-scale-horiz-decr|incr"] = 0;
-    // normalizedDistanceDictionary["mouth/mouth-scale-vert-decr|incr"] = 0;
-    // normalizedDistanceDictionary["mouth/mouth-lowerlip-height-decr|incr"] = 0;
-    // normalizedDistanceDictionary["mouth/mouth-upperlip-height-decr|incr"] = 0;
-    // normalizedDistanceDictionary["eyebrows/eyebrows-trans-down|up"] = 0;
-    // normalizedDistanceDictionary["eyebrows/eyebrows-angle-down|up"] = 0;
-    // normalizedDistanceDictionary["eyes/r-eye-scale-decr|incr"] = 0;
-    // normalizedDistanceDictionary["eyes/r-eye-height2-decr|incr"] = 0;
-    // normalizedDistanceDictionary["eyes/r-eye-trans-in|out"] = 0;
-    // normalizedDistanceDictionary["eyes/r-eye-trans-down|up"] = 0;
-    // normalizedDistanceDictionary["eyes/l-eye-scale-decr|incr"] = 0;
-    // normalizedDistanceDictionary["eyes/l-eye-height2-decr|incr"] = 0;
-    // normalizedDistanceDictionary["eyes/l-eye-trans-in|out"] = 0;
-    // normalizedDistanceDictionary["eyes/l-eye-trans-down|up"] = 0;
-    // normalizedDistanceDictionary["nose/nose-trans-down|up"] = 0;
-    // normalizedDistanceDictionary["nose/nose-scale-vert-decr|incr"] = 0;
-    // normalizedDistanceDictionary["nose/nose-scale-horiz-decr|incr"] = 0.6;
-    // normalizedDistanceDictionary["modifier nose/nose-width3-decr|incr"] = 0;
-    // normalizedDistanceDictionary["nose/nose-nostrils-width-decr|incr"] = 0;
-    // normalizedDistanceDictionary["modifier nose/nose-width2-decr|incr"] = 0;
-    // normalizedDistanceDictionary["nose/nose-width3-decr|incr"] = 0;
-    // normalizedDistanceDictionary["head/head-round"] = 0;
-    // normalizedDistanceDictionary["modifier head/head-fat-decr|incr"] = 0;
-    // normalizedDistanceDictionary["head/head-rectangular"] = 0;
-    // normalizedDistanceDictionary["chin/chin-width-decr|incr"] = 0;
-    // normalizedDistanceDictionary["chin/chin-height-decr|incr"] = 0;
 
 
     for(let key in normalizedDistanceDictionary){
@@ -928,32 +938,6 @@ async function handleClick(){
         ctx.fillStyle = "#fc03a9";
         ctx.fillRect(xD, yD, pointSize, pointSize);
     }
-
-
-    //Print to console all the landmarks
-    // console.log("All landmarks")
-    // console.log(faceLandmarkerResult.faceLandmarks);
-    // console.log("RIGHT_EYE landmarks");
-    // console.log(FaceLandmarker.FACE_LANDMARKS_RIGHT_EYE);
-    // console.log("RIGHT_EYEBROW landmarks");
-    // console.log(FaceLandmarker.FACE_LANDMARKS_RIGHT_EYEBROW);
-    // console.log("RIGHT_IRIS landmarks");
-    // console.log(FaceLandmarker.FACE_LANDMARKS_RIGHT_IRIS);
-    // console.log("LEFT_EYE landmarks");
-    // console.log(FaceLandmarker.FACE_LANDMARKS_LEFT_EYE);
-    // console.log("LEFT_EYEBROW landmarks");
-    // console.log(FaceLandmarker.FACE_LANDMARKS_LEFT_EYEBROW);
-    // console.log("LEFT_IRIS landmarks");
-    // console.log(FaceLandmarker.FACE_LANDMARKS_LEFT_IRIS);
-    // console.log("FACE_LIPS landmarks");
-    // console.log(FaceLandmarker.FACE_LANDMARKS_LIPS);
-    // console.log("FACE_OVAL landmarks");
-    // console.log(FaceLandmarker.FACE_LANDMARKS_FACE_OVAL);
-    // console.log("FACE_TESSELATION landmarks");
-    // console.log(FaceLandmarker.FACE_LANDMARKS_TESSELATION);
-
-
-    
 
 }
 
