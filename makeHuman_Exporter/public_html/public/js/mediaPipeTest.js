@@ -551,7 +551,6 @@ function calculateChin(normalizedLandmarks, ctx, squareSize, startX, startY, dis
     //Distanza y tra labbro inferiore e parte bassa della faccia
     let distanceChinLips = Math.abs(faceShapeCoord[0].y - lipsCoord[0].y);
     distanceDictionary["distanceChinLips"] = distanceChinLips;
-    //VEDERE LIMITI
     // normalizedDistanceDictionary["chin/chin-height-decr|incr"] = normalizeminus11(distanceChinLips, 0.000000, 1.000000);
 }
 
@@ -581,9 +580,8 @@ function calculateFaceShape(faceShapeCoord, distanceDictionary, normalizedDistan
 
 
     normalizedDistanceDictionary["chin/chin-bones-decr|incr"] = normalizeminus11(meanDistanceLowerFace, 0.087, 0.196);
-
-    // normalizedDistanceDictionary["head/head-rectangular"] = normalizeminus11(meanDistanceLowerFace, 0.152612, 0.232226);
     // normalizedDistanceDictionary["head/head-rectangular"] = normalizeminus11(meanDistanceLowerFace, 0.087, 0.196);
+
     //Distanza tra punto in lato e punto in basso
     let distanceUpDownFace = Math.abs(faceShapeCoord[0].y - faceShapeCoord[1].y);
     distanceDictionary["distanceUpDownFace"] = distanceUpDownFace;
@@ -594,26 +592,17 @@ function calculateNose(noseCoord, faceShapeCoord, distanceDictionary, normalized
     //Distanza Y dal punto basso del naso al mento
     let distanceLowNoseChin = Math.abs(noseCoord[0].y - faceShapeCoord[0].y);
     distanceDictionary["distanceLowNoseChin"] = distanceLowNoseChin;
-    // normalizedDistanceDictionary["nose/nose-trans-down|up"] = normalizeminus11(distanceLowNoseChin, 0.367967, 0.458889);
-    // normalizedDistanceDictionary["nose/nose-trans-down|up"] = normalizeminus11(distanceLowNoseChin, 0.367967, 1.221);
     normalizedDistanceDictionary["nose/nose-trans-down|up"] = normalizeminus11(distanceLowNoseChin, 0.269, 0.606);
-
-
 
     //Distanza Y dal punto piu alto al puno piu basso del naso
     let distanceLowHighNose = Math.abs(noseCoord[1].y - noseCoord[0].y);
     distanceDictionary["distanceLowHighNose"] = distanceLowHighNose;
-    // normalizedDistanceDictionary["nose/nose-scale-vert-decr|incr"] = normalizeminus11(distanceLowHighNose, 0.336936, 0.423061);
-    // normalizedDistanceDictionary["nose/nose-scale-vert-decr|incr"] = normalizeminus11(distanceLowHighNose, 0.20, 0.70);
     normalizedDistanceDictionary["nose/nose-scale-vert-decr|incr"] = normalizeminus11(distanceLowHighNose, 0.263, 0.5925);
 
     //Provare ad aggiungere il septum angle e nostril angle e forse anche volume
     //Distanza x tra le due narici
     let distanceNostrilNose = Math.abs(noseCoord[2].x - noseCoord[3].x);
     distanceDictionary["distanceNostrilNose"] = distanceNostrilNose;
-    // normalizedDistanceDictionary["nose/nose-scale-horiz-decr|incr"] = normalizeminus11(distanceNostrilNose, 0.210454, 0.286658);
-    // normalizedDistanceDictionary["nose/nose-scale-horiz-decr|incr"] = normalizeminus11(distanceNostrilNose, 0.210454, 0.251);
-    // normalizedDistanceDictionary["nose/nose-scale-horiz-decr|incr"] = normalizeminus11(distanceNostrilNose, 0.161, 0.363);
     // normalizedDistanceDictionary["nose/nose-scale-horiz-decr|incr"] = normalizeminus11(distanceNostrilNose, 0.149, 0.3);
     normalizedDistanceDictionary["nose/nose-width3-decr|incr"] = normalizeminus11(distanceNostrilNose, 0.149, 0.3);
 
@@ -637,7 +626,6 @@ function calculateNose(noseCoord, faceShapeCoord, distanceDictionary, normalized
 
     let meanDistanceNostril = (distanceNostril1 + distanceNostril2) * 0.5;
     distanceDictionary["meanDistanceNostril"] = meanDistanceNostril;
-    // normalizedDistanceDictionary["nose/nose-nostrils-width-decr|incr"] = normalizeminus11(meanDistanceNostril, 0.005, 0.12);
     // normalizedDistanceDictionary["nose/nose-nostrils-width-decr|incr"] = normalizeminus11(meanDistanceNostril, 0.03, 0.067);
     normalizedDistanceDictionary["nose/nose-flaring-decr|incr"] = normalizeminus11(meanDistanceNostril, 0.03, 0.067);
 
@@ -666,9 +654,7 @@ function calculateNose(noseCoord, faceShapeCoord, distanceDictionary, normalized
 
     let distanceNoseMedium = Math.abs(noseMediumDX.x - noseMediumSX.x);
     distanceDictionary["distanceNoseMedium"] = distanceNoseMedium;
-    // normalizedDistanceDictionary["nose/nose-width2-decr|incr"] = normalizeminus11(distanceNoseMedium, 0.105, 0.21);
     normalizedDistanceDictionary["nose/nose-width2-decr|incr"] = normalizeminus11(distanceNoseMedium, 0.075, 0.168);
-
 
     let noseHighDX = normalizedLandmarks[0][193];
     let noseHighSX = normalizedLandmarks[0][417];
@@ -678,27 +664,22 @@ function calculateNose(noseCoord, faceShapeCoord, distanceDictionary, normalized
 
     let distanceNoseHigh = Math.abs(noseHighDX.x - noseHighSX.x);
     distanceDictionary["distanceNoseHigh"] = distanceNoseHigh;
-    // normalizedDistanceDictionary["nose/nose-width1-decr|incr"] = normalizeminus11(distanceNoseHigh, 0.038, 0.087);
     normalizedDistanceDictionary["nose/nose-width1-decr|incr"] = normalizeminus11(distanceNoseHigh, 0.052, 0.117);
 }
 
 function calculateEyes(rightEyeCoord, distanceDictionary, normalizedDistanceDictionary, normalizedLandmarks, squareSize, startX, startY, ctx, noseCoord, faceShapeCoord, leftEyeCoord) {
+    
     //RIGHT EYE
     //Distanza x tra estremi dx e sx
     let distanceXRightEye = Math.abs(rightEyeCoord[2].x - rightEyeCoord[3].x);
     distanceDictionary["distanceXRightEye"] = distanceXRightEye;
-    // normalizedDistanceDictionary["eyes/r-eye-scale-decr|incr"] = normalizeminus11(distanceXRightEye, 0.145855, 0.240166);
     normalizedDistanceDictionary["eyes/r-eye-scale-decr|incr"] = normalizeminus11(distanceXRightEye, 0.135, 0.303);
-
 
     //Distanza y tra estremi up e dw
     let distanceYRightEye = Math.abs(rightEyeCoord[0].y - rightEyeCoord[1].y);
     distanceDictionary["distanceYRightEye"] = distanceYRightEye;
     let scaledDistanceYRightEye = distanceYRightEye / distanceXRightEye;
     distanceDictionary["scaledDistanceYRightEye"] = scaledDistanceYRightEye;
-    // normalizedDistanceDictionary["eyes/r-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYRightEye, 0.210716, 0.401557);
-    // normalizedDistanceDictionary["eyes/r-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYRightEye, 0.435137, 0.639566);
-    // normalizedDistanceDictionary["eyes/r-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYRightEye, 0.379, 0.8535);
     normalizedDistanceDictionary["eyes/r-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYRightEye, 0.2, 0.7);
 
     //Distanza y tra estremi up e dw a sx
@@ -729,44 +710,31 @@ function calculateEyes(rightEyeCoord, distanceDictionary, normalizedDistanceDict
     ctx.fillStyle = "green";
     ctx.fillRect(centerPointRightEye.x * squareSize + startX, centerPointRightEye.y * squareSize + startY, 2, 2);
 
-
     //Distanza X dal punto centrale degli occhi al punto del naso
     let distanceRightEyeCenterNose = Math.abs(centerPointRightEye.x - noseCoord[1].x);
     distanceDictionary["distanceRightEyeCenterNose"] = distanceRightEyeCenterNose;
-    // normalizedDistanceDictionary["eyes/r-eye-trans-in|out"] = normalizeminus11(distanceRightEyeCenterNose, 0.178379, 0.242117);
-    // normalizedDistanceDictionary["eyes/r-eye-trans-in|out"] = normalizeminus11(distanceRightEyeCenterNose, 0.139, 0.3135);
     //distanza X dal punto a DX degli occhi al punto superiore del naso
     let distanceRightEyeNose = Math.abs(rightEyeCoord[3].x - noseCoord[1].x);
     distanceDictionary["distanceRightEyeNose"] = distanceRightEyeNose;
     normalizedDistanceDictionary["eyes/r-eye-trans-in|out"] = normalizeminus11(distanceRightEyeNose, 0.061, 0.138);
 
-
     //Distanza Y dal punto centrale degli occhi al mento
     let distanceRightEyeCenterChin = Math.abs(centerPointRightEye.y - faceShapeCoord[0].y);
     distanceDictionary["distanceRightEyeCenterChin"] = distanceRightEyeCenterChin;
-    // normalizedDistanceDictionary["eyes/r-eye-trans-down|up"] = normalizeminus11(distanceRightEyeCenterChin, 0.655851, 0.770520);
-    // normalizedDistanceDictionary["eyes/r-eye-trans-down|up"] = normalizeminus11(distanceRightEyeCenterChin, 0.648646, 1.688);
     normalizedDistanceDictionary["eyes/r-eye-trans-down|up"] = normalizeminus11(distanceRightEyeCenterChin, 0.47, 1.05);
-
-
 
 
     //LEFT EYE
     //Distanza x tra estremi dx e sx
     let distanceXLeftEye = Math.abs(leftEyeCoord[2].x - leftEyeCoord[3].x);
     distanceDictionary["distanceXLeftEye"] = distanceXLeftEye;
-    // normalizedDistanceDictionary["eyes/l-eye-scale-decr|incr"] = normalizeminus11(distanceXLeftEye, 0.147403, 0.238990);
     normalizedDistanceDictionary["eyes/l-eye-scale-decr|incr"] = normalizeminus11(distanceXLeftEye, 0.132, 0.297);
-
 
     //Distanza y tra estremi up e dw
     let distanceYLeftEye = Math.abs(leftEyeCoord[0].y - leftEyeCoord[1].y);
     distanceDictionary["distanceYLeftEye"] = distanceYLeftEye;
     let scaledDistanceYLeftEye = distanceYLeftEye / distanceXLeftEye;
     distanceDictionary["scaledDistanceYLeftEye"] = scaledDistanceYLeftEye;
-    // normalizedDistanceDictionary["eyes/l-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYLeftEye, 0.166872, 0.416880);
-    // normalizedDistanceDictionary["eyes/l-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYLeftEye, 0.442249, 0.645937);
-    // normalizedDistanceDictionary["eyes/l-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYLeftEye, 0.379, 0.8535);
     normalizedDistanceDictionary["eyes/l-eye-height2-decr|incr"] = normalizeminus11(scaledDistanceYLeftEye, 0.2, 0.7);
 
     //Distanza y tra estremi up e dw a sx
@@ -800,8 +768,6 @@ function calculateEyes(rightEyeCoord, distanceDictionary, normalizedDistanceDict
     //Distanza X dal punto centrale degli occhi al punto del naso
     let distanceLeftEyeCenterNose = Math.abs(centerPointLeftEye.x - noseCoord[1].x);
     distanceDictionary["distanceLeftEyeCenterNose"] = distanceLeftEyeCenterNose;
-    // normalizedDistanceDictionary["eyes/l-eye-trans-in|out"] = normalizeminus11(distanceLeftEyeCenterNose, 0.174884, 0.243505);
-    // normalizedDistanceDictionary["eyes/l-eye-trans-in|out"] = normalizeminus11(distanceLeftEyeCenterNose, 0.139, 0.3135);
     //distanza X dal punto a SX degli occhi al punto superiore del naso
     let distanceLeftEyeNose = Math.abs(leftEyeCoord[2].x - noseCoord[1].x);
     distanceDictionary["distanceLeftEyeNose"] = distanceLeftEyeNose;
@@ -811,8 +777,6 @@ function calculateEyes(rightEyeCoord, distanceDictionary, normalizedDistanceDict
     //Distance Y dal punto centrale degli occhi al mento
     let distanceLeftEyeCenterChin = Math.abs(centerPointLeftEye.y - faceShapeCoord[0].y);
     distanceDictionary["distanceLeftEyeCenterChin"] = distanceLeftEyeCenterChin;
-    // normalizedDistanceDictionary["eyes/l-eye-trans-down|up"] = normalizeminus11(distanceLeftEyeCenterChin, 0.648646, 0.770520);
-    // normalizedDistanceDictionary["eyes/l-eye-trans-down|up"] = normalizeminus11(distanceLeftEyeCenterChin, 0.648646, 1.688);
     normalizedDistanceDictionary["eyes/l-eye-trans-down|up"] = normalizeminus11(distanceLeftEyeCenterChin, 0.47, 1.05);
 }
 
@@ -877,40 +841,58 @@ function calculateEyebrows(rightEyeBrowCoord, ctx, squareSize, startX, startY, d
     distanceDictionary["meanDistanceEyeBrowY"] = meanDistanceEyeBrowY;
     let meanDistanceEyeEyeBrow = (distanceEyeEyeBrowRight + distanceEyeEyeBrowLeft) * 0.5;
     distanceDictionary["meanDistanceEyeEyeBrow"] = meanDistanceEyeEyeBrow;
-    // normalizedDistanceDictionary["eyebrows/eyebrows-trans-down|up"] = normalizeminus11(meanDistanceEyeBrowY, 0.018856, 0.041093);
-    // normalizedDistanceDictionary["eyebrows/eyebrows-trans-down|up"] = normalizeminus11(meanDistanceEyeBrowY, 0.018856, 0.077);
     normalizedDistanceDictionary["eyebrows/eyebrows-trans-down|up"] = normalizeminus11(meanDistanceEyeEyeBrow, 0.029, 0.066);
     normalizedDistanceDictionary["eyebrows/eyebrows-angle-down|up"] = normalizeminus11(meanDistanceYEyeBrow, 0.000050, 0.043772);
-    // normalizedDistanceDictionary["eyebrows/eyebrows-angle-down|up"] = normalizeminus11(meanDistanceYEyeBrow, 0.016, 0.036);
 }
 
 function calculateLips(normalizedLandmarks, ctx, squareSize, startX, startY, lipsCoord, distanceDictionary, normalizedDistanceDictionary) {
+    //Distanza tra i punti interni della bocca per calcolare eventuale spazio per la bocca aperta
     let upOpenMouth = normalizedLandmarks[0][13];
     let downOpenMouth = normalizedLandmarks[0][14];
     let distanceOpenMouth = Math.abs(upOpenMouth.y - downOpenMouth.y);
     ctx.fillStyle = "green";
     ctx.fillRect(upOpenMouth.x * squareSize + startX, upOpenMouth.y * squareSize + startY, 2, 2);
     ctx.fillRect(downOpenMouth.x * squareSize + startX, downOpenMouth.y * squareSize + startY, 2, 2);
+
     //Distanza x tra i punti esterni della bocca DX e SX
     let distanceXLips = Math.abs(lipsCoord[2].x - lipsCoord[3].x);
     distanceDictionary["distanceXLips"] = distanceXLips;
     // normalizedDistanceDictionary["mouth/mouth-scale-horiz-decr|incr"] = normalizeminus11(distanceXLips, 0.242151, 0.398220);
     normalizedDistanceDictionary["mouth/mouth-scale-horiz-decr|incr"] = normalizeminus11(distanceXLips, 0.2, 0.45);
+
     //Distanza y tra i punti esterni della bocca UP e DW
     let distanceYLips = Math.abs(lipsCoord[1].y - lipsCoord[0].y) - distanceOpenMouth;
     distanceDictionary["distanceYLips"] = distanceYLips;
     // normalizedDistanceDictionary["mouth/mouth-scale-vert-decr|incr"] = normalizeminus11(distanceYLips, 0.090961 ,0.185984);
     // normalizedDistanceDictionary["mouth/mouth-scale-vert-decr|incr"] = normalizeminus11(distanceYLips, 0.076, 0.171);
+
     //Larghezza del labbro inferiore
     let distanceLipsWidthDown = Math.abs(downOpenMouth.y - lipsCoord[0].y);
     distanceDictionary["distanceLipsWidthDown"] = distanceLipsWidthDown;
     // normalizedDistanceDictionary["mouth/mouth-lowerlip-height-decr|incr"] = normalizeminus11(distanceLipsWidthDown, 0.001, 0.112);
     normalizedDistanceDictionary["mouth/mouth-lowerlip-height-decr|incr"] = normalizeminus11(distanceLipsWidthDown, 0.037, 0.084);
 
-
     //Larghezza del labbro superiore
     let distanceLipsWidthUp = Math.abs(upOpenMouth.y - lipsCoord[1].y);
     distanceDictionary["distanceLipsWidthUp"] = distanceLipsWidthUp;
     normalizedDistanceDictionary["mouth/mouth-upperlip-height-decr|incr"] = normalizeminus11(distanceLipsWidthUp, 0.021, 0.0465);
+
+    //Cupid Bow Width
+    //Distanza x tra i punti esterni del cupid bow
+    let cupidBowSx = normalizedLandmarks[0][37];
+    let cupidBowDx = normalizedLandmarks[0][267];
+    drawPoint(cupidBowSx, "green", squareSize, startX, startY, ctx);
+    drawPoint(cupidBowDx, "green", squareSize, startX, startY, ctx);
+
+    let distanceCupidBow = Math.abs(cupidBowSx.x - cupidBowDx.x);
+    distanceDictionary["distanceCupidBow"] = distanceCupidBow;
+    normalizedDistanceDictionary["mouth/mouth-cupidsbow-width-decr|incr"] = normalizeminus11(distanceCupidBow, 0.061, 0.136);
+
+    //Cupid Bow Shape
+    //Distanza media y tra i punti esterni del cupid bow e il punto superiore del labbro
+    let distanceCupidBowY = (Math.abs(cupidBowSx.y - lipsCoord[1].y) + Math.abs(cupidBowDx.y - lipsCoord[1].y))/2;
+    distanceDictionary["distanceCupidBowY"] = distanceCupidBowY;
+    normalizedDistanceDictionary["mouth/mouth-cupidsbow-decr|incr"] = normalizeminus11(distanceCupidBowY, 0.005, 0.012);
+
 }
 
