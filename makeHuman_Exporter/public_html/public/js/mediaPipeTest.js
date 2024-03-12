@@ -40,6 +40,87 @@ const makeHumanParameters = {
     "material eyebrow011": "19e43555-4613-4457-ac6e-c30bf350d275 eyebrow011.mhmat"
 }
 
+const sliderElementsIDs = {
+    "head_rectangular": "modifier head/head-rectangular",
+    "head_round": "modifier head/head-round",
+    "eyebrows_angle": "modifier eyebrows/eyebrows-angle-down|up",
+    "eyebrows_movevert": "modifier eyebrows/eyebrows-trans-down|up",
+    "mouth_scalevert": "modifier mouth/mouth-scale-vert-decr|incr",
+    "mouth_scalehoriz": "modifier mouth/mouth-scale-horiz-decr|incr",
+    "righteye_height": "modifier eyes/r-eye-height2-decr|incr",
+    "lefteye_height": "modifier eyes/l-eye-height2-decr|incr",
+    "righteye_scalevert": "modifier eyes/r-eye-scale-decr|incr",
+    "lefteye_scalevert": "modifier eyes/l-eye-scale-decr|incr",
+    "righteye_moveinout": "modifier eyes/r-eye-trans-in|out",
+    "lefteye_moveinout": "modifier eyes/l-eye-trans-in|out",
+    "righteye_movevert": "modifier eyes/r-eye-trans-down|up",
+    "lefteye_movevert": "modifier eyes/l-eye-trans-down|up",
+    "nose_movevert": "modifier nose/nose-trans-down|up",
+    "nose_scalevert": "modifier nose/nose-scale-vert-decr|incr",
+    "nose_scalehoriz": "modifier nose/nose-scale-horiz-decr|incr",
+    "avatargender": "modifier macrodetails/Gender",
+    "avatarage": "modifier macrodetails/Age",
+}
+
+const sliderModifierPairs = {
+    "head_rectangular": "head_rectangular_value",
+    "head_round": "head_round_value",
+    "eyebrows_angle": "eyebrows_angle_value",
+    "eyebrows_movevert": "eyebrows_movevert_value",
+    "mouth_scalevert": "mouth_scalevert_value",
+    "mouth_scalehoriz": "mouth_scalehoriz_value",
+    "righteye_height": "righteye_height_value",
+    "lefteye_height": "lefteye_height_value",
+    "righteye_scalevert": "righteye_scalevert_value",
+    "lefteye_scalevert": "lefteye_scalevert_value",
+    "righteye_moveinout": "righteye_moveinout_value",
+    "lefteye_moveinout": "lefteye_moveinout_value",
+    "righteye_movevert": "righteye_movevert_value",
+    "lefteye_movevert": "lefteye_movevert_value",
+    "nose_movevert": "nose_movevert_value",
+    "nose_scalevert": "nose_scalevert_value",
+    "nose_scalehoriz": "nose_scalehoriz_value",
+    "avatargender": "avatargender_value",
+    "avatarage": "avatarage_value",
+}
+
+var changedSliders = {};
+
+window.updateSliderValue = updateSliderValue;
+
+function updateSliderValue(element)
+{
+    console.log("updating slider " + element.id)
+    let valueElementId = sliderModifierPairs[element.id];
+    console.log("updating slider value " + valueElementId + " to " + element.value)
+    let valueElement = document.getElementById(valueElementId);
+    valueElement.innerHTML = element.value;
+}
+
+function updateValueFromModifiersToSliders()
+{       
+    for (const [curKey, curValue] of Object.entries(sliderElementsIDs)) {
+        let sliderElement = document.getElementById(curKey)
+        sliderElement.value = makeHumanParameters[curValue]
+        updateSliderValue(sliderElement)
+    }
+}
+
+function updateValueFromSlidersToModifiers()
+{
+    for (const [curKey, curValue] of Object.entries(sliderElementsIDs)) {
+        let sliderElement = document.getElementById(curKey)
+        if(!almost(makeHumanParameters[curValue], sliderElement.value, 0.01))
+        {
+            changedSliders[curValue] = sliderElement.value
+        }
+    }
+}
+
+function almost(a, b, delta = 0.000001){
+    return Math.abs(a - b) < delta
+}
+
 function clamp(value, min, max) {
     return Math.min(Math.max(value, min), max);
 }
@@ -71,8 +152,7 @@ window.handleClick = handleClick;
 function saveJsonFile(text) {
     document.getElementById("export_button").style.display = "none";
     document.getElementById("exporting_button").style.display = "block";
-    document.getElementById("apply_slider").style.display = "none";
-    document.getElementById("applying_slider").style.display = "block";
+    document.getElementById("sliders").style.display = "none";
 
     fetch('/applymodifiers', {
                 method: 'POST',
@@ -81,12 +161,11 @@ function saveJsonFile(text) {
             })
             .then(res => 
                 {
+                    updateValueFromModifiersToSliders()
                     console.log(res)
                     document.getElementById("exporting_button").style.display = "none";
                     document.getElementById("download_button").style.display = "block";
-                    document.getElementById("apply_slider").style.display = "block";
-                    document.getElementById("applying_slider").style.display = "none";
-                    document.getElementById("slider").style.display = "block";
+                    document.getElementById("sliders").style.display = "block";
                 }
             )
 }
@@ -140,6 +219,43 @@ function applySlider() {
         )
 }
 window.applySlider = applySlider;
+
+window.applySliderValuesAndDownloadFbx = applySliderValuesAndDownloadFbx;
+
+async function applySliderValuesAndDownloadFbx() {
+    updateValueFromSlidersToModifiers()
+    document.getElementById("download_button").style.display = "none";
+    document.getElementById("exporting_button").style.display = "block";
+    for (const [curSliderKey, curSliderValue] of Object.entries(changedSliders)) 
+    {
+        console.log("changing modifier " + curSliderKey + " " + curSliderValue)
+        const sliderJson =
+        {
+            "modifier": "\"" + curSliderKey + "\"",
+            "value": curSliderValue
+        }
+        await fetch('/applymodifier', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ sliderJson })
+        })
+    }
+    const options = {
+        method: 'GET',
+    };
+    fetch('/downloadFbxZip', options)
+        .then(function (t) {
+            return t.blob().then((b) => {
+                var a = document.createElement("a");
+                a.href = URL.createObjectURL(b);
+                a.setAttribute("download", 'avatar.zip');
+                a.click();
+                document.getElementById("download_button").style.display = "block";
+                document.getElementById("exporting_button").style.display = "none";
+            }
+            )
+        });
+}
 
 
 const {FaceLandmarker, FilesetResolver, DrawingUtils} = vision;

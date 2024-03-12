@@ -82,3 +82,13 @@ input[type="file"]::-webkit-file-upload-button {
     color: #fff;
     border-radius: .2em;
 }
+
+.sliderlabel {
+  width: 150px;
+  text-align: right;
+}
+
+.slidervalue {
+  width: 40px;
+  text-align: right;
+}
