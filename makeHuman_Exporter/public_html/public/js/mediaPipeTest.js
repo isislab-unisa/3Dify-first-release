@@ -90,9 +90,7 @@ window.updateSliderValue = updateSliderValue;
 
 function updateSliderValue(element)
 {
-    console.log("updating slider " + element.id)
     let valueElementId = sliderModifierPairs[element.id];
-    console.log("updating slider value " + valueElementId + " to " + element.value)
     let valueElement = document.getElementById(valueElementId);
     valueElement.innerHTML = element.value;
 }
@@ -239,7 +237,9 @@ async function applySliderValuesAndDownloadFbx() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ sliderJson })
         })
+        makeHumanParameters[curSliderKey] = curSliderValue
     }
+    changedSliders = {}
     const options = {
         method: 'GET',
     };
