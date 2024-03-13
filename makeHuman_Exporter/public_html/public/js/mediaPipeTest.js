@@ -59,7 +59,7 @@ const sliderElementsIDs = {
     "nose_scalevert": "modifier nose/nose-scale-vert-decr|incr",
     "nose_scalehoriz": "modifier nose/nose-scale-horiz-decr|incr",
     "avatargender": "modifier macrodetails/Gender",
-    "avatarage": "modifier macrodetails/Age",
+    "avatarage": "modifier head/head-age-decr|incr",
 }
 
 const sliderModifierPairs = {
