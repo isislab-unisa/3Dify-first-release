@@ -292,7 +292,7 @@ function normalizeminus11(value, min, max){
 }
 
 function reverse_normalizeminus11(value, min_value, max_value){
-    return 1 - 2 * ((value - min_value) / (max_value - min_value))
+    return (2 * ((value - min_value) / (max_value - min_value)) - 1) * -1
 }
 
 function midpoint(point1x, point1y, point2x, point2y){
@@ -343,6 +343,7 @@ async function handleClick(){
     const faceAPIResults = await faceapi.detectAllFaces(inputImgEl, options).withFaceLandmarks()
         .withAgeAndGender()
 
+
     let gender = faceAPIResults[0].gender
     let genderValue = 0.0
     if (gender.toLowerCase() == "male") {
@@ -370,6 +371,10 @@ async function handleClick(){
         return;
     }
 
+    //Rilevazione misure della testa
+    // const { spawn} = require('child_process');
+    // const python = spawn("python", )
+
     //Se presente rimuove un canvas con le mesh generate precedentemente
     const oldCanvas = document.getElementById("overlay");
     if(oldCanvas){
@@ -389,6 +394,7 @@ async function handleClick(){
     canvas.style.height = "${inputImgEl.height}px";
 
     const ctx = drawMediaPipeLandmarks(inputImgEl, canvas, faceLandmarkerResult);
+    
 
     console.log(faceLandmarkerResult.faceLandmarks);
     let limits = calculateLimits(faceLandmarkerResult.faceLandmarks);
@@ -593,11 +599,11 @@ function drawMediaPipeLandmarks(inputImgEl, canvas, faceLandmarkerResult) {
     const ctx = canvas.getContext("2d");
     const drawingUtils = new DrawingUtils(ctx);
     for (const landmarks of faceLandmarkerResult.faceLandmarks) {
-        drawingUtils.drawConnectors(
-            landmarks,
-            FaceLandmarker.FACE_LANDMARKS_TESSELATION,
-            { color: "#C0C0C070", lineWidth: 1 }
-        );
+        // drawingUtils.drawConnectors(
+        //     landmarks,
+        //     FaceLandmarker.FACE_LANDMARKS_TESSELATION,
+        //     { color: "#C0C0C070", lineWidth: 1 }
+        // );
         // drawingUtils.drawConnectors(
         //     landmarks,
         //     FaceLandmarker.FACE_LANDMARKS_RIGHT_EYE,
@@ -690,11 +696,11 @@ function calculateFaceShape(faceShapeCoord, distanceDictionary, normalizedDistan
     let meanDistanceLowerFace = (distanceLeftLowerFace + distanceRightLowerFace) * 0.5;
     distanceDictionary["meanDistanceLowerFace"] = meanDistanceLowerFace;
     // normalizedDistanceDictionary["head/head-fat-decr|incr"] = normalizeminus11(meanDistanceLowerFace, 0.001, 0.23);
-    normalizedDistanceDictionary["head/head-fat-decr|incr"] = normalizeminus11(meanDistanceLowerFace, 0.043, 0.196);
+    normalizedDistanceDictionary["head/head-fat-decr|incr"] = normalizeminus11(meanDistanceLowerFace, 0.043, 0.196); //0.196
 
 
-    normalizedDistanceDictionary["chin/chin-bones-decr|incr"] = normalizeminus11(meanDistanceLowerFace, 0.087, 0.196);
-    // normalizedDistanceDictionary["head/head-rectangular"] = normalizeminus11(meanDistanceLowerFace, 0.087, 0.196);
+    // normalizedDistanceDictionary["chin/chin-bones-decr|incr"] = normalizeminus11(meanDistanceLowerFace, 0.087, 0.196); //0.196
+    normalizedDistanceDictionary["head/head-rectangular"] = normalizeminus11(meanDistanceLowerFace, 0.087, 0.196);
 
     //Distanza tra punto in lato e punto in basso
     let distanceUpDownFace = Math.abs(faceShapeCoord[0].y - faceShapeCoord[1].y);
@@ -711,7 +717,7 @@ function calculateNose(noseCoord, faceShapeCoord, distanceDictionary, normalized
     //Distanza Y dal punto piu alto al puno piu basso del naso
     let distanceLowHighNose = Math.abs(noseCoord[1].y - noseCoord[0].y);
     distanceDictionary["distanceLowHighNose"] = distanceLowHighNose;
-    normalizedDistanceDictionary["nose/nose-scale-vert-decr|incr"] = normalizeminus11(distanceLowHighNose, 0.263, 0.5925);
+    normalizedDistanceDictionary["nose/nose-scale-vert-decr|incr"] = normalizeminus11(distanceLowHighNose, 0.263, 0.55); //0.5925
 
     //Provare ad aggiungere il septum angle e nostril angle e forse anche volume
     //Distanza x tra le due narici
@@ -755,7 +761,7 @@ function calculateNose(noseCoord, faceShapeCoord, distanceDictionary, normalized
     let meanDistanceNostrilUpDown = (distanceNostrilUpDownSX + distanceNostrilUpDownDX) * 0.5;
     distanceDictionary["meanDistanceNostrilUpDown"] = meanDistanceNostrilUpDown;
     // normalizedDistanceDictionary["nose/nose-nostrils-angle-down|up"] = reverse_normalizeminus11(meanDistanceNostrilUpDown, 0.016, 0.036);
-    normalizedDistanceDictionary["nose/nose-septumangle-decr|incr"] = reverse_normalizeminus11(meanDistanceNostrilUpDown, 0.016, 0.036);
+    // normalizedDistanceDictionary["nose/nose-septumangle-decr|incr"] = reverse_normalizeminus11(meanDistanceNostrilUpDown, 0.016, 0.036);
 
 
     //Parti del naso verticali
@@ -829,7 +835,7 @@ function calculateEyes(rightEyeCoord, distanceDictionary, normalizedDistanceDict
     // let distanceRightEyeNose = Math.abs(rightEyeCoord[3].x - noseCoord[1].x);
     let distanceRightEyeNose = Math.abs(centerPointRightEye.x - noseCoord[1].x);
     distanceDictionary["distanceRightEyeNose"] = distanceRightEyeNose;
-    normalizedDistanceDictionary["eyes/r-eye-trans-in|out"] = normalizeminus11(distanceRightEyeNose, 0.090, 0.265);
+    normalizedDistanceDictionary["eyes/r-eye-trans-in|out"] = normalizeminus11(distanceRightEyeNose, 0.090, 0.245); //0.265
 
     //Distanza Y dal punto centrale degli occhi al mento
     let distanceRightEyeCenterChin = Math.abs(centerPointRightEye.y - faceShapeCoord[0].y);
@@ -887,7 +893,7 @@ function calculateEyes(rightEyeCoord, distanceDictionary, normalizedDistanceDict
     // let distanceLeftEyeNose = Math.abs(leftEyeCoord[2].x - noseCoord[1].x);
     let distanceLeftEyeNose = Math.abs(centerPointLeftEye.x - noseCoord[1].x);
     distanceDictionary["distanceLeftEyeNose"] = distanceLeftEyeNose;
-    normalizedDistanceDictionary["eyes/l-eye-trans-in|out"] = normalizeminus11(distanceLeftEyeNose, 0.090, 0.265);
+    normalizedDistanceDictionary["eyes/l-eye-trans-in|out"] = normalizeminus11(distanceLeftEyeNose, 0.090, 0.245);
 
 
     //Distance Y dal punto centrale degli occhi al mento
