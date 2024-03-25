@@ -740,7 +740,8 @@ function calculateEyes(rightEyeCoord, distanceDictionary, normalizedDistanceDict
     let downLeftEyeSX = normalizedLandmarks[0][256];
     drawPoint(upLeftEyeSX, "green", squareSize, startX, startY, ctx);
     drawPoint(downLeftEyeSX, "green", squareSize, startX, startY, ctx);
-    let distanceYLeftEyeSX = Math.abs(upRightEyeSX.y - downRightEyeSX.y);
+    // let distanceYLeftEyeSX = Math.abs(upRightEyeSX.y - downRightEyeSX.y);
+    let distanceYLeftEyeSX = Math.abs(upLeftEyeSX.y - downLeftEyeSX.y);
     distanceDictionary["distanceYLeftEyeSX"] = distanceYLeftEyeSX;
     normalizedDistanceDictionary["eyes/l-eye-height1-decr|incr"] = normalizeminus11(distanceYLeftEyeSX, 0.052, 0.117);
 
@@ -749,7 +750,8 @@ function calculateEyes(rightEyeCoord, distanceDictionary, normalizedDistanceDict
     let downLeftEyeDX = normalizedLandmarks[0][339];
     drawPoint(upLeftEyeDX, "green", squareSize, startX, startY, ctx);
     drawPoint(downLeftEyeDX, "green", squareSize, startX, startY, ctx);
-    let distanceYLeftEyeDX = Math.abs(upRightEyeDX.y - downRightEyeDX.y);
+    // let distanceYLeftEyeDX = Math.abs(upRightEyeDX.y - downRightEyeDX.y);
+    let distanceYLeftEyeDX = Math.abs(upLeftEyeDX.y - downLeftEyeDX.y);
     distanceDictionary["distanceYLeftEyeDX"] = distanceYLeftEyeDX;
     normalizedDistanceDictionary["eyes/l-eye-height3-decr|incr"] = normalizeminus11(distanceYLeftEyeDX, 0.053, 0.12);
 
