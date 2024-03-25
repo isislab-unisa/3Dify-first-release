@@ -18,7 +18,7 @@ class SocketModifierOps(AbstractOp):
         jsonCall.data = self.api.modifiers.getAppliedTargets()
 
     def applyModifier(self,conn,jsonCall):
-        modifierName = jsonCall.getParam("modifier")
+        modifierName = jsonCall.getParam("modifier").split()[-1]
         power = float(jsonCall.getParam("power"))
         modifier = self.api.internals.getHuman().getModifier(modifierName)
 

@@ -62,7 +62,7 @@
         </button>
         <button
           class="waves-effect waves-light btn"
-          onclick="downloadFbx()"
+          onclick="applySliderValuesAndDownloadFbx()"
           id="download_button"
           style="display: none;"
         >
@@ -71,25 +71,116 @@
       </div>
     </span>
     <!-- exporter -->
+    <label for="sliders">Parameters</label>
+    <span id="sliders" style="display: none;">
+      <div class="row side-by-side" >
+        <label for="head_rectangular" class="sliderlabel">Head rectangular:</label>
+        <input type="range" id="head_rectangular" min="0.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="head_rectangular_value" class="slidervalue">0.0</label>
+      </div>
+      <div class="row side-by-side" >
+        <label for="head_round" class="sliderlabel">Head round:</label>
+        <input type="range" id="head_round" min="0.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="head_round_value" class="slidervalue">0.0</label>
+      </div>
+      <div class="row side-by-side" >
+        <label for="eyebrows_angle" class="sliderlabel">Eyebrows angle:</label>
+        <input type="range" id="eyebrows_angle" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="eyebrows_angle_value" class="slidervalue">0.0</label>
+      </div>
+      <div class="row side-by-side" >
+        <label for="eyebrows_movevert" class="sliderlabel">Eyebrows move vertical:</label>
+        <input type="range" id="eyebrows_movevert" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="eyebrows_movevert_value" class="slidervalue">0.0</label>
+      </div>
+      <div class="row side-by-side" >
+        <label for="mouth_scalevert" class="sliderlabel">Mouth scale vertical:</label>
+        <input type="range" id="mouth_scalevert" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="mouth_scalevert_value" class="slidervalue">0.0</label>
+      </div>
+      <div class="row side-by-side" >
+        <label for="mouth_scalehoriz" class="sliderlabel">Mouth scale horizontal:</label>
+        <input type="range" id="mouth_scalehoriz" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="mouth_scalehoriz_value" class="slidervalue">0.0</label>
+      </div>
+      <div class="row side-by-side" >
+        <label for="righteye_height" class="sliderlabel">Right Eye height:</label>
+        <input type="range" id="righteye_height" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="righteye_height_value" class="slidervalue">0.0</label>
+        <label for="lefteye_height" class="sliderlabel">Left Eye height:</label>
+        <input type="range" id="lefteye_height" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="lefteye_height_value" class="slidervalue">0.0</label>
+      </div>
+      <div class="row side-by-side" >
+        <label for="righteye_scalevert" class="sliderlabel">Right Eye scale vertical:</label>
+        <input type="range" id="righteye_scalevert" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="righteye_scalevert_value" class="slidervalue">0.0</label>
+        <label for="lefteye_scalevert" class="sliderlabel">Left Eye scale vertical:</label>
+        <input type="range" id="lefteye_scalevert" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="lefteye_scalevert_value" class="slidervalue">0.0</label>
+      </div>
+      <div class="row side-by-side" >
+        <label for="righteye_moveinout" class="sliderlabel">Right Eye move in/out:</label>
+        <input type="range" id="righteye_moveinout" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="righteye_moveinout_value" class="slidervalue">0.0</label>
+        <label for="lefteye_moveinout" class="sliderlabel">Left Eye move in/out:</label>
+        <input type="range" id="lefteye_moveinout" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="lefteye_moveinout_value" class="slidervalue">0.0</label>
+      </div>
+      <div class="row side-by-side" >
+        <label for="righteye_movevert" class="sliderlabel">Right Eye move vertical:</label>
+        <input type="range" id="righteye_movevert" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="righteye_movevert_value" class="slidervalue">0.0</label>
+        <label for="lefteye_movevert" class="sliderlabel">Left Eye move vertical:</label>
+        <input type="range" id="lefteye_movevert" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="lefteye_movevert_value" class="slidervalue">0.0</label>
+      </div>
+      <div class="row side-by-side" >
+        <label for="nose_movevert" class="sliderlabel">Nose move vertical:</label>
+        <input type="range" id="nose_movevert" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="nose_movevert_value" class="slidervalue">0.0</label>
+      </div>
+      <div class="row side-by-side" >
+        <label for="nose_scalevert" class="sliderlabel">Nose scale vertical:</label>
+        <input type="range" id="nose_scalevert" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="nose_scalevert_value" class="slidervalue">0.0</label>
+      </div>
+      <div class="row side-by-side" >
+        <label for="nose_scalehoriz" class="sliderlabel">Nose scale horizontal:</label>
+        <input type="range" id="nose_scalehoriz" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="nose_scalehoriz_value" class="slidervalue">0.0</label>        
+      </div>
+      <div class="row side-by-side" >
+        <label for="avatargender" class="sliderlabel">Gender (0=F / 1=M):</label>
+        <input type="range" id="avatargender" min="0.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="avatargender_value" class="slidervalue">0.0</label>
+      </div>
+      <div class="row side-by-side" >
+        <label for="avatarage" class="sliderlabel">Age:</label>
+        <input type="range" id="avatarage" min="0.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="avatarage_value" class="slidervalue">0.0</label>
+      </div>
+    </span>
 
-        <!-- fake slider -->
-        <span id="slider" style="display: none;">
-          <div class="row">
-            <label for="sliderInput">Set Slider:</label>
-          </div>
-          <div class="row">
-            <input id="sliderInputModifier" type="text" class="bold">
-            <input id="sliderInputValue" type="text" class="bold">
-          </div>
-          <div class="row side-by-side">
-            <button class="waves-effect waves-light btn" onclick="applySlider()" id="apply_slider">
-              Apply Slider Value
-            </button>
-            <button class="btn-large disabled" id="applying_slider" style="display: none;">
-              Working...
-            </button>
-          </div>
-        </span>
+    <!-- fake slider -->
+    <!--span id="slider" style="display: none;">
+      <div class="row">
+        <label for="sliderInput">Set Slider:</label>
+      </div>
+      <div class="row">
+        
+        <input id="sliderInputModifier" type="text" class="bold">
+        <input id="sliderInputValue" type="text" class="bold">
+      </div>
+      <div class="row side-by-side">
+        <button class="waves-effect waves-light btn" onclick="applySlider()" id="apply_slider">
+          Apply Slider Value
+        </button>
+        <button class="btn-large disabled" id="applying_slider" style="display: none;">
+          Working...
+        </button>
+      </div>
+    </span-->
 
 
   </body>
@@ -106,3 +197,5 @@
   </script>
 </body>
 </html>
+
+<!-- TODO:  fix crash on saving mhm after export-->
