@@ -84,6 +84,11 @@
         <label id="head_round_value" class="slidervalue">0.0</label>
       </div>
       <div class="row side-by-side" >
+        <label for="head_fat" class="sliderlabel">Head fat:</label>
+        <input type="range" id="head_fat" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="head_fat_value" class="slidervalue">0.0</label>
+      </div>
+      <div class="row side-by-side" >
         <label for="eyebrows_angle" class="sliderlabel">Eyebrows angle:</label>
         <input type="range" id="eyebrows_angle" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
         <label id="eyebrows_angle_value" class="slidervalue">0.0</label>
@@ -94,30 +99,36 @@
         <label id="eyebrows_movevert_value" class="slidervalue">0.0</label>
       </div>
       <div class="row side-by-side" >
-        <label for="mouth_scalevert" class="sliderlabel">Mouth scale vertical:</label>
-        <input type="range" id="mouth_scalevert" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
-        <label id="mouth_scalevert_value" class="slidervalue">0.0</label>
+        <label for="righteye_height1" class="sliderlabel">Right Eye height 1:</label>
+        <input type="range" id="righteye_height1" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="righteye_height1_value" class="slidervalue">0.0</label>
+        <label for="lefteye_height1" class="sliderlabel">Left Eye height 1:</label>
+        <input type="range" id="lefteye_height1" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="lefteye_height1_value" class="slidervalue">0.0</label>
       </div>
       <div class="row side-by-side" >
-        <label for="mouth_scalehoriz" class="sliderlabel">Mouth scale horizontal:</label>
-        <input type="range" id="mouth_scalehoriz" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
-        <label id="mouth_scalehoriz_value" class="slidervalue">0.0</label>
+        <label for="righteye_height2" class="sliderlabel">Right Eye height 2:</label>
+        <input type="range" id="righteye_height2" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="righteye_height2_value" class="slidervalue">0.0</label>
+        <label for="lefteye_height2" class="sliderlabel">Left Eye height 2:</label>
+        <input type="range" id="lefteye_height2" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="lefteye_height2_value" class="slidervalue">0.0</label>
       </div>
       <div class="row side-by-side" >
-        <label for="righteye_height" class="sliderlabel">Right Eye height:</label>
-        <input type="range" id="righteye_height" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
-        <label id="righteye_height_value" class="slidervalue">0.0</label>
-        <label for="lefteye_height" class="sliderlabel">Left Eye height:</label>
-        <input type="range" id="lefteye_height" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
-        <label id="lefteye_height_value" class="slidervalue">0.0</label>
+        <label for="righteye_height3" class="sliderlabel">Right Eye height 3:</label>
+        <input type="range" id="righteye_height3" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="righteye_height3_value" class="slidervalue">0.0</label>
+        <label for="lefteye_height3" class="sliderlabel">Left Eye height 3:</label>
+        <input type="range" id="lefteye_height3" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="lefteye_height3_value" class="slidervalue">0.0</label>
       </div>
       <div class="row side-by-side" >
-        <label for="righteye_scalevert" class="sliderlabel">Right Eye scale vertical:</label>
-        <input type="range" id="righteye_scalevert" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
-        <label id="righteye_scalevert_value" class="slidervalue">0.0</label>
-        <label for="lefteye_scalevert" class="sliderlabel">Left Eye scale vertical:</label>
-        <input type="range" id="lefteye_scalevert" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
-        <label id="lefteye_scalevert_value" class="slidervalue">0.0</label>
+        <label for="righteye_scale" class="sliderlabel">Right Eye scale:</label>
+        <input type="range" id="righteye_scale" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="righteye_scale_value" class="slidervalue">0.0</label>
+        <label for="lefteye_scale" class="sliderlabel">Left Eye scale:</label>
+        <input type="range" id="lefteye_scale" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="lefteye_scale_value" class="slidervalue">0.0</label>
       </div>
       <div class="row side-by-side" >
         <label for="righteye_moveinout" class="sliderlabel">Right Eye move in/out:</label>
@@ -149,6 +160,61 @@
         <label for="nose_scalehoriz" class="sliderlabel">Nose scale horizontal:</label>
         <input type="range" id="nose_scalehoriz" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
         <label id="nose_scalehoriz_value" class="slidervalue">0.0</label>        
+      </div>
+      <div class="row side-by-side" >
+        <label for="nose_width1" class="sliderlabel">Nose width 1:</label>
+        <input type="range" id="nose_width1" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="nose_width1_value" class="slidervalue">0.0</label>        
+      </div>
+      <div class="row side-by-side" >
+        <label for="nose_width2" class="sliderlabel">Nose width 2:</label>
+        <input type="range" id="nose_width2" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="nose_width2_value" class="slidervalue">0.0</label>        
+      </div>
+      <div class="row side-by-side" >
+        <label for="nose_width3" class="sliderlabel">Nose width 3:</label>
+        <input type="range" id="nose_width3" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="nose_width3_value" class="slidervalue">0.0</label>        
+      </div>
+      <div class="row side-by-side" >
+        <label for="nose_flaring" class="sliderlabel">Nose flaring:</label>
+        <input type="range" id="nose_flaring" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="nose_flaring_value" class="slidervalue">0.0</label>        
+      </div>
+      <div class="row side-by-side" >
+        <label for="chin_bones" class="sliderlabel">Chin scale angular:</label>
+        <input type="range" id="chin_bones" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="chin_bones_value" class="slidervalue">0.0</label>        
+      </div>
+      <div class="row side-by-side" >
+        <label for="chin_width" class="sliderlabel">Chin width:</label>
+        <input type="range" id="chin_width" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="chin_width_value" class="slidervalue">0.0</label>        
+      </div>
+      <div class="row side-by-side" >
+        <label for="mouth_cupidsbowwidth" class="sliderlabel">Cupid's bow width:</label>
+        <input type="range" id="mouth_cupidsbowwidth" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="mouth_cupidsbowwidth_value" class="slidervalue">0.0</label>
+      </div>
+      <div class="row side-by-side" >
+        <label for="mouth_cupidsbowshape" class="sliderlabel">Cupid's bow shape:</label>
+        <input type="range" id="mouth_cupidsbowshape" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="mouth_cupidsbowshape_value" class="slidervalue">0.0</label>
+      </div>
+      <div class="row side-by-side" >
+        <label for="mouth_upperlipscale" class="sliderlabel">Mouth scale upper lip:</label>
+        <input type="range" id="mouth_upperlipscale" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="mouth_upperlipscale_value" class="slidervalue">0.0</label>
+      </div>
+      <div class="row side-by-side" >
+        <label for="mouth_lowerlipscale" class="sliderlabel">Mouth scale lower lip:</label>
+        <input type="range" id="mouth_lowerlipscale" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="mouth_lowerlipscale_value" class="slidervalue">0.0</label>
+      </div>
+      <div class="row side-by-side" >
+        <label for="mouth_scalehoriz" class="sliderlabel">Mouth scale horizontal:</label>
+        <input type="range" id="mouth_scalehoriz" min="-1.0" max="1.0" value="0" step="0.001" onchange="updateSliderValue(this)"/>
+        <label id="mouth_scalehoriz_value" class="slidervalue">0.0</label>
       </div>
       <div class="row side-by-side" >
         <label for="avatargender" class="sliderlabel">Gender (0=F / 1=M):</label>
