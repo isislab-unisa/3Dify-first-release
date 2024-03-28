@@ -73,7 +73,7 @@ app.post('/applymodifiers', (req, res) =>
     if (err) {
       return res.send(err);
     } else {      
-      exec('python ' + path.join(__dirname, '..', '..', 'MakehumanSocketClient', 'cli', 'mhrc', 'applymodifiers.py')+ ' ' + path.join(__dirname, 'aaa.json'), 
+      exec('python ' + path.join(__dirname, '..', '..', 'MakehumanSocketClient', 'cli', 'mhrc', 'applyModifiers.py')+ ' ' + path.join(__dirname, 'aaa.json'), 
           (err, stdout, stderr) => {
             if (err) {
               console.error(`exec error: ${err}`);
@@ -92,7 +92,7 @@ app.post('/applymodifier', (req, res) =>
 {
   console.log(req.body.sliderJson)
   const params = req.body.sliderJson
-  exec('python ' + path.join(__dirname, '..', '..', 'MakehumanSocketClient', 'cli', 'mhrc', 'applymodifier.py')+ ' ' + params.modifier + " " + params.value,
+  exec('python ' + path.join(__dirname, '..', '..', 'MakehumanSocketClient', 'cli', 'mhrc', 'applyModifier.py')+ ' ' + params.modifier + " " + params.value,
     (err, stdout, stderr) => {
       if (err) {
         console.error(`exec error: ${err}`);
