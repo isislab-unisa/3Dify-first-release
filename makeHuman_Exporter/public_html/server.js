@@ -117,7 +117,7 @@ app.get('/downloadFbxZip', function(req, res) {
     // add local file
     var tempFolder = `${stdout}`.replace(/(\r\n|\n|\r)/gm, "");
     zip.addLocalFile(path.join(tempFolder, 'myHuman.fbx'));
-    zip.addLocalFolder(path.join(tempFolder, 'Textures/'), "/Textures");
+    zip.addLocalFolder(path.join(tempFolder, 'textures/'), "/textures");
     // get everything as a buffer
     var zipFileContents = zip.toBuffer();
     const fileName = 'avatar.zip';
