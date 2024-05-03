@@ -32,6 +32,7 @@ const makeHumanParameters = {
     "modifier macrodetails-universal/Weight": "0.500000",
     "modifier macrodetails-height/Height": "0.500000",
     "modifier macrodetails-proportions/BodyProportions": "0.500000",
+    "skeleton": "default_no_toes.mhskel",
     "eyebrows eyebrow001": "9c81ec3a-faa5-4c94-9cdb-992300ba3084",
     "eyes HighPolyEyes": "2c12f43b-1303-432c-b7ce-d78346baf2e6",
     "clothesHideFaces": "True",
