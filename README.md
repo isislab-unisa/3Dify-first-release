@@ -1,9 +1,7 @@
 # 3Dify
 Automatic avatar generator from 2D image
 
-[LIVE DEMO](http://isislab.it:30000/makehuman_exporter)
-
-Acknowledgement to the repo https://github.com/justadudewhohacks/face-api.js
+[LIVE DEMO](http://isislab.it:30000/3DifyAlpha1)
 
 # Running the server
 
