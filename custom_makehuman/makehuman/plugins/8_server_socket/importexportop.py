@@ -9,6 +9,8 @@ import time
 import log
 import events3d
 import tempfile
+import zipfile
+import base64
 
 from .abstractop import AbstractOp
 from core import G
@@ -32,22 +34,48 @@ class ImportExportOps(AbstractOp):
         human.load("D:\\Downloads\\output (1).mhm", True)
         jsonCall.setData("OK")
 
+    def create_zip_file(self, directory, zip_filename):
+        print("Creating zip file")
+        print("DIRECTORY: ", directory)
+        print("ZIP FILENAME: ", zip_filename)
+        with zipfile.ZipFile(directory + "/" + zip_filename, "w") as zipf:
+            rootzip = "myHuman/"
+            for root, dirs, files in os.walk(directory):
+                print("ROOT: ", root)
+                print("DIRS: ", dirs)
+                print("FILES: ", files)
+                for directory in dirs:
+                    zipf.write(os.path.join(root, directory), arcname=os.path.join(rootzip, directory) + "/")
+
+                for file in files:
+                    if ".zip" not in file:
+                        if ".png" in file:
+                            zipf.write(os.path.join(root, file), arcname=os.path.join(rootzip, os.path.join("textures", file)))
+                        else:
+                            zipf.write(os.path.join(root, file), arcname=os.path.join(rootzip, file))
+
+        return
+    
     def exportFbx(self,conn,jsonCall):
         tmpDirName = tempfile.mkdtemp()
         mhapi.exports.exportAsFBX(os.path.join(tmpDirName, 'myHuman.fbx'), False)
-        jsonCall.setData(tmpDirName)
+        #Cretae ZIP and return 
+        self.create_zip_file(tmpDirName, 'myHuman.zip')
+        print("Zip File Encoding Start")
+        with open(tmpDirName + '/myHuman.zip', "rb") as zip_file:
+            encoded_string = base64.b64encode(zip_file.read()).decode()
+            jsonCall.setData(encoded_string)
 
     def applyModifiers(self, conn, jsonCall):
         for lh in list(G.app.loadHandlers.values()):
             lh(self, ['status', 'started'], True)
 
         event = events3d.HumanEvent(self, 'load')
-        event.path = "aaa.mhm"
+        event.path = "./aaa.mhm"
         human.callEvent('onChanging', event)
         human.resetMeshValues()
         for key, value in jsonCall.params.items():
-            linedata = key.strip().split()
-            linedata.append(value)
+            linedata = key.strip().split() + value.strip().split()
             if linedata[0] == 'modifier':
                 modifier = self.api.internals.getHuman().getModifier(linedata[1])
                 if not modifier:

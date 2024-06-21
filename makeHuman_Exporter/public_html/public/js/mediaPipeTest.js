@@ -361,7 +361,8 @@ async function handleClick(){
     await faceapi.loadFaceLandmarkModel('/')
     await faceapi.nets.ageGenderNet.load('/')
     const inputImgEl = $('#inputImg').get(0)
-
+    console.log(inputImgEl);
+    
     //FaceAPI for gender and age
     if (!isFaceDetectionModelLoaded()) {
         console.log("Face detection model not loaded")
