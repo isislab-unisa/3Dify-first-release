@@ -1,0 +1,13 @@
+/Temp
+/obj
+/Library
+/.idea
+/BuildWebGL
+/UserSettings
+/Logs
+*.csproj
+*.unityproj
+*.sln
+*.userprefs
+*.suo
+*.user

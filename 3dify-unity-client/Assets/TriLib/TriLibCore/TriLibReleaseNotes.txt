@@ -1,0 +1,8 @@
+﻿2.3.3
+Changelog:
+-Fixed Draco decompression mesh mismatch.
+-Fixed negative scale matrix decomposition issues.
+-Fixed FBX animation issues.
+-Fixed FBX pivot issues. Only FBX static models have pivot preservation. Pivot preservation for animated models is in the works. 
+-Added MaxVertexDataInitialCapacity asset loader option. Use this field to set the maximum initial capacity of meshes vertex buffers. Vertex count higher than that will use the default .NET exponential capacity increasing method.
+-Added animation curve simplification. Please refer to SimplifyAnimations, PositionThreshold, RotationThreshold, and ScaleThreshold asset loader options.

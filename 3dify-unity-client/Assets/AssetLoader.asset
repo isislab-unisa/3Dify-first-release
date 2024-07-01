@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 191441253, guid: c4ea2338823602243b0dd1c480afaf56, type: 3}
+  m_Name: AssetLoader
+  m_EditorClassIdentifier: 
+  UseFileScale: 1
+  ScaleFactor: 1
+  SortHierarchyByName: 1
+  ImportVisibility: 1
+  Static: 0
+  AddAssetUnloader: 1
+  ImportMeshes: 1
+  LimitBoneWeights: 1
+  ReadEnabled: 0
+  MarkMeshesAsDynamic: 0
+  OptimizeMeshes: 1
+  GenerateColliders: 0
+  ConvexColliders: 0
+  ImportBlendShapes: 1
+  ImportColors: 1
+  IndexFormat: 1
+  LODScreenRelativeTransitionHeightBase: 0.75
+  KeepQuads: 0
+  ImportNormals: 0
+  GenerateNormals: 1
+  GenerateTangents: 1
+  SmoothingAngle: 60
+  ImportBlendShapeNormals: 0
+  CalculateBlendShapeNormals: 0
+  ImportTangents: 1
+  SwapUVs: 0
+  ImportMaterials: 1
+  MaterialMappers:
+  - {fileID: 11400000, guid: 17461d45f67737848a84da434a451788, type: 2}
+  ImportTextures: 1
+  ScanForAlphaPixels: 1
+  AlphaMaterialMode: 3
+  DoubleSidedMaterials: 0
+  TextureMappers:
+  - {fileID: 0}
+  TextureCompressionQuality: 1
+  GenerateMipmaps: 1
+  FixNormalMaps: 0
+  AnimationType: 0
+  SimplifyAnimations: 0
+  PositionThreshold: 0.01
+  RotationThreshold: 0.01
+  ScaleThreshold: 0.01
+  AvatarDefinition: 0
+  Avatar: {fileID: 0}
+  HumanDescription:
+    armStretch: 0.05
+    feetSpacing: 0
+    hasTranslationDof: 0
+    legStretch: 0.05
+    lowerArmTwist: 0.5
+    lowerLegTwist: 0.5
+    upperArmTwist: 0.5
+    upperLegTwist: 0.5
+  RootBoneMapper: {fileID: 11400000, guid: cffd3dd817db9b74d9245a34c17bddb2, type: 2}
+  HumanoidAvatarMapper: {fileID: 0}
+  LipSyncMappers: []
+  SampleBindPose: 0
+  EnforceTPose: 1
+  EnforceAnimatorWithLegacyAnimations: 0
+  AutomaticallyPlayLegacyAnimations: 0
+  ResampleFrequency: 4
+  AnimationWrapMode: 2
+  AnimationClipMappers: []
+  ExternalDataMapper: {fileID: 0}
+  ShowLoadingWarnings: 0
+  CloseStreamAutomatically: 1
+  Timeout: 180
+  DestroyOnError: 1
+  EnsureQuaternionContinuity: 1
+  UseMaterialKeywords: 0
+  ForceGCCollectionWhileLoading: 1
+  MergeVertices: 1
+  MarkTexturesNoLongerReadable: 1
+  UseUnityNativeNormalCalculator: 1
+  ApplyGammaCurveToMaterialColors: 0
+  LoadTexturesAsSRGB: 1
+  UserPropertiesMapper: {fileID: 0}
+  ApplyTexturesOffsetAndScaling: 1
+  DiscardUnusedTextures: 1
+  PivotPosition: 0
+  ForcePowerOfTwoTextures: 0
+  MaxTexturesResolution: 0
+  EnableProfiler: 0
+  UseUnityNativeTextureLoader: 1
+  ImportCameras: 0
+  ImportLights: 0
+  DisableObjectsRenaming: 0
+  MergeSingleChild: 0
+  SetUnusedTexturePropertiesToNull: 0
+  LoadPointClouds: 0
+  CreateVerticesAsNativeLists: 0
+  CompressMeshes: 0
+  ExtractEmbeddedData: 1
+  EmbeddedDataExtractionPath: 
+  BufferizeFiles: 2
+  ConvertMaterialTextures: 1
+  ConvertMaterialTexturesUsingHalfRes: 1
+  DisableTesselation: 0
+  SearchTexturesRecursively: 1
+  AddAllBonesToSkinnedMeshRenderers: 0
+  EnforceAlphaChannelTextures: 1
+  NameMapper: {fileID: 0}
+  CreateMaterialsForAllModels: 0
+  UseCoroutines: 1
+  MaxCoroutineDelayInMS: 500
+  MaxVertexDataInitialCapacity: 196605
