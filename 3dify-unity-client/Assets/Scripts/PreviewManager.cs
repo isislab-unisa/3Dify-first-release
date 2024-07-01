@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using Newtonsoft.Json;
 using TriLibCore;
 using UnityEngine;
@@ -24,6 +25,9 @@ public class PreviewManager : MonoBehaviour
     public List<string> ParametersToRemove;
     private GameObject avatar;
     private string lastAvatarBase64;
+    
+    [DllImport("__Internal")]
+    public static extern void DownloadFileBrowser(byte[] array, int byteLength, string fileName);
     
     // To be called from js
     public void Init(string endpoint, string bucketName)
@@ -132,6 +136,6 @@ public class PreviewManager : MonoBehaviour
     public void Download()
     {
         byte[] binaryFbx = Convert.FromBase64String(lastAvatarBase64);
-        // TODO download fbx from browser
+        DownloadFileBrowser(binaryFbx, binaryFbx.Length, Client.FbxFileName);
     }
 }
