@@ -23782,6 +23782,7 @@ MonoBehaviour:
   ApplyModifiersApi: applymodifiers
   ExportFbxApi: downloadFbxZip
   ExtractFeaturesApi: extractFeatures
+  GenderAgeApi: genderAge
   MinioProxyApi: minioProxy
   BucketName: testbucket
   ImageFileName: image.png

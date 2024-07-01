@@ -24,6 +24,26 @@ public class PythonRequest
     public float age;
 }
 
+public class GenderAgeRequest
+{
+    public string img;
+    public int width;
+}
+
+public class GenderAgeResponse
+{
+    public string code;
+    public string status;
+    public string error;
+    public GenderAgeResponseMetadata message;
+}
+
+public class GenderAgeResponseMetadata
+{
+    public string gender;
+    public float age;
+}
+
 public class ExportFbxResponse
 {
     public Dictionary<string, string> sliders;
@@ -39,6 +59,7 @@ public class Client3dify : MonoBehaviour
     public string ApplyModifiersApi;
     public string ExportFbxApi;
     public string ExtractFeaturesApi;
+    public string GenderAgeApi;
     public string MinioProxyApi;
     public string BucketName;
     public string ImageFileName;
@@ -131,6 +152,22 @@ public class Client3dify : MonoBehaviour
             Dictionary<string, string> parameters = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
             callback.Invoke(parameters);
         }));
+    }
+
+    public void DoExtractGenderAndAge(string imageBase64, int imageWidth, UnityAction<GenderAgeResponse> callback)
+    {
+        GenderAgeRequest request = new GenderAgeRequest()
+        {
+            img = imageBase64,
+            width = imageWidth
+        };
+        PostRequest(ServerEndpoint + GenderAgeApi, JsonConvert.SerializeObject(request), responseStr =>
+        {
+            Debug.Log("GenderAge response: " + responseStr);
+            
+            GenderAgeResponse response = JsonConvert.DeserializeObject<GenderAgeResponse>(responseStr);
+            callback.Invoke(response);
+        });
     }
 
     public void DoExtractParameters(string imageBase64, string gender, float age, UnityAction<Dictionary<string, string>> callback)

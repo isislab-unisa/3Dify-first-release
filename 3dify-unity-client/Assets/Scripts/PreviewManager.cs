@@ -36,10 +36,13 @@ public class PreviewManager : MonoBehaviour
             Sprite image = Sprite.Create(tex, new Rect(0f, 0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100f);
             InputImage.sprite = image;
             string base64Image = Convert.ToBase64String(tex.EncodeToJPG());
-            Client.DoExtractParameters(base64Image, "male", 1f, par =>
+            Client.DoExtractGenderAndAge(base64Image, tex.width, genderAndAge =>
             {
-                Sliders.ApplyParametersToSlidersAndChoices(par);
-                Build();
+                Client.DoExtractParameters(base64Image, genderAndAge.message.gender, genderAndAge.message.age, par =>
+                {
+                    Sliders.ApplyParametersToSlidersAndChoices(par);
+                    Build();
+                });
             });
         });
     }
