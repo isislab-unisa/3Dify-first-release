@@ -30,15 +30,17 @@ public class PreviewManager : MonoBehaviour
     public static extern void DownloadFileBrowser(byte[] array, int byteLength, string fileName);
     
     // To be called from js
-    public void Init(string endpoint, string bucketName)
+    public void Init(string endpoint, string bucketName, string fileName)
     {
         avatar = null;
         Client.ServerEndpoint = endpoint;
         Client.BucketName = bucketName;
-        Client.DoGetImage(tex =>
+        Client.DoGetImage(fileName, tex =>
         {
             Sprite image = Sprite.Create(tex, new Rect(0f, 0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100f);
             InputImage.sprite = image;
+            float newWidth = 100f * ((float)tex.width / tex.height);
+            InputImage.rectTransform.sizeDelta = new Vector2(newWidth, 100f);
             string base64Image = Convert.ToBase64String(tex.EncodeToJPG());
             Client.DoExtractGenderAndAge(base64Image, tex.width, genderAndAge =>
             {

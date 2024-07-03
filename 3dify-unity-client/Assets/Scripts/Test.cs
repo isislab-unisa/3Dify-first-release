@@ -9,6 +9,7 @@ public class Test : MonoBehaviour
     public PreviewManager Preview;
     public string Endpoint;
     public string BucketName;
+    public string DefaultImageFileName;
     
     public static string[] GetArguments()
     {
@@ -36,14 +37,15 @@ public class Test : MonoBehaviour
             Debug.LogError("Invalid bucket id in the url");
             return;
         }
-        Preview.Init(Endpoint, args[idParamIndex + 1]);
+        int imageParamIndex = Array.IndexOf(args, "name");
+        Preview.Init(Endpoint, args[idParamIndex + 1], args[imageParamIndex + 1]);
 #endif
     }
 
     [ContextMenu("Init")]
     void Init()
     {
-        Preview.Init(Endpoint, BucketName);
+        Preview.Init(Endpoint, BucketName, DefaultImageFileName);
     }
 
     private void Update()

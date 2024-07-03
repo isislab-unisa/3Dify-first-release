@@ -242,9 +242,9 @@ public class Client3dify : MonoBehaviour
         });
     }
     
-    public void DoGetImage(UnityAction<Texture2D> callback)
+    public void DoGetImage(string filename, UnityAction<Texture2D> callback)
     {
-        StartCoroutine(GetRequest(GetFileEndpoint(ImageFileName), responseStr =>
+        StartCoroutine(GetRequest(GetFileEndpoint(filename), responseStr =>
         {
             Texture2D texture = new Texture2D(2, 2);
             ProxyResponse response = JsonConvert.DeserializeObject<ProxyResponse>(responseStr);
