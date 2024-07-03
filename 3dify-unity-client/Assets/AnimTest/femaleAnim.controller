@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: rockAnim
+  m_Name: femaleAnim
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -30,7 +30,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Take 001
-  m_Speed: 1
+  m_Speed: 0.8
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -42,7 +42,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: 41538079ad457d946992a8f739fb1343, type: 3}
+  m_Motion: {fileID: 1827226128182048838, guid: 2cc4f1727162ce74889a9cb3a7d60285, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

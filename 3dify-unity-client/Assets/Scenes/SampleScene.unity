@@ -249,6 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 7486387}
+  KeySuffix: []
   Values:
   - afro01 59627022-32e9-4126-9cf1-036d4b9335fc
   - afro01 59627022-32e9-4126-9cf1-036d4b9335fc afro01.mhmat
@@ -325,8 +326,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2093954514}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -476,7 +477,7 @@ RectTransform:
   m_Father: {fileID: 1395198630}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -622,7 +623,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 956311198}
+      - m_Target: {fileID: 1436139411}
         m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
         m_MethodName: SelectChoice
         m_Mode: 2
@@ -647,9 +648,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 46227942}
+  KeySuffix:
+  - male_elegantsuit01
   Values:
-  - afro01 59627022-32e9-4126-9cf1-036d4b9335fc
-  - afro01 59627022-32e9-4126-9cf1-036d4b9335fc afro01.mhmat
+  - 1d2e3843-dda5-40a8-84a0-96666aa681bb
 --- !u!114 &46227946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1049,9 +1051,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 80193424}
+  KeySuffix: []
   Values:
-  - long01 6c6b0bb1-3608-40b8-9108-4bfd8fa71e39
-  - long01 6c6b0bb1-3608-40b8-9108-4bfd8fa71e39 long01.mhmat
+  - skins/old_asian_female/old_asian_female.mhmat
 --- !u!114 &80193426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1081,7 +1083,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2122503412}
+      - m_Target: {fileID: 1958589249}
         m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
         m_MethodName: SelectChoice
         m_Mode: 2
@@ -1354,9 +1356,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 95384835}
+  KeySuffix:
+  - HighPolyEyes
+  - HighPolyEyes
   Values:
-  - ponytail01 44e0340e-c7a6-4d22-814c-0632968d2dde
-  - ponytail01 44e0340e-c7a6-4d22-814c-0632968d2dde ponytail01.mhmat
+  - 2c12f43b-1303-432c-b7ce-d78346baf2e6
+  - 2c12f43b-1303-432c-b7ce-d78346baf2e6eyes/materials/ice.mhmat
 --- !u!114 &95384839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1463,8 +1468,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1067257073}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1959,15 +1964,13 @@ RectTransform:
   m_Children:
   - {fileID: 826282306}
   - {fileID: 1749723289}
-  - {fileID: 620639587}
-  - {fileID: 310237742}
   - {fileID: 1256085693}
   m_Father: {fileID: 1268179615}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 360.51587, y: -72}
-  m_SizeDelta: {x: 323.104, y: 620.2138}
+  m_AnchoredPosition: {x: 360.51587, y: -120}
+  m_SizeDelta: {x: 323.104, y: 817.6186}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &125213563
 MonoBehaviour:
@@ -2135,9 +2138,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 129254482}
+  KeySuffix:
+  - eyebrow001
+  - eyebrow001
   Values:
-  - afro01 59627022-32e9-4126-9cf1-036d4b9335fc
-  - afro01 59627022-32e9-4126-9cf1-036d4b9335fc afro01.mhmat
+  - 9c81ec3a-faa5-4c94-9cdb-992300ba3084
+  - 9c81ec3a-faa5-4c94-9cdb-992300ba3084eyebrow001.mhmat
 --- !u!114 &129254484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2618,9 +2624,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 139414104}
+  KeySuffix:
+  - HighPolyEyes
+  - HighPolyEyes
   Values:
-  - bob01 a153cb9b-2a28-45fa-a526-04e45146268e
-  - bob01 a153cb9b-2a28-45fa-a526-04e45146268e bob01.mhmat
+  - 2c12f43b-1303-432c-b7ce-d78346baf2e6
+  - 2c12f43b-1303-432c-b7ce-d78346baf2e6eyes/materials/bluegreen.mhmat
 --- !u!114 &139414106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3141,7 +3150,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -11.1}
+  m_AnchoredPosition: {x: -3.0000687, y: 117}
   m_SizeDelta: {x: 183.7, y: 17.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &174273745
@@ -3348,9 +3357,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 178284732}
+  KeySuffix: []
   Values:
-  - bob02 cd7840cf-b340-49e9-a505-8a5a22a86db2
-  - bob02 cd7840cf-b340-49e9-a505-8a5a22a86db2 bob02.mhmat
+  - skins/middleage_caucasian_female/middleage_caucasian_female.mhmat
 --- !u!114 &178284734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3380,7 +3389,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2122503412}
+      - m_Target: {fileID: 1958589249}
         m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
         m_MethodName: SelectChoice
         m_Mode: 2
@@ -4121,7 +4130,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2020936189}
+      - m_Target: {fileID: 1436139411}
         m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
         m_MethodName: SelectChoice
         m_Mode: 2
@@ -4146,9 +4155,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 237246504}
+  KeySuffix:
+  - female_sportsuit01
   Values:
-  - afro01 59627022-32e9-4126-9cf1-036d4b9335fc
-  - afro01 59627022-32e9-4126-9cf1-036d4b9335fc afro01.mhmat
+  - e38d3a5b-718f-41d5-8404-299def30b43f
 --- !u!114 &237246508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4843,6 +4853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 268384648}
+  KeySuffix: []
   Values:
   - short01 766436e9-63ed-4f6a-afa9-99f3acff70a8
   - short01 766436e9-63ed-4f6a-afa9-99f3acff70a8 short01.mhmat
@@ -5099,8 +5110,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1588042142}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5523,7 +5534,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310237741}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5532,11 +5543,11 @@ RectTransform:
   - {fileID: 396580907}
   - {fileID: 1361446677}
   - {fileID: 381241856}
-  m_Father: {fileID: 125213562}
+  m_Father: {fileID: 1781727537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -187.30002}
+  m_AnchoredPosition: {x: -0.000091552734, y: 229.59985}
   m_SizeDelta: {x: 183.7, y: 17.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &310237743
@@ -5766,8 +5777,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2112784150}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6031,140 +6042,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &353258136
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 353258137}
-  - component: {fileID: 353258139}
-  - component: {fileID: 353258138}
-  m_Layer: 5
-  m_Name: Accessories
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &353258137
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353258136}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1345293705}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.6999512, y: -67.2}
-  m_SizeDelta: {x: 0, y: -1.6000061}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &353258138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353258136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: Accessories
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8b85c5e76fc18b048ac775449e245fd0, type: 2}
-  m_sharedMaterial: {fileID: -4659514770371030259, guid: 8b85c5e76fc18b048ac775449e245fd0, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4285295724
-  m_fontColor: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &353258139
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353258136}
-  m_CullTransparentMesh: 1
 --- !u!1 &354639365
 GameObject:
   m_ObjectHideFlags: 0
@@ -6197,8 +6074,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6163739}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6457,8 +6334,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 67574526}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6991,8 +6868,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 340063295}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7466,7 +7343,7 @@ RectTransform:
   m_Father: {fileID: 1725697013}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7598,6 +7475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 407672580}
+  KeySuffix: []
   Values:
   - Braid01 eead6f99-d6c6-4f6b-b6c2-210459d7a62e
   - Braid01 eead6f99-d6c6-4f6b-b6c2-210459d7a62e braid01.mhmat
@@ -8141,7 +8019,7 @@ RectTransform:
   m_Father: {fileID: 149190786}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8226,7 +8104,6 @@ GameObject:
   - component: {fileID: 463497463}
   - component: {fileID: 463497466}
   - component: {fileID: 463497465}
-  - component: {fileID: 463497464}
   m_Layer: 5
   m_Name: Male
   m_TagString: Untagged
@@ -8254,50 +8131,6 @@ RectTransform:
   m_AnchoredPosition: {x: -49.3, y: 87.8}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &463497464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463497462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 463497465}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &463497465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8318,7 +8151,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8405,9 +8238,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 469164765}
+  KeySuffix: []
   Values:
-  - long01 6c6b0bb1-3608-40b8-9108-4bfd8fa71e39
-  - long01 6c6b0bb1-3608-40b8-9108-4bfd8fa71e39 long01.mhmat
+  - skins/old_caucasian_male/old_caucasian_male.mhmat
 --- !u!114 &469164767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8437,7 +8270,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 714926905}
+      - m_Target: {fileID: 1958589249}
         m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
         m_MethodName: SelectChoice
         m_Mode: 2
@@ -8592,6 +8425,8 @@ GameObject:
   - component: {fileID: 491494013}
   - component: {fileID: 491494015}
   - component: {fileID: 491494014}
+  - component: {fileID: 491494017}
+  - component: {fileID: 491494016}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -8640,8 +8475,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Female
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8b85c5e76fc18b048ac775449e245fd0, type: 2}
+  m_sharedMaterial: {fileID: -4659514770371030259, guid: 8b85c5e76fc18b048ac775449e245fd0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8715,6 +8550,135 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491494012}
   m_CullTransparentMesh: 1
+--- !u!114 &491494016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491494012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59dffddb27448c24fa5549056e7d4146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 491494012}
+  KeySuffix: []
+  Values:
+  - 0
+--- !u!114 &491494017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491494012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d43e572572fdaf64ea43c8ac8002a085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainImage: {fileID: 1322541022}
+  MainText: {fileID: 0}
+  Colors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 0.5019608}
+  OnAppear:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHoverStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHoverEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 918499227}
+        m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
+        m_MethodName: SelectChoice
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 491494016}
+          m_ObjectArgumentAssemblyTypeName: ChoiceBinding, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 491494017}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ActivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2122503410}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 491494017}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 714926903}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1958589249}
+        m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
+        m_MethodName: ResetChoice
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 491494017}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ActivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2020936187}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 491494017}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 956311196}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436139411}
+        m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
+        m_MethodName: ResetChoice
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &503369430
 GameObject:
   m_ObjectHideFlags: 0
@@ -8910,7 +8874,7 @@ GameObject:
   - component: {fileID: 507077896}
   - component: {fileID: 507077895}
   m_Layer: 5
-  m_Name: FacialHair
+  m_Name: P_FacialHair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8952,17 +8916,9 @@ MonoBehaviour:
   Choices:
   - {fileID: 1811472985}
   - {fileID: 1293796484}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   ParameterNames:
-  - hair
-  - material
+  - clothes
+  CanUnselect: 1
 --- !u!114 &507077896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9172,9 +9128,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 517002880}
+  KeySuffix: []
   Values:
-  - afro01 59627022-32e9-4126-9cf1-036d4b9335fc
-  - afro01 59627022-32e9-4126-9cf1-036d4b9335fc afro01.mhmat
+  - skins/middleage_african_male/middleage_african_male.mhmat
 --- !u!114 &517002882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9204,7 +9160,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 714926905}
+      - m_Target: {fileID: 1958589249}
         m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
         m_MethodName: SelectChoice
         m_Mode: 2
@@ -9409,8 +9365,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1244875842}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10082,6 +10038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 585844665}
+  KeySuffix: []
   Values:
   - short02 c104cd4a-1edc-43f9-8b94-f63345a44638
   - short02 c104cd4a-1edc-43f9-8b94-f63345a44638 short02.mhmat
@@ -10576,7 +10533,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 620639586}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10585,11 +10542,11 @@ RectTransform:
   - {fileID: 803700607}
   - {fileID: 2082849958}
   - {fileID: 298311498}
-  m_Father: {fileID: 125213562}
+  m_Father: {fileID: 1781727537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -134.3}
+  m_AnchoredPosition: {x: -0.000091552734, y: 282.60004}
   m_SizeDelta: {x: 183.7, y: 17.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &620639588
@@ -10690,7 +10647,7 @@ RectTransform:
   m_Father: {fileID: 1284474750}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10839,8 +10796,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1894887647}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11161,6 +11118,42 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 246308178}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1781727536}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1600925423}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2096785422}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -11508,9 +11501,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 656703307}
+  KeySuffix:
+  - eyebrow009
+  - eyebrow009
   Values:
-  - ponytail01 44e0340e-c7a6-4d22-814c-0632968d2dde
-  - ponytail01 44e0340e-c7a6-4d22-814c-0632968d2dde ponytail01.mhmat
+  - 55b3b52a-379e-426d-b320-562ed57202b3
+  - 55b3b52a-379e-426d-b320-562ed57202b3eyebrow009.mhmat
 --- !u!114 &656703311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11531,7 +11527,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 31efe004b2226c444bc418761fdc2e1b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa69733d35fb7f14d8355950427ed454, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11837,9 +11833,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 694795724}
+  KeySuffix:
+  - HighPolyEyes
+  - HighPolyEyes
   Values:
-  - long01 6c6b0bb1-3608-40b8-9108-4bfd8fa71e39
-  - long01 6c6b0bb1-3608-40b8-9108-4bfd8fa71e39 long01.mhmat
+  - 2c12f43b-1303-432c-b7ce-d78346baf2e6
+  - 2c12f43b-1303-432c-b7ce-d78346baf2e6eyes/materials/green.mhmat
 --- !u!114 &694795726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11971,9 +11970,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 704143191}
+  KeySuffix:
+  - eyebrow008
+  - eyebrow008
   Values:
-  - Braid01 eead6f99-d6c6-4f6b-b6c2-210459d7a62e
-  - Braid01 eead6f99-d6c6-4f6b-b6c2-210459d7a62e braid01.mhmat
+  - 79ea307f-a942-40dd-bf50-bbaa41f02034
+  - 79ea307f-a942-40dd-bf50-bbaa41f02034eyebrow008.mhmat
 --- !u!114 &704143193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12235,7 +12237,7 @@ RectTransform:
   m_Father: {fileID: 631243180}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12308,7 +12310,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1818079509}
+  - {fileID: 1781727537}
   m_Father: {fileID: 1661432541}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -12329,7 +12331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainImage: {fileID: 0}
-  MainText: {fileID: 1753783410}
+  MainText: {fileID: 714896828}
   Colors: []
   OnAppear:
     m_PersistentCalls:
@@ -12348,7 +12350,7 @@ MonoBehaviour:
         m_MethodName: ToggleGameObject
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1818079508}
+          m_ObjectArgument: {fileID: 1781727536}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -12409,6 +12411,42 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 246308178}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 507077893}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2096785422}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1600925423}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -12524,14 +12562,13 @@ GameObject:
   - component: {fileID: 714926908}
   - component: {fileID: 714926907}
   - component: {fileID: 714926906}
-  - component: {fileID: 714926905}
   m_Layer: 5
   m_Name: Skin_MALEPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &714926904
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12554,35 +12591,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 73.400085, y: -158.5}
+  m_AnchoredPosition: {x: 78, y: -158.5}
   m_SizeDelta: {x: 177.3862, y: 280.40622}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &714926905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714926903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b222a34c56a11e4497568f44069e686, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Choices:
-  - {fileID: 517002881}
-  - {fileID: 849095173}
-  - {fileID: 809559069}
-  - {fileID: 1477287596}
-  - {fileID: 469164766}
-  - {fileID: 2003744281}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  ParameterNames:
-  - hair
-  - material
 --- !u!114 &714926906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12788,8 +12799,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 72138743}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12864,7 +12875,7 @@ RectTransform:
   m_Father: {fileID: 1391791206}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -13453,6 +13464,42 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2096785422}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1781727536}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 507077893}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1600925423}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -14481,9 +14528,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 809559068}
+  KeySuffix: []
   Values:
-  - bob02 cd7840cf-b340-49e9-a505-8a5a22a86db2
-  - bob02 cd7840cf-b340-49e9-a505-8a5a22a86db2 bob02.mhmat
+  - skins/middleage_caucasian_male/middleage_caucasian_male.mhmat
 --- !u!114 &809559070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14513,7 +14560,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 714926905}
+      - m_Target: {fileID: 1958589249}
         m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
         m_MethodName: SelectChoice
         m_Mode: 2
@@ -14615,7 +14662,7 @@ RectTransform:
   m_Father: {fileID: 1736639917}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -14892,6 +14939,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1781727536}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 507077893}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1600925423}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &820388225
 GameObject:
   m_ObjectHideFlags: 0
@@ -15042,7 +15125,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 86}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &828353143
@@ -15153,9 +15236,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 834369111}
+  KeySuffix:
+  - female_elegantsuit01
   Values:
-  - afro01 59627022-32e9-4126-9cf1-036d4b9335fc
-  - afro01 59627022-32e9-4126-9cf1-036d4b9335fc afro01.mhmat
+  - 8bb26477-c09f-4439-b05f-961516acf662
 --- !u!114 &834369113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15185,7 +15269,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2020936189}
+      - m_Target: {fileID: 1436139411}
         m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
         m_MethodName: SelectChoice
         m_Mode: 2
@@ -15437,9 +15521,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 839114232}
+  KeySuffix: []
   Values:
-  - Braid01 eead6f99-d6c6-4f6b-b6c2-210459d7a62e
-  - Braid01 eead6f99-d6c6-4f6b-b6c2-210459d7a62e braid01.mhmat
+  - skins/old_african_female/old_african_female.mhmat
 --- !u!114 &839114234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15469,7 +15553,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2122503412}
+      - m_Target: {fileID: 1958589249}
         m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
         m_MethodName: SelectChoice
         m_Mode: 2
@@ -15677,9 +15761,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 849095172}
+  KeySuffix: []
   Values:
-  - bob01 a153cb9b-2a28-45fa-a526-04e45146268e
-  - bob01 a153cb9b-2a28-45fa-a526-04e45146268e bob01.mhmat
+  - skins/middleage_asian_male/middleage_asian_male.mhmat
 --- !u!114 &849095174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15709,7 +15793,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 714926905}
+      - m_Target: {fileID: 1958589249}
         m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
         m_MethodName: SelectChoice
         m_Mode: 2
@@ -17229,6 +17313,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1781727536}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 507077893}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1600925423}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &906165318
 GameObject:
   m_ObjectHideFlags: 0
@@ -17655,7 +17775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 918499224}
   - component: {fileID: 918499226}
-  - component: {fileID: 918499225}
+  - component: {fileID: 918499227}
   m_Layer: 5
   m_Name: Gender
   m_TagString: Untagged
@@ -17682,23 +17802,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -32.700012}
+  m_AnchoredPosition: {x: -3, y: 87}
   m_SizeDelta: {x: 183.7, y: 17.5}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &918499225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 918499223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59dffddb27448c24fa5549056e7d4146, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Target: {fileID: 0}
-  Values: []
 --- !u!114 &918499226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17750,6 +17856,24 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &918499227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918499223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b222a34c56a11e4497568f44069e686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Choices:
+  - {fileID: 1445520475}
+  - {fileID: 491494016}
+  ParameterNames:
+  - modifier macrodetails/Gender
+  CanUnselect: 0
 --- !u!1 &927338333
 GameObject:
   m_ObjectHideFlags: 0
@@ -18210,14 +18334,13 @@ GameObject:
   - component: {fileID: 956311201}
   - component: {fileID: 956311200}
   - component: {fileID: 956311199}
-  - component: {fileID: 956311198}
   m_Layer: 5
   m_Name: MaleClothes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &956311197
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18232,39 +18355,13 @@ RectTransform:
   m_Children:
   - {fileID: 1472482829}
   - {fileID: 46227943}
-  m_Father: {fileID: 1436139408}
+  m_Father: {fileID: 1600925424}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 295.89996, y: -17.3}
-  m_SizeDelta: {x: 201.08624, y: 239.37817}
+  m_AnchoredPosition: {x: 0, y: -5.699999}
+  m_SizeDelta: {x: 0, y: 21.588959}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &956311198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956311196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b222a34c56a11e4497568f44069e686, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Choices:
-  - {fileID: 1472482831}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  ParameterNames:
-  - hair
-  - material
 --- !u!114 &956311199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18990,7 +19087,7 @@ RectTransform:
   m_Father: {fileID: 708682164}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -19458,7 +19555,7 @@ RectTransform:
   m_Father: {fileID: 1334416963}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -19533,9 +19630,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1062950017}
+  KeySuffix:
+  - eyebrow012
+  - eyebrow012
   Values:
-  - long01 6c6b0bb1-3608-40b8-9108-4bfd8fa71e39
-  - long01 6c6b0bb1-3608-40b8-9108-4bfd8fa71e39 long01.mhmat
+  - 1c16325c-7831-4166-831a-05c5b609c219
+  - 1c16325c-7831-4166-831a-05c5b609c219eyebrow012.mhmat
 --- !u!114 &1062950019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20178,7 +20278,7 @@ RectTransform:
   m_Father: {fileID: 1674733404}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -21039,7 +21139,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2122503412}
+      - m_Target: {fileID: 1958589249}
         m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
         m_MethodName: SelectChoice
         m_Mode: 2
@@ -21064,9 +21164,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1190459046}
+  KeySuffix: []
   Values:
-  - ponytail01 44e0340e-c7a6-4d22-814c-0632968d2dde
-  - ponytail01 44e0340e-c7a6-4d22-814c-0632968d2dde ponytail01.mhmat
+  - skins/old_caucasian_female/old_caucasian_female.mhmat
 --- !u!114 &1190459050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21906,8 +22006,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1256085693}
-  - component: {fileID: 1256085695}
-  - component: {fileID: 1256085694}
   m_Layer: 5
   m_Name: Eyes Color
   m_TagString: Untagged
@@ -21933,74 +22031,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -73.1, y: -231.7}
+  m_AnchoredPosition: {x: -73.1, y: -145.70001}
   m_SizeDelta: {x: 183.7, y: 17.5}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1256085694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256085692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59dffddb27448c24fa5549056e7d4146, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Target: {fileID: 0}
-  Values: []
---- !u!114 &1256085695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256085692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
-  m_FillRect: {fileID: 0}
-  m_HandleRect: {fileID: 0}
-  m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1258882565
 GameObject:
   m_ObjectHideFlags: 0
@@ -22380,6 +22413,42 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2096785422}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1781727536}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 507077893}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1600925423}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -22934,6 +23003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1293454245}
+  KeySuffix: []
   Values:
   - short03 a6cb8ad2-2e0d-4655-81ef-bfce1676ec67
   - short03 a6cb8ad2-2e0d-4655-81ef-bfce1676ec67 short03.mhmat
@@ -23071,9 +23141,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1293796481}
+  KeySuffix:
+  - Full_beard
   Values:
-  - bob01 a153cb9b-2a28-45fa-a526-04e45146268e
-  - bob01 a153cb9b-2a28-45fa-a526-04e45146268e bob01.mhmat
+  - f06387f9-3365-493d-bee6-72bc33013936
 --- !u!114 &1293796485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23125,7 +23196,7 @@ GameObject:
   - component: {fileID: 1304872467}
   - component: {fileID: 1304872469}
   m_Layer: 5
-  m_Name: UPDATES
+  m_Name: BUILD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23373,7 +23444,6 @@ GameObject:
   - component: {fileID: 1322541020}
   - component: {fileID: 1322541023}
   - component: {fileID: 1322541022}
-  - component: {fileID: 1322541021}
   m_Layer: 5
   m_Name: Female
   m_TagString: Untagged
@@ -23401,50 +23471,6 @@ RectTransform:
   m_AnchoredPosition: {x: 49.3, y: 87.8}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1322541021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1322541019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1322541022}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1322541022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23465,7 +23491,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -23551,7 +23577,6 @@ RectTransform:
   m_Children:
   - {fileID: 1016998758}
   - {fileID: 1436139408}
-  - {fileID: 353258137}
   m_Father: {fileID: 879410408}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -23766,8 +23791,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 223, y: 6}
-  m_SizeDelta: {x: 48.072327, y: 196.22057}
+  m_AnchoredPosition: {x: 305, y: -36}
+  m_SizeDelta: {x: 212.0697, y: 439.2824}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1364850289
 MonoBehaviour:
@@ -23782,7 +23807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0.10980392}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0.39607844}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -24077,9 +24102,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1388461903}
+  KeySuffix: []
   Values:
-  - afro01 59627022-32e9-4126-9cf1-036d4b9335fc
-  - afro01 59627022-32e9-4126-9cf1-036d4b9335fc afro01.mhmat
+  - skins/middleage_african_female/middleage_african_female.mhmat
 --- !u!114 &1388461905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24109,7 +24134,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2122503412}
+      - m_Target: {fileID: 1958589249}
         m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
         m_MethodName: SelectChoice
         m_Mode: 2
@@ -24630,8 +24655,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 293308660}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -24896,6 +24921,8 @@ GameObject:
   - component: {fileID: 1436139408}
   - component: {fileID: 1436139410}
   - component: {fileID: 1436139409}
+  - component: {fileID: 1436139411}
+  - component: {fileID: 1436139412}
   m_Layer: 5
   m_Name: Cloth
   m_TagString: Untagged
@@ -24915,8 +24942,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 956311197}
-  - {fileID: 2020936188}
+  - {fileID: 1600925424}
   m_Father: {fileID: 1345293705}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -24944,7 +24970,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cloth
+  m_text: Clothes
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b85c5e76fc18b048ac775449e245fd0, type: 2}
   m_sharedMaterial: {fileID: -4659514770371030259, guid: 8b85c5e76fc18b048ac775449e245fd0, type: 2}
@@ -25021,6 +25047,161 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436139407}
   m_CullTransparentMesh: 1
+--- !u!114 &1436139411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436139407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b222a34c56a11e4497568f44069e686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Choices:
+  - {fileID: 1472482831}
+  - {fileID: 46227945}
+  - {fileID: 834369112}
+  - {fileID: 237246507}
+  ParameterNames:
+  - clothes
+  CanUnselect: 1
+--- !u!114 &1436139412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436139407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d43e572572fdaf64ea43c8ac8002a085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainImage: {fileID: 0}
+  MainText: {fileID: 1753783410}
+  Colors: []
+  OnAppear:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHoverStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHoverEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1436139412}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ToggleGameObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1600925423}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436139412}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1364850287}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436139412}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1741149268}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436139412}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 125213561}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436139412}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 360834699}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436139412}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 246308178}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436139412}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1781727536}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436139412}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 507077893}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436139412}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2096785422}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1439261316
 GameObject:
   m_ObjectHideFlags: 0
@@ -25352,6 +25533,8 @@ GameObject:
   - component: {fileID: 1445520472}
   - component: {fileID: 1445520474}
   - component: {fileID: 1445520473}
+  - component: {fileID: 1445520476}
+  - component: {fileID: 1445520475}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -25400,8 +25583,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Male
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8b85c5e76fc18b048ac775449e245fd0, type: 2}
+  m_sharedMaterial: {fileID: -4659514770371030259, guid: 8b85c5e76fc18b048ac775449e245fd0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -25475,6 +25658,135 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1445520471}
   m_CullTransparentMesh: 1
+--- !u!114 &1445520475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445520471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59dffddb27448c24fa5549056e7d4146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 1445520471}
+  KeySuffix: []
+  Values:
+  - 1
+--- !u!114 &1445520476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445520471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d43e572572fdaf64ea43c8ac8002a085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainImage: {fileID: 463497465}
+  MainText: {fileID: 0}
+  Colors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 0.5019608}
+  OnAppear:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHoverStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHoverEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 918499227}
+        m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
+        m_MethodName: SelectChoice
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1445520475}
+          m_ObjectArgumentAssemblyTypeName: ChoiceBinding, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1445520476}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ActivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 714926903}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1445520476}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2122503410}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1958589249}
+        m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
+        m_MethodName: ResetChoice
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1445520476}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ActivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 956311196}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1445520476}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2020936187}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436139411}
+        m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
+        m_MethodName: ResetChoice
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1471851301
 GameObject:
   m_ObjectHideFlags: 0
@@ -25648,7 +25960,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 956311198}
+      - m_Target: {fileID: 1436139411}
         m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
         m_MethodName: SelectChoice
         m_Mode: 2
@@ -25673,9 +25985,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1472482828}
+  KeySuffix:
+  - male_casualsuit03
   Values:
-  - afro01 59627022-32e9-4126-9cf1-036d4b9335fc
-  - afro01 59627022-32e9-4126-9cf1-036d4b9335fc afro01.mhmat
+  - 39864dca-8d5c-4d7c-84ce-c00982e93cb7
 --- !u!114 &1472482832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25747,9 +26060,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1477287595}
+  KeySuffix: []
   Values:
-  - Braid01 eead6f99-d6c6-4f6b-b6c2-210459d7a62e
-  - Braid01 eead6f99-d6c6-4f6b-b6c2-210459d7a62e braid01.mhmat
+  - skins/old_african_male/old_african_male.mhmat
 --- !u!114 &1477287597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25779,7 +26092,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 714926905}
+      - m_Target: {fileID: 1958589249}
         m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
         m_MethodName: SelectChoice
         m_Mode: 2
@@ -25900,6 +26213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1479625470}
+  KeySuffix: []
   Values:
   - short04 e09bfd91-f83f-4f9a-ba8c-4635cd1ae0d8
   - short04 e09bfd91-f83f-4f9a-ba8c-4635cd1ae0d8 short04.mhmat
@@ -28253,6 +28567,111 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1600925423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1600925424}
+  - component: {fileID: 1600925427}
+  - component: {fileID: 1600925426}
+  - component: {fileID: 1600925425}
+  m_Layer: 5
+  m_Name: P_Clothes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1600925424
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600925423}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 956311197}
+  - {fileID: 2020936188}
+  m_Father: {fileID: 1436139408}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 295.89993, y: -11.6}
+  m_SizeDelta: {x: 201.08624, y: 217.78922}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1600925425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600925423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d43e572572fdaf64ea43c8ac8002a085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainImage: {fileID: 0}
+  MainText: {fileID: 0}
+  Colors: []
+  OnAppear:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHoverStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHoverEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1600925426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600925423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0.10980392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1600925427
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600925423}
+  m_CullTransparentMesh: 1
 --- !u!1 &1604250631
 GameObject:
   m_ObjectHideFlags: 0
@@ -28286,43 +28705,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sliders:
-  - {fileID: 1147603218}
-  - {fileID: 620639589}
-  - {fileID: 616928315}
-  - {fileID: 1642957658}
-  - {fileID: 965458156}
-  - {fileID: 504775644}
-  - {fileID: 1148539237}
-  - {fileID: 397606199}
-  - {fileID: 414025299}
-  - {fileID: 310237744}
-  - {fileID: 577662552}
-  - {fileID: 1219467373}
-  - {fileID: 806603040}
-  - {fileID: 843764970}
-  - {fileID: 1911537784}
-  - {fileID: 1599747720}
-  - {fileID: 174273746}
-  - {fileID: 175039422}
-  - {fileID: 870312527}
-  - {fileID: 2091590534}
-  - {fileID: 1621696309}
-  - {fileID: 63048920}
-  - {fileID: 1085874326}
-  - {fileID: 1899120321}
   - {fileID: 1970653832}
-  - {fileID: 800765828}
-  - {fileID: 887919896}
-  - {fileID: 1676382216}
-  - {fileID: 1160312528}
-  - {fileID: 1600888198}
-  - {fileID: 1045703226}
-  - {fileID: 102580010}
-  - {fileID: 1982411133}
+  - {fileID: 1147603218}
   - {fileID: 1744646029}
+  - {fileID: 175039422}
+  - {fileID: 1642957658}
+  - {fileID: 870312527}
+  - {fileID: 397606199}
+  - {fileID: 63048920}
+  - {fileID: 1982411133}
+  - {fileID: 414025299}
+  - {fileID: 620639589}
+  - {fileID: 887919896}
+  - {fileID: 1600888198}
+  - {fileID: 843764970}
+  - {fileID: 1676382216}
+  - {fileID: 806603040}
+  - {fileID: 1085874326}
+  - {fileID: 102580010}
+  - {fileID: 965458156}
+  - {fileID: 577662552}
+  - {fileID: 1599747720}
+  - {fileID: 1621696309}
+  - {fileID: 1899120321}
+  - {fileID: 1219467373}
+  - {fileID: 1148539237}
+  - {fileID: 1045703226}
+  - {fileID: 2091590534}
+  - {fileID: 1160312528}
+  - {fileID: 310237744}
+  - {fileID: 616928315}
+  - {fileID: 504775644}
+  - {fileID: 174273746}
+  - {fileID: 800765828}
   - {fileID: 904855693}
+  - {fileID: 1911537784}
   Choices:
+  - {fileID: 2142746834}
+  - {fileID: 1818079510}
+  - {fileID: 918499227}
   - {fileID: 2096785427}
+  - {fileID: 1436139411}
+  - {fileID: 1958589249}
+  - {fileID: 507077895}
 --- !u!114 &1604250633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28361,36 +28786,27 @@ MonoBehaviour:
   Client: {fileID: 1604250633}
   Sliders: {fileID: 1604250632}
   Options: {fileID: 11400000, guid: 4311da0314f58f84cbb776595243a88f, type: 2}
-  StartPos: {x: 3.13, y: 1.5, z: -0.15}
+  StartPosMale: {x: 3.13, y: 1.5, z: -0.15}
+  StartPosFemale: {x: 3.13, y: 2.75, z: -0.15}
   StartRot: {x: 4.95, y: -151, z: 0.5}
   InputImage: {fileID: 1442169863}
   MaterialsToMakeFade:
   - eye
   - short
   - high
-  AnimatorController: {fileID: 9100000, guid: bafbbf144070a874ea152f1b46b7ef3e, type: 2}
+  MaleAnimatorController: {fileID: 9100000, guid: bafbbf144070a874ea152f1b46b7ef3e, type: 2}
+  FemaleAnimatorController: {fileID: 9100000, guid: fab732781aec3184883a5685f989e59b, type: 2}
   ParametersToAdd:
   - skeleton
-  - modifier macrodetails/Gender
-  - eyelashes
-  - eyebrows
-  - eyes
-  - material
-  - material
-  - material
-  - skinMaterial
+  - eyelashes Eyelashes01
+  - material Eyelashes01
   ParametersToAddValues:
   - default_no_toes.mhskel
-  - 1.0
-  - Eyelashes01 d533836f-13ad-4836-8b65-051108253cd2
-  - eyebrow001 9c81ec3a-faa5-4c94-9cdb-992300ba3084
-  - HighPolyEyes 2c12f43b-1303-432c-b7ce-d78346baf2e6
-  - HighPolyEyes 2c12f43b-1303-432c-b7ce-d78346baf2e6 eyes/materials/brown.mhmat
-  - eyebrow001 9c81ec3a-faa5-4c94-9cdb-992300ba3084 eyebrow001.mhmat
-  - Eyelashes01 d533836f-13ad-4836-8b65-051108253cd2 eyelashes01.mhmat
-  - skins/middleage_caucasian_male/middleage_caucasian_male.mhmat
-  ParametersToRemove:
-  - modifier macrodetails/Age
+  - d533836f-13ad-4836-8b65-051108253cd2
+  - d533836f-13ad-4836-8b65-051108253cd2 eyelashes01.mhmat
+  ParametersToRemove: []
+  GenderParameterName: modifier macrodetails/Gender
+  IsMale: 0
 --- !u!4 &1604250635
 Transform:
   m_ObjectHideFlags: 0
@@ -28455,7 +28871,7 @@ RectTransform:
   m_Father: {fileID: 1981416885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -28587,6 +29003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1617089086}
+  KeySuffix: []
   Values:
   - long01 6c6b0bb1-3608-40b8-9108-4bfd8fa71e39
   - long01 6c6b0bb1-3608-40b8-9108-4bfd8fa71e39 long01.mhmat
@@ -29028,9 +29445,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1655630810}
+  KeySuffix:
+  - eyebrow002
+  - eyebrow002
   Values:
-  - bob01 a153cb9b-2a28-45fa-a526-04e45146268e
-  - bob01 a153cb9b-2a28-45fa-a526-04e45146268e bob01.mhmat
+  - a4e73c2f-3a12-47c8-b706-31a68cac6907
+  - a4e73c2f-3a12-47c8-b706-31a68cac6907eyebrow002.mhmat
 --- !u!114 &1655630812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30088,9 +30508,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1727270504}
+  KeySuffix:
+  - eyebrow006
+  - eyebrow006
   Values:
-  - bob02 cd7840cf-b340-49e9-a505-8a5a22a86db2
-  - bob02 cd7840cf-b340-49e9-a505-8a5a22a86db2 bob02.mhmat
+  - bb953a1a-db43-44db-a0ad-ed8a5d6000c9
+  - bb953a1a-db43-44db-a0ad-ed8a5d6000c9eyebrow006.mhmat
 --- !u!114 &1727270506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30774,7 +31197,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 244, y: 0}
+  m_AnchoredPosition: {x: 244, y: 85.99998}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1753783408
@@ -31006,6 +31429,42 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2096785422}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1753783412}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1781727536}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1753783412}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 507077893}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1753783412}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1600925423}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -31576,6 +32035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1773025549}
+  KeySuffix: []
   Values:
   - ponytail01 44e0340e-c7a6-4d22-814c-0632968d2dde
   - ponytail01 44e0340e-c7a6-4d22-814c-0632968d2dde ponytail01.mhmat
@@ -31654,8 +32114,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: -10.33}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 73, y: 2.5615}
+  m_SizeDelta: {x: 200, y: 24.217}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1778102564
 MonoBehaviour:
@@ -31753,6 +32213,112 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778102562}
+  m_CullTransparentMesh: 1
+--- !u!1 &1781727536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1781727537}
+  - component: {fileID: 1781727540}
+  - component: {fileID: 1781727539}
+  - component: {fileID: 1781727538}
+  m_Layer: 5
+  m_Name: P_Eyebrows
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1781727537
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781727536}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 310237742}
+  - {fileID: 620639587}
+  - {fileID: 1818079509}
+  m_Father: {fileID: 714896826}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 361.11584, y: -90.70001}
+  m_SizeDelta: {x: 323.104, y: 817.6186}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1781727538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781727536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d43e572572fdaf64ea43c8ac8002a085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainImage: {fileID: 0}
+  MainText: {fileID: 0}
+  Colors: []
+  OnAppear:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHoverStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHoverEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1781727539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781727536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0.10980392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1781727540
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781727536}
   m_CullTransparentMesh: 1
 --- !u!1 &1785153115
 GameObject:
@@ -31862,9 +32428,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1803611784}
+  KeySuffix: []
   Values:
-  - bob01 a153cb9b-2a28-45fa-a526-04e45146268e
-  - bob01 a153cb9b-2a28-45fa-a526-04e45146268e bob01.mhmat
+  - skins/middleage_asian_female/middleage_asian_female.mhmat
 --- !u!114 &1803611786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31894,7 +32460,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2122503412}
+      - m_Target: {fileID: 1958589249}
         m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
         m_MethodName: SelectChoice
         m_Mode: 2
@@ -31996,9 +32562,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1811472984}
+  KeySuffix:
+  - Moustache
   Values:
-  - afro01 59627022-32e9-4126-9cf1-036d4b9335fc
-  - afro01 59627022-32e9-4126-9cf1-036d4b9335fc afro01.mhmat
+  - 8dbdff2d-495f-4dd6-8f27-5898ae4a3ad9
 --- !u!114 &1811472986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32116,7 +32683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1818079509
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32135,12 +32702,12 @@ RectTransform:
   - {fileID: 704143196}
   - {fileID: 1062950022}
   - {fileID: 656703308}
-  m_Father: {fileID: 714896826}
+  m_Father: {fileID: 1781727537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 297, y: -18.5}
-  m_SizeDelta: {x: 201.2362, y: 293.75623}
+  m_AnchoredPosition: {x: -6.515808, y: 52.999996}
+  m_SizeDelta: {x: -121.86777, y: -523.8623}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1818079510
 MonoBehaviour:
@@ -32161,13 +32728,10 @@ MonoBehaviour:
   - {fileID: 704143192}
   - {fileID: 1062950018}
   - {fileID: 656703310}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   ParameterNames:
-  - hair
+  - eyebrows
   - material
+  CanUnselect: 1
 --- !u!114 &1818079511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32266,9 +32830,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1823211840}
+  KeySuffix:
+  - HighPolyEyes
+  - HighPolyEyes
   Values:
-  - afro01 59627022-32e9-4126-9cf1-036d4b9335fc
-  - afro01 59627022-32e9-4126-9cf1-036d4b9335fc afro01.mhmat
+  - 2c12f43b-1303-432c-b7ce-d78346baf2e6
+  - 2c12f43b-1303-432c-b7ce-d78346baf2e6eyes/materials/blue.mhmat
 --- !u!114 &1823211842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32493,6 +33060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1846140668}
+  KeySuffix: []
   Values:
   - bob02 cd7840cf-b340-49e9-a505-8a5a22a86db2
   - bob02 cd7840cf-b340-49e9-a505-8a5a22a86db2 bob02.mhmat
@@ -33330,7 +33898,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1958589248}
   - component: {fileID: 1958589249}
-  - component: {fileID: 1958589250}
   m_Layer: 5
   m_Name: Skin
   m_TagString: Untagged
@@ -33357,7 +33924,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -54.8}
+  m_AnchoredPosition: {x: -74.00011, y: 66.89998}
   m_SizeDelta: {x: 183.7, y: 17.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1958589249
@@ -33369,62 +33936,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1958589247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b222a34c56a11e4497568f44069e686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
-  m_FillRect: {fileID: 0}
-  m_HandleRect: {fileID: 0}
-  m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1958589250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958589247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59dffddb27448c24fa5549056e7d4146, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Target: {fileID: 0}
-  Values: []
+  Choices:
+  - {fileID: 1388461904}
+  - {fileID: 1803611785}
+  - {fileID: 178284733}
+  - {fileID: 839114233}
+  - {fileID: 80193425}
+  - {fileID: 1190459049}
+  - {fileID: 517002881}
+  - {fileID: 849095173}
+  - {fileID: 809559069}
+  - {fileID: 1477287596}
+  - {fileID: 469164766}
+  - {fileID: 2003744281}
+  ParameterNames:
+  - skinMaterial
+  CanUnselect: 1
 --- !u!1 &1961569798
 GameObject:
   m_ObjectHideFlags: 0
@@ -33843,9 +34373,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1983266544}
+  KeySuffix:
+  - HighPolyEyes
+  - HighPolyEyes
   Values:
-  - bob02 cd7840cf-b340-49e9-a505-8a5a22a86db2
-  - bob02 cd7840cf-b340-49e9-a505-8a5a22a86db2 bob02.mhmat
+  - 2c12f43b-1303-432c-b7ce-d78346baf2e6
+  - 2c12f43b-1303-432c-b7ce-d78346baf2e6eyes/materials/brownlight.mhmat
 --- !u!114 &1983266546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34034,6 +34567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1987568737}
+  KeySuffix: []
   Values:
   - bob01 a153cb9b-2a28-45fa-a526-04e45146268e
   - bob01 a153cb9b-2a28-45fa-a526-04e45146268e bob01.mhmat
@@ -34570,6 +35104,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1781727536}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 507077893}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 649430170}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1600925423}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2003744278
 GameObject:
   m_ObjectHideFlags: 0
@@ -34638,7 +35208,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 714926905}
+      - m_Target: {fileID: 1958589249}
         m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
         m_MethodName: SelectChoice
         m_Mode: 2
@@ -34663,9 +35233,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 2003744278}
+  KeySuffix: []
   Values:
-  - ponytail01 44e0340e-c7a6-4d22-814c-0632968d2dde
-  - ponytail01 44e0340e-c7a6-4d22-814c-0632968d2dde ponytail01.mhmat
+  - skins/old_asian_male/old_asian_male.mhmat
 --- !u!114 &2003744282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34736,8 +35306,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1714651109}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -34791,14 +35361,13 @@ GameObject:
   - component: {fileID: 2020936192}
   - component: {fileID: 2020936191}
   - component: {fileID: 2020936190}
-  - component: {fileID: 2020936189}
   m_Layer: 5
   m_Name: FemaleClothes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2020936188
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34813,39 +35382,13 @@ RectTransform:
   m_Children:
   - {fileID: 834369116}
   - {fileID: 237246505}
-  m_Father: {fileID: 1436139408}
+  m_Father: {fileID: 1600925424}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 295.89996, y: -17.3}
-  m_SizeDelta: {x: 201.08624, y: 239.37817}
+  m_AnchoredPosition: {x: 0, y: -5.699999}
+  m_SizeDelta: {x: 0, y: 21.588959}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2020936189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2020936187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b222a34c56a11e4497568f44069e686, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Choices:
-  - {fileID: 834369112}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  ParameterNames:
-  - hair
-  - material
 --- !u!114 &2020936190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35055,9 +35598,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 2083382441}
+  KeySuffix:
+  - HighPolyEyes
+  - HighPolyEyes
   Values:
-  - Braid01 eead6f99-d6c6-4f6b-b6c2-210459d7a62e
-  - Braid01 eead6f99-d6c6-4f6b-b6c2-210459d7a62e braid01.mhmat
+  - 2c12f43b-1303-432c-b7ce-d78346baf2e6
+  - 2c12f43b-1303-432c-b7ce-d78346baf2e6eyes/materials/deepblue.mhmat
 --- !u!114 &2083382443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35695,6 +36241,7 @@ MonoBehaviour:
   ParameterNames:
   - hair
   - material
+  CanUnselect: 1
 --- !u!1 &2110470820
 GameObject:
   m_ObjectHideFlags: 0
@@ -35728,7 +36275,7 @@ RectTransform:
   m_Father: {fileID: 1981170175}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -35893,7 +36440,6 @@ GameObject:
   - component: {fileID: 2122503415}
   - component: {fileID: 2122503414}
   - component: {fileID: 2122503413}
-  - component: {fileID: 2122503412}
   m_Layer: 5
   m_Name: 'Skin_FEMALEPanel '
   m_TagString: Untagged
@@ -35926,32 +36472,6 @@ RectTransform:
   m_AnchoredPosition: {x: 73.400085, y: -158.5}
   m_SizeDelta: {x: 177.3862, y: 280.40622}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2122503412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2122503410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b222a34c56a11e4497568f44069e686, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Choices:
-  - {fileID: 1388461904}
-  - {fileID: 1803611785}
-  - {fileID: 178284733}
-  - {fileID: 839114233}
-  - {fileID: 80193425}
-  - {fileID: 1190459049}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  ParameterNames:
-  - hair
-  - material
 --- !u!114 &2122503413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36218,13 +36738,10 @@ MonoBehaviour:
   - {fileID: 2083382442}
   - {fileID: 694795725}
   - {fileID: 95384838}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   ParameterNames:
-  - hair
+  - eyes
   - material
+  CanUnselect: 1
 --- !u!114 &2142746835
 MonoBehaviour:
   m_ObjectHideFlags: 0

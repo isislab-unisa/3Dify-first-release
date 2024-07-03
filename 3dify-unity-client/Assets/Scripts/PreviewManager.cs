@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -8,21 +9,29 @@ using Newtonsoft.Json;
 using TriLibCore;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
+
+// TODO add loading screen
+//      fix initial gender choice to hide other gender panel
 
 public class PreviewManager : MonoBehaviour
 {
     public Client3dify Client;
     public SlidersManager Sliders;
     public AssetLoaderOptions Options;    
-    public Vector3 StartPos;
+    [FormerlySerializedAs("StartPos")] public Vector3 StartPosMale;
+    public Vector3 StartPosFemale;
     public Vector3 StartRot;
     public Image InputImage;
     public List<string> MaterialsToMakeFade;
-    public RuntimeAnimatorController AnimatorController;
+    [FormerlySerializedAs("AnimatorController")] public RuntimeAnimatorController MaleAnimatorController;
+    public RuntimeAnimatorController FemaleAnimatorController;
     public List<string> ParametersToAdd;
     public List<string> ParametersToAddValues;
     public List<string> ParametersToRemove;
+    public string GenderParameterName;
+    public bool IsMale;
     private GameObject avatar;
     private string lastAvatarBase64;
     
@@ -47,7 +56,7 @@ public class PreviewManager : MonoBehaviour
                 Client.DoExtractParameters(base64Image, genderAndAge.message.gender, genderAndAge.message.age, par =>
                 {
                     Sliders.ApplyParametersToSlidersAndChoices(par);
-                    Build();
+                    Build(); // TODO get default parameters from extract features
                 });
             });
         });
@@ -67,7 +76,7 @@ public class PreviewManager : MonoBehaviour
         }
         avatar = assetLoaderContext.RootGameObject;
         avatar.SetActive(true);
-        avatar.transform.position = StartPos;
+        avatar.transform.position = IsMale ? StartPosMale : StartPosFemale;
         avatar.transform.eulerAngles = StartRot;
         List<Material> materialsToFade = avatar.GetComponentsInChildren<Renderer>()
             .Where(r => MaterialsToMakeFade.FirstOrDefault(m => r.material.name.ToLower().StartsWith(m)) != null)
@@ -85,7 +94,7 @@ public class PreviewManager : MonoBehaviour
         }
 
         Animator animator = avatar.AddComponent<Animator>();
-        animator.runtimeAnimatorController = AnimatorController;
+        animator.runtimeAnimatorController = IsMale ? MaleAnimatorController : FemaleAnimatorController;
     }
 
     void OnFbxGot(string base64Fbx)
@@ -111,12 +120,15 @@ public class PreviewManager : MonoBehaviour
         Dictionary<string, string> parameters = Sliders.GetParametersFromSlidersAndChoices();
         for (int i = 0; i < ParametersToAdd.Count; ++i)
         {
-            parameters[ParametersToAdd[i]] = ParametersToAddValues[i];
+            if(!parameters.ContainsKey(ParametersToAdd[i]))
+                parameters[ParametersToAdd[i]] = ParametersToAddValues[i];
         }
         
         ParametersToRemove.ForEach(p => parameters.Remove(p));
-        
+
+        IsMale = Mathf.RoundToInt(float.Parse(parameters[GenderParameterName], NumberStyles.Any, CultureInfo.InvariantCulture)) == 1; 
         LogParameters(parameters);
+        // TODO update with new python endpoint and retry after 15 seconds if fails
         Client.DoApplyModifiers(parameters, () =>
         {
             Client.ExportFbxFromMakehuman((base64Fbx) =>

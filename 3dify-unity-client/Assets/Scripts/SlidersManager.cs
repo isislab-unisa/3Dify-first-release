@@ -33,7 +33,14 @@ public class SlidersManager : MonoBehaviour
             {
                 for(int i = 0; i < curChoice.ParameterNames.Count; ++i)
                 {
-                    parameters[curChoice.ParameterNames[i]] = curChoice.SelectedChoice.Values[i];                    
+                    if (i >= curChoice.SelectedChoice.KeySuffix.Count || string.IsNullOrEmpty(curChoice.SelectedChoice.KeySuffix[i]))
+                    {
+                        parameters[curChoice.ParameterNames[i]] = curChoice.SelectedChoice.Values[i];
+                    }
+                    else
+                    {
+                        parameters[curChoice.ParameterNames[i] + " " + curChoice.SelectedChoice.KeySuffix[i]] = curChoice.SelectedChoice.Values[i];
+                    }
                 }
                 
             }
@@ -59,7 +66,16 @@ public class SlidersManager : MonoBehaviour
             ChoiceGroup choice = Choices.FirstOrDefault(c => c.ParameterNames.Contains(curParam.Key));
             if (choice != null)
             {
-                choice.SelectChoice(curParam.Value);
+                float val;
+                if (float.TryParse(curParam.Value, NumberStyles.Any, CultureInfo.InvariantCulture, out val))
+                {
+                    int intVal = Mathf.RoundToInt(val);
+                    choice.SelectChoice(intVal.ToString());
+                }
+                else
+                {
+                    choice.SelectChoice(curParam.Value);
+                }
             }
         }
     }
