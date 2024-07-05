@@ -12,15 +12,12 @@ using UnityEngine.Events;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-// TODO add loading screen
-//      fix initial gender choice to hide other gender panel
-
 public class PreviewManager : MonoBehaviour
 {
     public Client3dify Client;
     public SlidersManager Sliders;
     public AssetLoaderOptions Options;    
-    [FormerlySerializedAs("StartPos")] public Vector3 StartPosMale;
+    public Vector3 StartPosMale;
     public Vector3 StartPosFemale;
     public Vector3 StartRot;
     public Image InputImage;
@@ -32,15 +29,24 @@ public class PreviewManager : MonoBehaviour
     public List<string> ParametersToRemove;
     public string GenderParameterName;
     public bool IsMale;
+    public GameObject LoadingScreen;
+    public float ApplyAndDownloadRetryDelay;
+    public UIHandler BuildButton;
     private GameObject avatar;
     private string lastAvatarBase64;
     
     [DllImport("__Internal")]
     public static extern void DownloadFileBrowser(byte[] array, int byteLength, string fileName);
-    
+
+    private void Awake()
+    {
+        LoadingScreen.SetActive(false);
+    }
+
     // To be called from js
     public void Init(string endpoint, string bucketName, string fileName)
     {
+        LoadingScreen.SetActive(true);
         avatar = null;
         Client.ServerEndpoint = endpoint;
         Client.BucketName = bucketName;
@@ -56,7 +62,7 @@ public class PreviewManager : MonoBehaviour
                 Client.DoExtractParameters(base64Image, genderAndAge.message.gender, genderAndAge.message.age, par =>
                 {
                     Sliders.ApplyParametersToSlidersAndChoices(par);
-                    Build(); // TODO get default parameters from extract features
+                    Build(par);
                 });
             });
         });
@@ -95,6 +101,9 @@ public class PreviewManager : MonoBehaviour
 
         Animator animator = avatar.AddComponent<Animator>();
         animator.runtimeAnimatorController = IsMale ? MaleAnimatorController : FemaleAnimatorController;
+        LoadingScreen.SetActive(false);
+        BuildButton.ChangeImageColor(0);
+        BuildButton.ChangeTextColor(0);
     }
 
     void OnFbxGot(string base64Fbx)
@@ -115,9 +124,15 @@ public class PreviewManager : MonoBehaviour
         Debug.Log(JsonConvert.SerializeObject(parameters, Formatting.Indented));
     }
 
-    public void Build()
+    public void BuildFromSliders()
     {
         Dictionary<string, string> parameters = Sliders.GetParametersFromSlidersAndChoices();
+        Build(parameters);
+    }
+
+    public void Build(Dictionary<string, string> parameters)
+    {
+        LoadingScreen.SetActive(true);
         for (int i = 0; i < ParametersToAdd.Count; ++i)
         {
             if(!parameters.ContainsKey(ParametersToAdd[i]))
@@ -128,23 +143,44 @@ public class PreviewManager : MonoBehaviour
 
         IsMale = Mathf.RoundToInt(float.Parse(parameters[GenderParameterName], NumberStyles.Any, CultureInfo.InvariantCulture)) == 1; 
         LogParameters(parameters);
-        // TODO update with new python endpoint and retry after 15 seconds if fails
-        Client.DoApplyModifiers(parameters, () =>
+        StartCoroutine(ApplyAndDownloadInternal(parameters));
+    }
+
+    IEnumerator ApplyAndDownloadInternal(Dictionary<string, string> parameters)
+    {
+        bool disableLoadingScreen = false;
+        for (int i = 0; i < 3; ++i)
         {
-            Client.ExportFbxFromMakehuman((base64Fbx) =>
+            bool retry = false;
+            try
             {
-                OnFbxGot(base64Fbx);
-                Client.DoUploadFbx(base64Fbx, () =>
+                Client.DoApplyModifiersAndExportFBX(parameters, (base64Fbx) =>
                 {
-                    Debug.Log("Avatar uploaded on bucket");
+                    OnFbxGot(base64Fbx);
+                    Client.DoUploadFbx(base64Fbx, () => { Debug.Log("Avatar uploaded on bucket"); });
+                    Client.DoUploadParameters(parameters, () => { Debug.Log("Parameters uploaded on bucket"); });
+                    retry = false;
                 });
-                
-                Client.DoUploadParameters(parameters, () =>
-                {
-                    Debug.Log("Parameters uploaded on bucket");
-                });
-            });
-        });
+            }
+            catch (Exception e)
+            {
+                if(i == 2)
+                    disableLoadingScreen = true;
+                retry = true;
+            }
+            if(retry)
+            {
+                yield return new WaitForSeconds(ApplyAndDownloadRetryDelay);
+            }
+            else
+            {
+                break;
+            }
+        }
+        if(disableLoadingScreen)
+        {
+            LoadingScreen.SetActive(false);
+        }
     }
 
     public void Download()

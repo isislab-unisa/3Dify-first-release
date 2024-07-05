@@ -2,12 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ChoiceGroup : MonoBehaviour
 {
     public List<ChoiceBinding> Choices;
     public List<string> ParameterNames;
     public bool CanUnselect = true;
+    public UnityEvent OnValueChangedFromGUI;
     private ChoiceBinding selectedChoice;
 
     public ChoiceBinding SelectedChoice
@@ -20,7 +22,8 @@ public class ChoiceGroup : MonoBehaviour
 
     public void Start()
     {
-        ResetChoice();
+        if(selectedChoice == null)
+            ResetChoice();
     }
 
     public void ResetChoice()
@@ -30,6 +33,7 @@ public class ChoiceGroup : MonoBehaviour
 
     public void SelectChoice(ChoiceBinding newChoice)
     {
+        ChoiceBinding oldChoice = selectedChoice;
         if (!CanUnselect)
         {
             if (newChoice != null)
@@ -53,12 +57,14 @@ public class ChoiceGroup : MonoBehaviour
             }
         }
         Choices.ForEach(c => c.OnChoiceChanged(selectedChoice));
+        if(oldChoice != selectedChoice)
+            OnValueChangedFromGUI.Invoke();
     }
 
     public void SelectChoice(string value)
     {
         ChoiceBinding oldChoice = selectedChoice;
-        selectedChoice = Choices.FirstOrDefault(c => c.Values.FirstOrDefault(v => value.Contains(v, StringComparison.CurrentCultureIgnoreCase)) != null);
+        selectedChoice = Choices.FirstOrDefault(c => c.Values.FirstOrDefault(v => v.Contains(value, StringComparison.CurrentCultureIgnoreCase)) != null);
         if (selectedChoice != oldChoice)
         {
             Choices.ForEach(c => c.OnChoiceChanged(selectedChoice));

@@ -59,6 +59,7 @@ public class Client3dify : MonoBehaviour
     public string ApplyModifiersApi;
     public string ExportFbxApi;
     public string ExtractFeaturesApi;
+    public string ApplyModifiersAndDownloadApi;
     public string GenderAgeApi;
     public string MinioProxyApi;
     public string BucketName;
@@ -126,6 +127,28 @@ public class Client3dify : MonoBehaviour
             }
         }
     }
+    
+    void LogParameters(Dictionary<string, Dictionary<string, string>> parameters)
+    {
+        Debug.Log(JsonConvert.SerializeObject(parameters, Formatting.Indented));
+    }
+
+    public void DoApplyModifiersAndExportFBX(Dictionary<string, string> parameters, UnityAction<string> callback)
+    {
+        foreach (var key in parameters.Keys.ToList())
+        {
+            parameters[key] = parameters[key].Replace(",", ".");
+        }
+        //string paramsJson = JsonConvert.SerializeObject(parameters, Formatting.None);
+        Dictionary<string, Dictionary<string, string>> postParams = new Dictionary<string, Dictionary<string, string>>();
+        postParams["sliders"] = parameters;
+        LogParameters(postParams);
+        PostRequest(PythonEndpoint + ApplyModifiersAndDownloadApi, JsonConvert.SerializeObject(postParams), responseStr =>
+        {
+            ExportFbxResponse response = JsonConvert.DeserializeObject<ExportFbxResponse>(responseStr);
+            callback.Invoke(response.zipFile64);
+        });
+    }
 
     public void DoApplyModifiers(Dictionary<string, string> parameters, UnityAction callback)
     {
@@ -182,7 +205,7 @@ public class Client3dify : MonoBehaviour
             StringBuilder extractedSliders = new StringBuilder(1024);
             foreach (KeyValuePair<string, string> curSlider in response.sliders)
             {
-                extractedSliders.AppendFormat("{0} {1}\n", curSlider.Key, curSlider.Value);
+                extractedSliders.AppendFormat("{0}: {1}\n", curSlider.Key, curSlider.Value);
             }
             Debug.Log(extractedSliders.ToString());
             callback.Invoke(response.sliders);

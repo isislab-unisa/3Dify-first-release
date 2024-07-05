@@ -63,7 +63,8 @@ public class SlidersManager : MonoBehaviour
                 }
             }
 
-            ChoiceGroup choice = Choices.FirstOrDefault(c => c.ParameterNames.Contains(curParam.Key));
+            ChoiceGroup choice = Choices.FirstOrDefault(c => c.Choices.FirstOrDefault(ch => 
+                ch.Values.Contains(curParam.Value))!= null);
             if (choice != null)
             {
                 float val;

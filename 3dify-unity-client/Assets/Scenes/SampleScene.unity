@@ -253,6 +253,9 @@ MonoBehaviour:
   Values:
   - afro01 59627022-32e9-4126-9cf1-036d4b9335fc
   - afro01 59627022-32e9-4126-9cf1-036d4b9335fc afro01.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7486392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -652,6 +655,9 @@ MonoBehaviour:
   - male_elegantsuit01
   Values:
   - 1d2e3843-dda5-40a8-84a0-96666aa681bb
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &46227946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -856,7 +862,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &63048920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,6 +1084,9 @@ MonoBehaviour:
   KeySuffix: []
   Values:
   - skins/old_asian_female/old_asian_female.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &80193426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1361,7 +1394,10 @@ MonoBehaviour:
   - HighPolyEyes
   Values:
   - 2c12f43b-1303-432c-b7ce-d78346baf2e6
-  - 2c12f43b-1303-432c-b7ce-d78346baf2e6eyes/materials/ice.mhmat
+  - 2c12f43b-1303-432c-b7ce-d78346baf2e6 eyes/materials/ice.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &95384839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1616,7 +1652,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &103025345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2143,7 +2203,10 @@ MonoBehaviour:
   - eyebrow001
   Values:
   - 9c81ec3a-faa5-4c94-9cdb-992300ba3084
-  - 9c81ec3a-faa5-4c94-9cdb-992300ba3084eyebrow001.mhmat
+  - 9c81ec3a-faa5-4c94-9cdb-992300ba3084 eyebrow001.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &129254484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2629,7 +2692,10 @@ MonoBehaviour:
   - HighPolyEyes
   Values:
   - 2c12f43b-1303-432c-b7ce-d78346baf2e6
-  - 2c12f43b-1303-432c-b7ce-d78346baf2e6eyes/materials/bluegreen.mhmat
+  - 2c12f43b-1303-432c-b7ce-d78346baf2e6 eyes/materials/bluegreen.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &139414106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3203,7 +3269,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &174273746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3309,7 +3399,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &175039422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3360,6 +3474,9 @@ MonoBehaviour:
   KeySuffix: []
   Values:
   - skins/middleage_caucasian_female/middleage_caucasian_female.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &178284734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4159,6 +4276,9 @@ MonoBehaviour:
   - female_sportsuit01
   Values:
   - e38d3a5b-718f-41d5-8404-299def30b43f
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &237246508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4857,6 +4977,9 @@ MonoBehaviour:
   Values:
   - short01 766436e9-63ed-4f6a-afa9-99f3acff70a8
   - short01 766436e9-63ed-4f6a-afa9-99f3acff70a8 short01.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &268384653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5600,7 +5723,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &310237744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7061,6 +7208,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393360363}
   m_CullTransparentMesh: 1
+--- !u!1 &394911961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 394911962}
+  - component: {fileID: 394911964}
+  - component: {fileID: 394911963}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &394911962
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394911961}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1295430624}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &394911963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394911961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 0.8862745}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &394911964
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394911961}
+  m_CullTransparentMesh: 1
 --- !u!1 &396580906
 GameObject:
   m_ObjectHideFlags: 0
@@ -7263,7 +7485,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &397606199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7479,6 +7725,9 @@ MonoBehaviour:
   Values:
   - Braid01 eead6f99-d6c6-4f6b-b6c2-210459d7a62e
   - Braid01 eead6f99-d6c6-4f6b-b6c2-210459d7a62e braid01.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &407672585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7611,7 +7860,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &414025299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7724,6 +7997,7 @@ RectTransform:
   - {fileID: 756991937}
   - {fileID: 743897853}
   - {fileID: 2086109191}
+  - {fileID: 1295430624}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8241,6 +8515,9 @@ MonoBehaviour:
   KeySuffix: []
   Values:
   - skins/old_caucasian_male/old_caucasian_male.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &469164767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8565,7 +8842,82 @@ MonoBehaviour:
   Target: {fileID: 491494012}
   KeySuffix: []
   Values:
-  - 0
+  - 0.0
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1445520476}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 714926903}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1445520476}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ActivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2122503410}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1958589249}
+        m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
+        m_MethodName: ResetChoice
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1445520476}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: DeactivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 956311196}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1445520476}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ActivateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2020936187}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436139411}
+        m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
+        m_MethodName: ResetChoice
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &491494017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8602,78 +8954,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 491494016}
           m_ObjectArgumentAssemblyTypeName: ChoiceBinding, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 491494017}
-        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
-        m_MethodName: ActivateObject
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2122503410}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 491494017}
-        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
-        m_MethodName: DeactivateObject
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 714926903}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1958589249}
-        m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
-        m_MethodName: ResetChoice
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 491494017}
-        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
-        m_MethodName: ActivateObject
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2020936187}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 491494017}
-        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
-        m_MethodName: DeactivateObject
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 956311196}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1436139411}
-        m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
-        m_MethodName: ResetChoice
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -8845,7 +9125,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &504775644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8919,6 +9223,33 @@ MonoBehaviour:
   ParameterNames:
   - clothes
   CanUnselect: 1
+  OnValueChangedFromGUI:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &507077896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9131,6 +9462,9 @@ MonoBehaviour:
   KeySuffix: []
   Values:
   - skins/middleage_african_male/middleage_african_male.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &517002882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9933,7 +10267,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &577662552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10042,6 +10400,9 @@ MonoBehaviour:
   Values:
   - short02 c104cd4a-1edc-43f9-8b94-f63345a44638
   - short02 c104cd4a-1edc-43f9-8b94-f63345a44638 short02.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &585844670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10493,7 +10854,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &616928315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10599,7 +10984,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &620639589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11506,7 +11915,10 @@ MonoBehaviour:
   - eyebrow009
   Values:
   - 55b3b52a-379e-426d-b320-562ed57202b3
-  - 55b3b52a-379e-426d-b320-562ed57202b3eyebrow009.mhmat
+  - 55b3b52a-379e-426d-b320-562ed57202b3 eyebrow009.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &656703311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11838,7 +12250,10 @@ MonoBehaviour:
   - HighPolyEyes
   Values:
   - 2c12f43b-1303-432c-b7ce-d78346baf2e6
-  - 2c12f43b-1303-432c-b7ce-d78346baf2e6eyes/materials/green.mhmat
+  - 2c12f43b-1303-432c-b7ce-d78346baf2e6 eyes/materials/green.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &694795726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11975,7 +12390,10 @@ MonoBehaviour:
   - eyebrow008
   Values:
   - 79ea307f-a942-40dd-bf50-bbaa41f02034
-  - 79ea307f-a942-40dd-bf50-bbaa41f02034eyebrow008.mhmat
+  - 79ea307f-a942-40dd-bf50-bbaa41f02034 eyebrow008.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &704143193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14090,7 +14508,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &800765828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14480,7 +14922,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &806603040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14531,6 +14997,9 @@ MonoBehaviour:
   KeySuffix: []
   Values:
   - skins/middleage_caucasian_male/middleage_caucasian_male.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &809559070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15240,6 +15709,9 @@ MonoBehaviour:
   - female_elegantsuit01
   Values:
   - 8bb26477-c09f-4439-b05f-961516acf662
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &834369113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15524,6 +15996,9 @@ MonoBehaviour:
   KeySuffix: []
   Values:
   - skins/old_african_female/old_african_female.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &839114234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15727,7 +16202,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &849095172
 GameObject:
   m_ObjectHideFlags: 0
@@ -15764,6 +16263,9 @@ MonoBehaviour:
   KeySuffix: []
   Values:
   - skins/middleage_asian_male/middleage_asian_male.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &849095174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16271,7 +16773,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &870312527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16502,7 +17028,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &887919896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17063,7 +17613,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &904855693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17855,7 +18429,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &918499227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17874,6 +18472,33 @@ MonoBehaviour:
   ParameterNames:
   - modifier macrodetails/Gender
   CanUnselect: 0
+  OnValueChangedFromGUI:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &927338333
 GameObject:
   m_ObjectHideFlags: 0
@@ -18671,7 +19296,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &965458156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19446,7 +20095,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1051025259
 GameObject:
   m_ObjectHideFlags: 0
@@ -19635,7 +20308,10 @@ MonoBehaviour:
   - eyebrow012
   Values:
   - 1c16325c-7831-4166-831a-05c5b609c219
-  - 1c16325c-7831-4166-831a-05c5b609c219eyebrow012.mhmat
+  - 1c16325c-7831-4166-831a-05c5b609c219 eyebrow012.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1062950019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19734,6 +20410,140 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -214.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1064995177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1064995178}
+  - component: {fileID: 1064995180}
+  - component: {fileID: 1064995179}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1064995178
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064995177}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1295430624}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1141.4, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1064995179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064995177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: LOADING...
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8b85c5e76fc18b048ac775449e245fd0, type: 2}
+  m_sharedMaterial: {fileID: -4659514770371030259, guid: 8b85c5e76fc18b048ac775449e245fd0, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 150
+  m_fontSizeBase: 150
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1064995180
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064995177}
+  m_CullTransparentMesh: 1
 --- !u!1 &1067257072
 GameObject:
   m_ObjectHideFlags: 0
@@ -20008,7 +20818,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1085874326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20657,7 +21491,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1147603218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20763,7 +21621,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1148539237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20915,7 +21797,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1160312528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21167,6 +22073,9 @@ MonoBehaviour:
   KeySuffix: []
   Values:
   - skins/old_caucasian_female/old_caucasian_female.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1190459050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21721,7 +22630,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1219467373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23007,6 +23940,9 @@ MonoBehaviour:
   Values:
   - short03 a6cb8ad2-2e0d-4655-81ef-bfce1676ec67
   - short03 a6cb8ad2-2e0d-4655-81ef-bfce1676ec67 short03.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1293454250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23145,6 +24081,9 @@ MonoBehaviour:
   - Full_beard
   Values:
   - f06387f9-3365-493d-bee6-72bc33013936
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1293796485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23183,6 +24122,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293796481}
   m_CullTransparentMesh: 1
+--- !u!1 &1295430623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1295430624}
+  m_Layer: 5
+  m_Name: LoadingScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1295430624
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295430623}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 394911962}
+  - {fileID: 1064995178}
+  m_Father: {fileID: 422098825}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -1820, y: -980}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1304872465
 GameObject:
   m_ObjectHideFlags: 0
@@ -23331,9 +24307,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d43e572572fdaf64ea43c8ac8002a085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainImage: {fileID: 0}
-  MainText: {fileID: 0}
-  Colors: []
+  MainImage: {fileID: 282954741}
+  MainText: {fileID: 1304872467}
+  Colors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
   OnAppear:
     m_PersistentCalls:
       m_Calls: []
@@ -23348,7 +24326,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1604250634}
         m_TargetAssemblyTypeName: PreviewManager, Assembly-CSharp
-        m_MethodName: Build
+        m_MethodName: BuildFromSliders
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24105,6 +25083,9 @@ MonoBehaviour:
   KeySuffix: []
   Values:
   - skins/middleage_african_female/middleage_african_female.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1388461905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25067,6 +26048,33 @@ MonoBehaviour:
   ParameterNames:
   - clothes
   CanUnselect: 1
+  OnValueChangedFromGUI:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1436139412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25673,48 +26681,10 @@ MonoBehaviour:
   Target: {fileID: 1445520471}
   KeySuffix: []
   Values:
-  - 1
---- !u!114 &1445520476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445520471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d43e572572fdaf64ea43c8ac8002a085, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainImage: {fileID: 463497465}
-  MainText: {fileID: 0}
-  Colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 0.5019608}
-  OnAppear:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverStart:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  OnClick:
+  - 1.0
+  OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 918499227}
-        m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
-        m_MethodName: SelectChoice
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1445520475}
-          m_ObjectArgumentAssemblyTypeName: ChoiceBinding, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1445520476}
         m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
         m_MethodName: ActivateObject
@@ -25782,6 +26752,47 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1445520476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445520471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d43e572572fdaf64ea43c8ac8002a085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainImage: {fileID: 463497465}
+  MainText: {fileID: 0}
+  Colors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 0.5019608}
+  OnAppear:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHoverStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHoverEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 918499227}
+        m_TargetAssemblyTypeName: ChoiceGroup, Assembly-CSharp
+        m_MethodName: SelectChoice
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1445520475}
+          m_ObjectArgumentAssemblyTypeName: ChoiceBinding, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -25989,6 +27000,9 @@ MonoBehaviour:
   - male_casualsuit03
   Values:
   - 39864dca-8d5c-4d7c-84ce-c00982e93cb7
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1472482832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26063,6 +27077,9 @@ MonoBehaviour:
   KeySuffix: []
   Values:
   - skins/old_african_male/old_african_male.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1477287597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26217,6 +27234,9 @@ MonoBehaviour:
   Values:
   - short04 e09bfd91-f83f-4f9a-ba8c-4635cd1ae0d8
   - short04 e09bfd91-f83f-4f9a-ba8c-4635cd1ae0d8 short04.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1479625473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28460,7 +29480,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1600888196
 GameObject:
   m_ObjectHideFlags: 0
@@ -28566,7 +29610,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1600925423
 GameObject:
   m_ObjectHideFlags: 0
@@ -28765,6 +29833,7 @@ MonoBehaviour:
   ApplyModifiersApi: applymodifiers
   ExportFbxApi: downloadFbxZip
   ExtractFeaturesApi: extractFeatures
+  ApplyModifiersAndDownloadApi: applyAndDownload
   GenderAgeApi: genderAge
   MinioProxyApi: minioProxy
   BucketName: testbucket
@@ -28807,6 +29876,9 @@ MonoBehaviour:
   ParametersToRemove: []
   GenderParameterName: modifier macrodetails/Gender
   IsMale: 0
+  LoadingScreen: {fileID: 1295430623}
+  ApplyAndDownloadRetryDelay: 15
+  BuildButton: {fileID: 1304872469}
 --- !u!4 &1604250635
 Transform:
   m_ObjectHideFlags: 0
@@ -29007,6 +30079,9 @@ MonoBehaviour:
   Values:
   - long01 6c6b0bb1-3608-40b8-9108-4bfd8fa71e39
   - long01 6c6b0bb1-3608-40b8-9108-4bfd8fa71e39 long01.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1617089091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29139,7 +30214,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1621696309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29361,7 +30460,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1642957658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29450,7 +30573,10 @@ MonoBehaviour:
   - eyebrow002
   Values:
   - a4e73c2f-3a12-47c8-b706-31a68cac6907
-  - a4e73c2f-3a12-47c8-b706-31a68cac6907eyebrow002.mhmat
+  - a4e73c2f-3a12-47c8-b706-31a68cac6907 eyebrow002.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1655630812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29970,7 +31096,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1676382216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30513,7 +31663,10 @@ MonoBehaviour:
   - eyebrow006
   Values:
   - bb953a1a-db43-44db-a0ad-ed8a5d6000c9
-  - bb953a1a-db43-44db-a0ad-ed8a5d6000c9eyebrow006.mhmat
+  - bb953a1a-db43-44db-a0ad-ed8a5d6000c9 eyebrow006.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1727270506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31007,7 +32160,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1744646029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32039,6 +33216,9 @@ MonoBehaviour:
   Values:
   - ponytail01 44e0340e-c7a6-4d22-814c-0632968d2dde
   - ponytail01 44e0340e-c7a6-4d22-814c-0632968d2dde ponytail01.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1773025554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32431,6 +33611,9 @@ MonoBehaviour:
   KeySuffix: []
   Values:
   - skins/middleage_asian_female/middleage_asian_female.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1803611786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32566,6 +33749,9 @@ MonoBehaviour:
   - Moustache
   Values:
   - 8dbdff2d-495f-4dd6-8f27-5898ae4a3ad9
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1811472986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32731,7 +33917,34 @@ MonoBehaviour:
   ParameterNames:
   - eyebrows
   - material
-  CanUnselect: 1
+  CanUnselect: 0
+  OnValueChangedFromGUI:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1818079511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32835,7 +34048,10 @@ MonoBehaviour:
   - HighPolyEyes
   Values:
   - 2c12f43b-1303-432c-b7ce-d78346baf2e6
-  - 2c12f43b-1303-432c-b7ce-d78346baf2e6eyes/materials/blue.mhmat
+  - 2c12f43b-1303-432c-b7ce-d78346baf2e6 eyes/materials/blue.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1823211842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33064,6 +34280,9 @@ MonoBehaviour:
   Values:
   - bob02 cd7840cf-b340-49e9-a505-8a5a22a86db2
   - bob02 cd7840cf-b340-49e9-a505-8a5a22a86db2 bob02.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1846140673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33343,7 +34562,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1899120321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33662,7 +34905,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1911537784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33955,6 +35222,33 @@ MonoBehaviour:
   ParameterNames:
   - skinMaterial
   CanUnselect: 1
+  OnValueChangedFromGUI:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1961569798
 GameObject:
   m_ObjectHideFlags: 0
@@ -34111,7 +35405,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1970653832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34325,7 +35643,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1982411133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34378,7 +35720,10 @@ MonoBehaviour:
   - HighPolyEyes
   Values:
   - 2c12f43b-1303-432c-b7ce-d78346baf2e6
-  - 2c12f43b-1303-432c-b7ce-d78346baf2e6eyes/materials/brownlight.mhmat
+  - 2c12f43b-1303-432c-b7ce-d78346baf2e6 eyes/materials/brownlight.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1983266546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34571,6 +35916,9 @@ MonoBehaviour:
   Values:
   - bob01 a153cb9b-2a28-45fa-a526-04e45146268e
   - bob01 a153cb9b-2a28-45fa-a526-04e45146268e bob01.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1987568742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35236,6 +36584,9 @@ MonoBehaviour:
   KeySuffix: []
   Values:
   - skins/old_asian_male/old_asian_male.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2003744282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35603,7 +36954,10 @@ MonoBehaviour:
   - HighPolyEyes
   Values:
   - 2c12f43b-1303-432c-b7ce-d78346baf2e6
-  - 2c12f43b-1303-432c-b7ce-d78346baf2e6eyes/materials/deepblue.mhmat
+  - 2c12f43b-1303-432c-b7ce-d78346baf2e6 eyes/materials/deepblue.mhmat
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2083382443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36064,7 +37418,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2093954513
 GameObject:
   m_ObjectHideFlags: 0
@@ -36242,6 +37620,33 @@ MonoBehaviour:
   - hair
   - material
   CanUnselect: 1
+  OnValueChangedFromGUI:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2110470820
 GameObject:
   m_ObjectHideFlags: 0
@@ -36741,7 +38146,34 @@ MonoBehaviour:
   ParameterNames:
   - eyes
   - material
-  CanUnselect: 1
+  CanUnselect: 0
+  OnValueChangedFromGUI:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeImageColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1304872469}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: ChangeTextColor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2142746835
 MonoBehaviour:
   m_ObjectHideFlags: 0

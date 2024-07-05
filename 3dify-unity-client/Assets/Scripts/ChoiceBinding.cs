@@ -1,16 +1,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ChoiceBinding : MonoBehaviour
 {
     public GameObject Target;
     public List<string> KeySuffix;
     public List<string> Values;
+    public UnityEvent OnValueChanged;
 
     public void OnChoiceChanged(ChoiceBinding selected)
     {
         Target.GetComponent<UIHandler>().ChangeImageColor(selected == this ? 0 : 1);
+        if(selected == this)
+        {
+            OnValueChanged.Invoke();
+        }
     }
 
     [ContextMenu ("Fix Suffixes")]
