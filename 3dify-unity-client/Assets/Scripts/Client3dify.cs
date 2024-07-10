@@ -96,12 +96,18 @@ public class Client3dify : MonoBehaviour
             }
         }
     }
+    
     void PostRequest(string uri, string json, UnityAction<string> callback)
     {
-        StartCoroutine(PostRequest_Unity(uri, json, callback));
+        StartCoroutine(PostRequest_Unity(uri, json, callback, (_) => { }));
     }
     
-    IEnumerator PostRequest_Unity(string uri, string json, UnityAction<string> callback)
+    void PostRequest(string uri, string json, UnityAction<string> callback, UnityAction<string> error)
+    {
+        StartCoroutine(PostRequest_Unity(uri, json, callback, error));
+    }
+    
+    IEnumerator PostRequest_Unity(string uri, string json, UnityAction<string> callback, UnityAction<string> error)
     {
         Debug.Log("POST " + uri);
         using (UnityWebRequest webRequest = UnityWebRequest.Post(uri, json, "application/json"))
@@ -119,6 +125,7 @@ public class Client3dify : MonoBehaviour
                 case UnityWebRequest.Result.DataProcessingError:
                 case UnityWebRequest.Result.ProtocolError:
                     Debug.LogError(pages[page] + ": Error: " + webRequest.error);
+                    error.Invoke(webRequest.error);
                     break;
                 case UnityWebRequest.Result.Success:
                     Debug.Log(pages[page] + ":\n Success ");
@@ -133,7 +140,7 @@ public class Client3dify : MonoBehaviour
         Debug.Log(JsonConvert.SerializeObject(parameters, Formatting.Indented));
     }
 
-    public void DoApplyModifiersAndExportFBX(Dictionary<string, string> parameters, UnityAction<string> callback)
+    public void DoApplyModifiersAndExportFBX(Dictionary<string, string> parameters, UnityAction<string> callback, UnityAction<string> error)
     {
         foreach (var key in parameters.Keys.ToList())
         {
@@ -147,7 +154,8 @@ public class Client3dify : MonoBehaviour
         {
             ExportFbxResponse response = JsonConvert.DeserializeObject<ExportFbxResponse>(responseStr);
             callback.Invoke(response.zipFile64);
-        });
+        }, errorStr => { error.Invoke(errorStr); }
+        );
     }
 
     public void DoApplyModifiers(Dictionary<string, string> parameters, UnityAction callback)

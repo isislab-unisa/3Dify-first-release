@@ -149,25 +149,26 @@ public class PreviewManager : MonoBehaviour
     IEnumerator ApplyAndDownloadInternal(Dictionary<string, string> parameters)
     {
         bool disableLoadingScreen = false;
+        bool finished = false;
         for (int i = 0; i < 3; ++i)
         {
             bool retry = false;
-            try
+           
+            Client.DoApplyModifiersAndExportFBX(parameters, (base64Fbx) =>
             {
-                Client.DoApplyModifiersAndExportFBX(parameters, (base64Fbx) =>
-                {
-                    OnFbxGot(base64Fbx);
-                    Client.DoUploadFbx(base64Fbx, () => { Debug.Log("Avatar uploaded on bucket"); });
-                    Client.DoUploadParameters(parameters, () => { Debug.Log("Parameters uploaded on bucket"); });
-                    retry = false;
-                });
-            }
-            catch (Exception e)
+                OnFbxGot(base64Fbx);
+                Client.DoUploadFbx(base64Fbx, () => { Debug.Log("Avatar uploaded on bucket"); });
+                Client.DoUploadParameters(parameters, () => { Debug.Log("Parameters uploaded on bucket"); });
+                finished = true;
+                retry = false;
+            }, error =>
             {
-                if(i == 2)
-                    disableLoadingScreen = true;
+                finished = true;
                 retry = true;
-            }
+            });
+            yield return new WaitUntil(() => finished);
+            if(i == 2)
+                disableLoadingScreen = true;
             if(retry)
             {
                 yield return new WaitForSeconds(ApplyAndDownloadRetryDelay);

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
@@ -59,6 +60,16 @@ public class ChoiceGroup : MonoBehaviour
         Choices.ForEach(c => c.OnChoiceChanged(selectedChoice));
         if(oldChoice != selectedChoice)
             OnValueChangedFromGUI.Invoke();
+    }
+
+    public void SelectChoice(float value)
+    {
+        ChoiceBinding oldChoice = selectedChoice;
+        selectedChoice = Choices.FirstOrDefault(c => c.Values.FirstOrDefault(v => Mathf.Approximately(float.Parse(v, NumberStyles.Any, CultureInfo.InvariantCulture), value)) != null);
+        if (selectedChoice != oldChoice)
+        {
+            Choices.ForEach(c => c.OnChoiceChanged(selectedChoice));
+        }
     }
 
     public void SelectChoice(string value)

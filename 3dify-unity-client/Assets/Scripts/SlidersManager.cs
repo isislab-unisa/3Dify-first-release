@@ -70,8 +70,7 @@ public class SlidersManager : MonoBehaviour
                 float val;
                 if (float.TryParse(curParam.Value, NumberStyles.Any, CultureInfo.InvariantCulture, out val))
                 {
-                    int intVal = Mathf.RoundToInt(val);
-                    choice.SelectChoice(intVal.ToString());
+                    choice.SelectChoice(val);
                 }
                 else
                 {
